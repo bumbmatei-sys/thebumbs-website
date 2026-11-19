@@ -3,6 +3,7 @@
   "name": "thebumbs-website",
   "main": "worker/index.ts",
   "compatibility_date": "2026-11-18",
+  "previews": {},
   "assets": {
     "directory": "./out",
     "binding": "ASSETS",
