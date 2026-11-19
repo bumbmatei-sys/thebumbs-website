@@ -28,17 +28,17 @@ export function PhotoTunnel(){
   return()=>{cancelAnimationFrame(frame);window.removeEventListener("scroll",update);window.removeEventListener("resize",update)};
  },[]);
  const visible=available.some(Boolean);
- return <section className={"photo-tunnel"+(!visible?" photo-tunnel-pending":"")} ref={root} aria-label="Photographs from our ministry journey">
+ return <section className="photo-tunnel" ref={root} aria-label="Photographs from our ministry journey">
   <div className="photo-tunnel-stage">
    <div className="photo-tunnel-label"><span>OUR JOURNEY IN FRAMES</span><span>{String(Math.min(9,Math.floor(progress*9)+1)).padStart(2,"0")} / 09</span></div>
-   <div className="photo-tunnel-perspective" aria-hidden="true">
+   <div className="photo-tunnel-perspective">
     {photos.map(([file,alt],index)=>{
      const start=index/12,phase=Math.max(0,Math.min(1,(progress-start)*2.1));
      const transform=`translate3d(${(index%3-1)*20}vw,${(index%2?1:-1)*9}vh,${(1-phase)*-950+index*5}px) rotate(${(index%2?1:-1)*7*(1-phase)}deg) scale(${.7+phase*.3})`;
-     return <div key={file} className={"tunnel-photo tunnel-photo-"+index} style={{transform,opacity:available[index]?Math.min(1,phase*3):0}}><img src={"/images/scroll/"+file} alt={alt} loading={index<3?"eager":"lazy"} onLoad={()=>setAvailable(a=>a.map((v,i)=>i===index?true:v))} onError={()=>setAvailable(a=>a.map((v,i)=>i===index?false:v))}/></div>;
+     return <div key={file} className={"tunnel-photo tunnel-photo-"+index} style={{transform,opacity:available[index]?Math.min(1,phase*3):0}}><img src={"/images/scroll/"+file} alt={alt} loading="eager" decoding="async" onLoad={()=>setAvailable(a=>a[index]?a:a.map((v,i)=>i===index?true:v))} onError={()=>setAvailable(a=>a[index]?a.map((v,i)=>i===index?false:v):a)}/></div>;
     })}
    </div>
-   <p className="photo-tunnel-caption">{visible?"Every image is a moment in the story.":"Nine moments from the journey — photographs being prepared."}</p>
+   <p className="photo-tunnel-caption">{visible?"Every image is a moment in the story.":"Our journey in nine photographs."}</p>
   </div>
  </section>;
 }
