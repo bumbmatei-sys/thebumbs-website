@@ -1385,3 +1385,33 @@ body{background:var(--cream);color:var(--ink)}
   .home-partner-action{align-items:stretch;flex-direction:column;gap:14px}
   .home-partner-action>.button{width:100%}
 }
+
+
+/* Center the homepage partnership CTA on every screen. */
+.home-partner-action{
+  justify-content:center;
+  text-align:center;
+}
+.home-partner-action>.button{
+  flex:0 0 auto;
+}
+
+/* Mobile dock: active icon and label become olive green, without a selected tile. */
+@media(max-width:700px){
+  .dock > a[aria-current="page"],
+  .dock a[aria-current="page"]{
+    background:transparent;
+    box-shadow:none;
+    color:var(--olive);
+  }
+  .dock > a[aria-current="page"] > svg,
+  .dock > a[aria-current="page"] > .dock-label{
+    color:var(--olive);
+  }
+  .home-partner-action{
+    align-items:center;
+  }
+  .home-partner-action>.button{
+    width:min(100%,360px);
+  }
+}
