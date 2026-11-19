@@ -1447,7 +1447,7 @@ body{background:var(--cream);color:var(--ink)}
   overflow:hidden;
 }
 .story-tile.story-tile-photo:first-child{
-  background-position:center 14%;
+  background-position:center 21%;
 }
 .story-tile.story-tile-photo:nth-child(2){
   background-position:center 37%;
