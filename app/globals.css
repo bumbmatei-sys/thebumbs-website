@@ -190,3 +190,197 @@ h1 em{color:var(--gold)}.lead,.body-copy,.panel p,.mission-row p{color:var(--mut
 .story-tile:nth-child(2){background-image:url("/images/matei-speaking-approved.jpg");background-position:center 35%}
 .story-tile:hover{background-size:cover;background-color:#594538}
 .story-tile-number,.story-tile-title,.story-tile>span:last-child{color:#fff}
+
+
+/* November 2026: unified opening cinematic, near-black palette and adaptive header. */
+:root{
+  color-scheme:dark;
+  --cream:#100E0D;
+  --deep:#090807;
+  --ink:#F2E9DE;
+  --muted:#C4B5A6;
+  --gold:#CE4C37;
+  --line:rgba(242,233,222,.16);
+}
+body{background:var(--cream);color:var(--ink)}
+.panel,.quote-panel,.contact-form{background:#211B17;border-color:var(--line)}
+.story-tile{background-color:#211B17}
+.site-header{
+  position:fixed;
+  top:0;left:0;right:0;
+  width:100%;
+  z-index:1001;
+  height:84px;
+  min-height:84px;
+  padding:0 clamp(20px,3.8vw,72px);
+  display:flex;
+  align-items:center;
+  border-bottom:1px solid transparent;
+  background:transparent;
+  transition:background .3s ease,border-color .3s ease;
+}
+.site-header .header-identity{position:relative;z-index:2;display:flex;align-items:center;flex:0 0 auto}
+.site-header .header-personal-name{font-size:clamp(11px,1vw,14px);font-weight:800;letter-spacing:.13em;white-space:nowrap;color:var(--ink)}
+.site-header .brand{font-size:clamp(24px,2.5vw,35px);white-space:nowrap}
+.site-header .nav{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  gap:clamp(15px,2.1vw,32px);
+  margin:0;
+}
+.site-header .nav a{white-space:nowrap}
+.site-header .header-partner{position:relative;z-index:2;margin-left:auto;white-space:nowrap}
+.site-header.header-after-tunnel{
+  background:rgba(12,10,9,.92);
+  border-bottom-color:var(--line);
+  backdrop-filter:blur(18px);
+}
+.site-header.header-after-tunnel .nav{
+  position:static;
+  left:auto;
+  transform:none;
+  margin:0 26px 0 auto;
+}
+#main-content > main:not(.home-page){padding-top:84px}
+
+/* THEBUMBS wordmark and nine-image tunnel now share the very first viewport. */
+.photo-tunnel{
+  height:550svh;
+  margin:0 calc(-1 * clamp(20px,3.8vw,72px));
+  background:#090807;
+  isolation:isolate;
+}
+.photo-tunnel-stage{
+  height:100svh;
+  position:sticky;
+  top:0;
+  overflow:hidden;
+  display:block;
+  padding:0;
+  background:radial-gradient(ellipse at 50% 41%,#291B17 0%,#15100E 42%,#090807 80%);
+}
+.photo-tunnel-stage::after{
+  content:"";
+  position:absolute;
+  inset:48% 0 0;
+  z-index:2;
+  pointer-events:none;
+  background:linear-gradient(to bottom,transparent 10%,rgba(9,8,7,.74) 86%);
+}
+.photo-tunnel-perspective{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  perspective:1200px;
+  perspective-origin:50% 42%;
+  transform-style:preserve-3d;
+  pointer-events:none;
+}
+.tunnel-photo{
+  position:absolute;
+  top:42%;
+  left:50%;
+  width:clamp(260px,31vw,560px);
+  height:clamp(310px,56svh,710px);
+  margin:0;
+  border:clamp(5px,.55vw,9px) solid #EDE4D7;
+  overflow:hidden;
+  box-shadow:0 26px 100px rgba(0,0,0,.72);
+  will-change:transform,opacity;
+  backface-visibility:hidden;
+  background:#211B17;
+}
+.tunnel-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.photo-tunnel-label{
+  position:absolute;
+  z-index:4;
+  top:calc(84px + 22px);
+  left:clamp(20px,3.8vw,72px);
+  right:clamp(20px,3.8vw,72px);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:.14em;
+  pointer-events:none;
+}
+.intro-brand-lockup{
+  position:absolute;
+  z-index:4;
+  bottom:clamp(32px,4.8vh,68px);
+  left:clamp(16px,3.8vw,72px);
+  right:clamp(16px,3.8vw,72px);
+  text-align:center;
+  pointer-events:none;
+  will-change:transform,opacity;
+}
+.intro-brand-lockup .cinematic-subtitle{
+  margin:0 0 clamp(14px,2vw,26px);
+  font-size:clamp(12px,1.3vw,18px);
+  color:var(--ink);
+}
+.intro-brand-lockup .cinematic-title{
+  font-size:clamp(56px,15vw,310px);
+  line-height:.8;
+  margin:0;
+  color:var(--gold);
+  letter-spacing:-.095em;
+  font-weight:900;
+  white-space:nowrap;
+}
+.manifesto{background:var(--cream)}
+.manifesto .scroll-manifesto{max-width:1500px}
+.manifesto-word{
+  display:inline-block;
+  margin-right:.23em;
+  will-change:transform,opacity,filter;
+}
+.manifesto-word-accent{color:var(--gold);font-style:normal}
+
+@media(max-width:1050px){
+  .site-header .nav{gap:15px;font-size:12px}
+  .site-header.header-after-tunnel .nav{margin-right:16px}
+  .site-header .header-partner{padding:13px 17px}
+}
+@media(max-width:850px){
+  .site-header{height:70px;min-height:70px;padding:0 18px}
+  .site-header .nav{display:none}
+  .site-header .header-personal-name{font-size:clamp(10px,2.3vw,13px);letter-spacing:.055em}
+  .site-header .brand{font-size:clamp(18px,4.6vw,24px)}
+  .site-header .header-partner{font-size:11px;padding:11px 12px;margin-left:auto}
+  .photo-tunnel{height:475svh;margin:0 -18px}
+  .photo-tunnel-label{top:90px;left:18px;right:18px;font-size:9px}
+  .tunnel-photo{width:min(80vw,440px);height:min(56svh,540px);top:42%;border-width:5px}
+  .intro-brand-lockup{bottom:clamp(70px,11svh,110px);left:10px;right:10px}
+  .intro-brand-lockup .cinematic-title{font-size:15.2vw}
+  .intro-brand-lockup .cinematic-subtitle{font-size:12px;margin-bottom:17px}
+  #main-content > main:not(.home-page){padding-top:70px}
+}
+@media(prefers-reduced-motion:reduce){
+  .site-header,.intro-brand-lockup{transition:none;will-change:auto}
+  .photo-tunnel{height:auto}
+  .photo-tunnel-stage{position:relative;height:auto;min-height:100svh;padding:120px 18px 60px}
+  .photo-tunnel-stage::after{display:none}
+  .photo-tunnel-perspective{
+    position:relative;inset:auto;
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:12px;perspective:none;transform-style:flat;margin:24px 0;
+    pointer-events:auto;
+  }
+  .tunnel-photo{
+    position:relative;top:auto;left:auto;
+    width:100%;height:auto;aspect-ratio:3/4;
+    transform:none!important;opacity:1!important;
+    border-width:3px;will-change:auto;
+  }
+  .photo-tunnel-label{top:90px}
+  .intro-brand-lockup{position:relative;bottom:auto;left:auto;right:auto;transform:none!important;opacity:1!important}
+  .manifesto-word{will-change:auto;filter:none!important;transform:none!important}
+}
+@media(max-width:600px) and (prefers-reduced-motion:reduce){
+  .photo-tunnel-perspective{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
