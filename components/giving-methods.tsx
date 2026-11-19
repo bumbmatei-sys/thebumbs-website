@@ -12,7 +12,7 @@ type Currency = keyof typeof accounts;
 const SWIFT = "BTRLRO22";
 const methods = [
   { name:"PayPal", description:"Give through PayPal", href:"https://www.paypal.me/MateiGBumb", logo:"https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/paypal.svg", kind:"paypal" },
-  { name:"Wise", description:"International transfers", href:"https://wise.com/pay/me/mateigabrielb", logo:"https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/wise.svg", kind:"wise" },
+  { name:"Wise", description:"Give through Wise", href:"https://wise.com/pay/me/mateigabrielb", logo:"https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/wise.svg", kind:"wise" },
   { name:"Revolut", description:"Give through Revolut", href:"https://revolut.me/mateibumb", logo:"https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/revolut.svg", kind:"revolut" },
 ] as const;
 
