@@ -1,0 +1,3 @@
+import Link from "next/link";
+export const metadata={title:"Missions & Reports"};
+export default function Missions(){return <main><section className="hero reveal"><span className="eyebrow">Missions · Reports · Articles</span><h1>Stories from the field.</h1><p className="lead">Mission updates, testimonies, and reflections from the places we serve. Verified field reports will be published here as they are approved.</p></section><section className="section"><h2>Mission reports</h2><div className="panel"><h3>Updates coming soon</h3><p>We are preparing the first stories and photographs for publication.</p><Link href="/contact">Get in touch →</Link></div></section></main>}
