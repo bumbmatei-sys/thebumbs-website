@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 /**
  * Call to Reset homepage feature, based on the actual hero in
  * bumbmatei-sys/men-reset-site/src/pages/index.astro.
