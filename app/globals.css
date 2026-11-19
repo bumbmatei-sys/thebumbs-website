@@ -1433,10 +1433,10 @@ body{background:var(--cream);color:var(--ink)}
 .story-tile.story-tile-photo .story-tile-title{color:#fff;text-shadow:0 2px 20px #110c0a66}
 .story-tile.story-tile-photo>span:last-child{color:#F1E8DC;text-shadow:0 1px 14px #110c0aaa}
 @media(prefers-reduced-motion:no-preference){
-  .photo-tunnel{height:1000svh}
+  .photo-tunnel{height:700svh}
 }
 @media(max-width:700px) and (prefers-reduced-motion:no-preference){
-  .photo-tunnel{height:850svh}
+  .photo-tunnel{height:595svh}
 }
 
 /* Keep faces visible in the story photographs; remove bright card outlines. */
