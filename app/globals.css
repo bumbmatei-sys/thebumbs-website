@@ -799,3 +799,43 @@ body{background:var(--cream);color:var(--ink)}
   .newsletter-field-row input,.newsletter-field-row button{width:100%;min-height:49px}
   .whatsapp-channel-button{width:100%;font-size:13px}
 }
+
+
+/* A real newsletter opt-in stores the subscriber's name and email in D1. */
+.newsletter-name-field{margin:0 0 17px}
+.newsletter-name-field label{
+  display:block;
+  font-size:12px;
+  font-weight:750;
+  margin:0 0 10px;
+}
+.newsletter-name-field input{
+  display:block;
+  width:100%;
+  min-width:0;
+  min-height:49px;
+  padding:15px 14px;
+  border-radius:9px;
+  border:1px solid rgba(73,55,45,.2);
+  background:#FFFCF6;
+  color:#49372D;
+  font:inherit;
+  font-size:14px;
+}
+.newsletter-name-field input:focus-visible{outline:2px solid #CE4C37;outline-offset:2px}
+.newsletter-unsubscribe-link{
+  display:inline-block;
+  margin-top:13px;
+  color:#49372D;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  font-size:13px;
+}
+.subscription-page{
+  min-height:65svh;
+  padding:clamp(130px,15vh,205px) 0 clamp(80px,12vh,160px);
+}
+.subscription-page h1{max-width:850px;font-size:clamp(38px,6vw,78px);margin:20px 0 26px}
+.subscription-page p{max-width:560px;color:var(--muted);font-size:17px;line-height:1.65}
+.subscription-page button{border:0;cursor:pointer;margin-top:20px}
+.subscription-page p:last-child a{text-decoration:underline;text-underline-offset:4px}
