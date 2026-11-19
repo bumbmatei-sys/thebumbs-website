@@ -18,7 +18,8 @@ const items = [
 
 export function Navigation() {
   const path = usePathname();
-  const isHome = path === "/";
+  const isRomanian = path === "/ro" || path.startsWith("/ro/");
+  const isHome = path === "/" || path === "/ro";
   const [afterTunnel, setAfterTunnel] = useState(!isHome);
 
   useEffect(() => {
@@ -50,44 +51,45 @@ export function Navigation() {
   }, [isHome]);
 
   const showLogo = !isHome || afterTunnel;
+  const menu = isRomanian ? ["Acasă","Despre noi","Misiuni","Blog","Contact"] : ["Home","About","Missions","Blog","Contact"];
 
   return (
     <>
       <header className={`header site-header ${showLogo ? "header-after-tunnel" : "header-during-tunnel"}`}>
         <div className="header-identity">
           {showLogo ? (
-            <a className="brand" href="/#intro-tunnel" aria-label="THEBUMBS — return to top of home">THEBUMBS</a>
+            <a className="brand" href={isRomanian ? "/ro#intro-tunnel" : "/#intro-tunnel"} aria-label="THEBUMBS — return to top of home">THEBUMBS</a>
           ) : (
             <a className="header-personal-name" href="/#intro-tunnel" aria-label="Matei and Larisa Bumb — return to top of home">MATEI &amp; LARISA BUMB</a>
           )}
         </div>
         <nav className="nav" aria-label="Main navigation">
-          {items.slice(0, 5).map(({ href, label }) => (
+          {items.slice(0, 5).map(({ href }, index) => (
             <Link
               key={href}
-              href={href}
+              href={isRomanian && href === "/" ? "/ro" : href}
               aria-current={path === href || (href !== "/" && path.startsWith(href + "/")) ? "page" : undefined}
             >
-              {label}
+              {menu[index]}
             </Link>
           ))}
-          <a href="https://calltoreset.site/" target="_blank" rel="noopener noreferrer">Be Discipled</a>
+          <a href="https://calltoreset.site/" target="_blank" rel="noopener noreferrer">{isRomanian ? "Ucenicizare" : "Be Discipled"}</a>
         </nav>
         <div className="header-actions">
           <div className="header-language-flags" aria-label="Website languages">
-            <span className="header-language-choice header-language-pending" title="Versiunea în română va fi disponibilă în curând" aria-label="Romanian translation coming soon"><RomaniaFlag width={25} decorative /></span>
-            <span className="header-language-choice header-language-current" title="English — current language" aria-label="English — current language"><UnitedKingdomFlag width={25} decorative /></span>
+            <Link href="/ro" className={`header-language-choice ${isRomanian ? "header-language-current" : ""}`} title="Română" aria-label="Română" aria-current={isRomanian ? "page" : undefined}><RomaniaFlag width={25} decorative /></Link>
+            <Link href="/" className={`header-language-choice ${!isRomanian ? "header-language-current" : ""}`} title="English" aria-label="English" aria-current={!isRomanian ? "page" : undefined}><UnitedKingdomFlag width={25} decorative /></Link>
           </div>
-          <Link className="button header-partner" href="/partner">Partner With Us</Link>
+          <Link className="button header-partner" href="/partner">{isRomanian ? "Devino Partener" : "Partner With Us"}</Link>
         </div>
       </header>
       <nav className="dock" aria-label="Mobile navigation">
-        {items.map(({ href, label, Icon }) => {
+        {items.map(({ href, label, Icon }, index) => {
           const active = path === href || (href !== "/" && path.startsWith(href + "/"));
           return (
-            <Link key={href} href={href} aria-label={label} title={label} aria-current={active ? "page" : undefined}>
+            <Link key={href} href={isRomanian && href === "/" ? "/ro" : href} aria-label={isRomanian ? (menu[index] || "Partener") : label} title={isRomanian ? (menu[index] || "Partener") : label} aria-current={active ? "page" : undefined}>
               <Icon size={21} strokeWidth={1.8} />
-              <span className="dock-label">{label}</span>
+              <span className="dock-label">{isRomanian ? (menu[index] || "Partener") : label}</span>
             </Link>
           );
         })}
