@@ -69,9 +69,9 @@ export function Navigation() {
               {label}
             </Link>
           ))}
+          <a href="https://calltoreset.site/" target="_blank" rel="noopener noreferrer">Be Discipled</a>
         </nav>
         <div className="header-actions">
-          <a className="header-discipleship" href="https://calltoreset.site/" target="_blank" rel="noopener noreferrer">Be Discipled</a>
           <Link className="button header-partner" href="/partner">Partner With Us</Link>
         </div>
       </header>
