@@ -20,8 +20,8 @@ export default function Partner(){
     </section>
     <section className="partner-vision" aria-labelledby="partner-vision-title">
       <span className="eyebrow">O SINGURĂ VIZIUNE · O SINGURĂ MISIUNE</span>
-      <h2 id="partner-vision-title">Locuri diferite.<br/><em>Aceeași misiune.</em></h2>
-      <p>Poate că Dumnezeu ne cheamă să mergem în națiunile în care nu a ajuns evanghelia, dar împreună putem duce mai departe aceeași misiune: să-L vestim pe Isus, să facem ucenici și să ajungem la oameni din toate națiunile cu Evanghelia.</p>
+      <h2 id="partner-vision-title">Cum poți deveni partener</h2>
+      <p>Poți fi alături de noi prin rugăciune, susținere financiară și împărtășirea viziunii de a duce Evanghelia printre națiuni.</p>
       <div className="partner-ways">
         <article><span className="eyebrow">01 / RUGĂCIUNE</span><h3>Susține-ne în rugăciune.</h3><p>Roagă-te împreună cu noi pentru uși deschise, îndrăzneală și roade care să rămână în fiecare loc în care slujim.</p></article>
         <article><span className="eyebrow">02 / SUSȚINERE FINANCIARĂ</span><h3>Ajută-ne să mergem.</h3><p>Prin susținerea ta financiară, contribui la realizarea evanghelizărilor, acoperirea cheltuielilor de călătorie și continuarea lucrării de slujire.</p></article>
