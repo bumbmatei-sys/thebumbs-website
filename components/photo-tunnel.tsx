@@ -12,6 +12,7 @@ const photos = [
   { file: "07-worship-and-prayer.jpg", alt: "Worship and prayer gathering" },
   { file: "08-outreach-team-outdoors.jpg", alt: "Outreach ministry team" },
   { file: "09-matei-preaching-black-white.jpg", alt: "Matei preaching at an outreach" },
+  { file: "10-matei-larisa-together.png", alt: "Matei and Larisa together at a gathering" },
 ] as const;
 
 const clamp = (value: number) => Math.max(0, Math.min(1, value));
@@ -48,14 +49,14 @@ export function PhotoTunnel() {
     };
   }, []);
 
-  // Move the viewer forward through nine spaced photographs, rather than stacking cards.
-  // Stop the tunnel on the ninth photo. Keep it visible until the sticky
+  // Move the viewer forward through ten spaced photographs, rather than stacking cards.
+  // Stop the tunnel on the tenth photo. Keep it visible until the sticky
   // section ends and the next section scrolls directly into view.
   const step = progress * (photos.length - 1);
   const titleOpacity = reducedMotion ? 1 : clamp(1 - progress * 4.5);
 
   return (
-    <section id="intro-tunnel" className="photo-tunnel" ref={root} aria-label="Our journey in nine photographs">
+    <section id="intro-tunnel" className="photo-tunnel" ref={root} aria-label="Our journey in ten photographs">
       <div className="photo-tunnel-stage">
         <div className="photo-tunnel-perspective">
           {photos.map(({ file, alt }, index) => {
@@ -82,13 +83,13 @@ export function PhotoTunnel() {
                 key={file}
                 style={{ opacity, transform, zIndex: photos.length - index }}
               >
-                <img src={`/images/scroll/${file}`} alt={alt} loading="eager" decoding="async" />
+                <img src={`/images/scroll/${file}${index === photos.length - 1 ? "?v=10-png" : ""}`} alt={alt} loading="eager" decoding="async" />
               </figure>
             );
           })}
         </div>
         <div className="photo-tunnel-label" aria-hidden="true">
-          <span>{String(Math.min(9, Math.floor(step) + 1)).padStart(2, "0")} / 09</span>
+          <span>{String(Math.min(photos.length, Math.floor(step) + 1)).padStart(2, "0")} / {String(photos.length).padStart(2, "0")}</span>
         </div>
         <div
           className="intro-brand-lockup"
