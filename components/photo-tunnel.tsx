@@ -48,7 +48,9 @@ export function PhotoTunnel() {
     };
   }, []);
 
-  const step = progress * (photos.length - 1);
+  // Move the viewer forward through nine spaced photographs, rather than stacking cards.
+  // The final interval lets the ninth photograph pass out of view into the next section.
+  const step = progress * photos.length;
   const titleOpacity = reducedMotion ? 1 : clamp(1 - progress * 4.5);
 
   return (
@@ -56,17 +58,23 @@ export function PhotoTunnel() {
       <div className="photo-tunnel-stage">
         <div className="photo-tunnel-perspective">
           {photos.map(({ file, alt }, index) => {
-            const delta = index - step;
-            const distance = Math.abs(delta);
-            const opacity = reducedMotion ? 1 : clamp(1 - distance * 1.75);
+            // Negative distance: the photo is waiting ahead of the viewer.
+            // Positive distance: the viewer has passed through the photo.
+            const passed = step - index;
+            // Each photo approaches from deep in the scene, grows to fill the
+            // viewport, then passes the camera. Never keep old photos stacked.
+            const depth = Math.min(940, 75 + passed * 1450);
+            const entering = clamp((passed + 1.15) / 0.8);
+            const leaving = clamp((0.82 - passed) / 0.45);
+            const opacity = reducedMotion ? 1 : Math.min(entering, leaving);
             const transform = reducedMotion
               ? undefined
-              : `translate(-50%, -50%) translate3d(${delta * 7}vw, ${-delta * 2.5}vh, ${-distance * 500}px) rotate(${delta * -5}deg) scale(${1 - Math.min(distance, 1) * 0.13})`;
+              : `translate(-50%, -50%) translate3d(0, 0, ${depth}px)`;
             return (
               <figure
                 className="tunnel-photo"
                 key={file}
-                style={{ opacity, transform, zIndex: photos.length - Math.round(distance * 2) }}
+                style={{ opacity, transform, zIndex: photos.length - index }}
               >
                 <img src={`/images/scroll/${file}`} alt={alt} loading="eager" decoding="async" />
               </figure>
@@ -74,8 +82,7 @@ export function PhotoTunnel() {
           })}
         </div>
         <div className="photo-tunnel-label" aria-hidden="true">
-          <span>OUR JOURNEY IN FRAMES</span>
-          <span>{String(Math.min(9, Math.round(step) + 1)).padStart(2, "0")} / 09</span>
+          <span>{String(Math.min(9, Math.floor(step) + 1)).padStart(2, "0")} / 09</span>
         </div>
         <div
           className="intro-brand-lockup"
@@ -84,7 +91,6 @@ export function PhotoTunnel() {
             transform: reducedMotion ? undefined : `translateY(${(1 - titleOpacity) * 24}px)`,
           }}
         >
-          <p className="cinematic-subtitle">Taking the Gospel beyond familiar places.</p>
           <h1 id="hero-title" className="cinematic-title">THEBUMBS</h1>
         </div>
       </div>
