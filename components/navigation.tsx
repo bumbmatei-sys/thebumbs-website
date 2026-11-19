@@ -70,7 +70,10 @@ export function Navigation() {
             </Link>
           ))}
         </nav>
-        <Link className="button header-partner" href="/partner">Partner With Us</Link>
+        <div className="header-actions">
+          <a className="header-discipleship" href="https://calltoreset.site/" target="_blank" rel="noopener noreferrer">Be Discipled</a>
+          <Link className="button header-partner" href="/partner">Partner With Us</Link>
+        </div>
       </header>
       <nav className="dock" aria-label="Mobile navigation">
         {items.map(({ href, label, Icon }) => {
