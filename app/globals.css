@@ -1308,3 +1308,80 @@ body{background:var(--cream);color:var(--ink)}
   }
   .dock{width:94vw}
 }
+
+
+/* Personal partnership invitation before the newsletter and WhatsApp section. */
+.home-invitation{
+  padding:clamp(85px,10vw,150px) 0 clamp(90px,10vw,140px);
+  border-top:1px solid var(--line);
+}
+.home-partner-heading{max-width:1050px}
+.home-partner-heading h2{
+  max-width:1050px;
+  margin:20px 0 25px;
+  font-size:clamp(54px,8.3vw,125px);
+  font-weight:850;
+  line-height:.95;
+  letter-spacing:-.07em;
+}
+.home-partner-heading h2 em{font-style:normal;color:#C64F3B}
+.home-partner-heading>p{
+  max-width:690px;
+  margin:0;
+  font-size:clamp(17px,1.7vw,21px);
+  line-height:1.6;
+  color:var(--muted);
+}
+.home-partner-paths{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  margin:clamp(45px,6vw,80px) 0 35px;
+}
+.home-partner-path{
+  padding:clamp(28px,3.5vw,52px);
+  min-height:255px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:rgba(242,233,222,.045);
+}
+.home-partner-path-label{
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.16em;
+  color:#D88977;
+}
+.home-partner-path h3{
+  margin:38px 0 14px;
+  font-size:clamp(28px,3vw,43px);
+  line-height:1.06;
+  letter-spacing:-.05em;
+}
+.home-partner-path p{
+  max-width:490px;
+  margin:0;
+  font-size:clamp(16px,1.35vw,18px);
+  line-height:1.65;
+  color:var(--muted);
+}
+.home-partner-action{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.home-partner-action>.button{
+  margin:0;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  background:#C64F3B;
+  color:#fff;
+  border-color:#C64F3B;
+}
+.home-partner-action>.button:hover{background:#A93627;border-color:#A93627;color:#fff}
+.home-partner-action>span{font-size:13px;line-height:1.55;color:var(--muted)}
+@media(max-width:700px){
+  .home-partner-heading h2{font-size:clamp(48px,11vw,75px)}
+  .home-partner-paths{grid-template-columns:1fr;gap:13px}
+  .home-partner-path{min-height:0;padding:30px}
+  .home-partner-path h3{margin-top:28px}
+  .home-partner-action{align-items:stretch;flex-direction:column;gap:14px}
+  .home-partner-action>.button{width:100%}
+}
