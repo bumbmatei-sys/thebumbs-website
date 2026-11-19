@@ -1456,3 +1456,11 @@ body{background:var(--cream);color:var(--ink)}
 .story-tile.story-tile-photo:hover{
   box-shadow:none;
 }
+
+/* Language flags beside the header partnership button. Romanian will be enabled after copy approval. */
+.site-header .header-language-flags{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.site-header .header-language-choice{display:inline-flex;align-items:center;justify-content:center;padding:4px;border-radius:5px;border:1px solid transparent}
+.site-header .header-language-choice img{width:25px;height:auto;display:block;border-radius:2px}
+.site-header .header-language-current{border-color:rgba(237,228,215,.55)}
+.site-header .header-language-pending{opacity:.72;cursor:help}
+@media(max-width:700px){.site-header .header-language-flags{gap:3px}.site-header .header-language-choice{padding:2px}.site-header .header-language-choice img{width:21px}}
