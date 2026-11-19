@@ -684,3 +684,118 @@ body{background:var(--cream);color:var(--ink)}
   .site-header .header-discipleship{padding:10px 8px;font-size:9px}
   .site-header .header-actions .header-partner{padding:10px 8px;font-size:9px}
 }
+
+
+/* A clear invitation to follow the mission by email or WhatsApp.
+   The two cards deliberately contrast a warm paper tone with deep olive. */
+.stay-connected{
+  border-top:1px solid var(--line);
+  padding:clamp(78px,9vw,135px) 0 clamp(95px,11vw,155px);
+}
+.stay-connected-intro{margin:0 0 clamp(34px,4.5vw,64px)}
+.stay-connected-intro h2{
+  font-size:clamp(24px,4.3vw,70px);
+  letter-spacing:-.058em;
+  line-height:1.07;
+  margin:20px 0;
+  max-width:980px;
+}
+.stay-connected-intro>p{
+  color:var(--muted);
+  max-width:620px;
+  font-size:clamp(16px,1.6vw,19px);
+  line-height:1.6;
+}
+.stay-connected-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.stay-connected-card{
+  min-width:0;
+  min-height:530px;
+  padding:clamp(28px,3.4vw,46px);
+  border-radius:18px;
+  display:flex;
+  flex-direction:column;
+}
+.stay-connected-newsletter{background:#EDE4D7;color:#49372D}
+.stay-connected-whatsapp{
+  color:#F2E9DE;
+  background:radial-gradient(ellipse at 75% 18%,#454029 0%,#2C2A20 53%,#211F19 100%);
+  border:1px solid rgba(242,233,222,.17);
+}
+.stay-connected-card-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.stay-connected-card-top span{font-size:11px;font-weight:750;letter-spacing:.14em}
+.stay-connected-card-copy{margin:clamp(45px,5.4vw,78px) 0 38px}
+.stay-connected-card-copy h3{
+  font-size:clamp(32px,3.65vw,53px);
+  line-height:1.04;
+  letter-spacing:-.055em;
+  font-weight:800;
+  margin:0 0 22px;
+}
+.stay-connected-card-copy p{font-size:17px;line-height:1.65;max-width:460px;margin:0;opacity:.85}
+.newsletter-form{margin-top:auto}
+.newsletter-form>label:first-child{display:block;font-size:12px;font-weight:750;margin-bottom:10px}
+.newsletter-field-row{display:flex;gap:8px;align-items:stretch}
+.newsletter-field-row input{
+  min-width:0;
+  width:100%;
+  flex:1;
+  padding:16px 14px;
+  border-radius:9px;
+  border:1px solid rgba(73,55,45,.2);
+  background:#FFFCF6;
+  color:#49372D;
+  font:inherit;
+  font-size:14px;
+}
+.newsletter-field-row input:focus-visible{outline:2px solid #CE4C37;outline-offset:2px}
+.newsletter-field-row button{
+  border:none;
+  border-radius:9px;
+  background:#49372D;
+  color:#fff;
+  padding:14px 18px;
+  font-weight:700;
+  font:inherit;
+  font-size:13px;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:background .2s;
+}
+.newsletter-field-row button:hover:not(:disabled){background:#6B493A}
+.newsletter-field-row button:disabled{opacity:.65;cursor:not-allowed}
+.newsletter-consent{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:12px;line-height:1.5;cursor:pointer}
+.newsletter-consent input{width:16px;height:16px;flex:0 0 16px;margin:2px 0 0;accent-color:#CE4C37}
+.newsletter-honeypot{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(100%)}
+.newsletter-feedback{font-size:13px;line-height:1.5;margin:12px 0 0;color:#8B251D}
+.newsletter-feedback.success{color:#305D32}
+.whatsapp-channel-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  align-self:flex-start;
+  margin-top:auto;
+  padding:16px 19px;
+  border-radius:9px;
+  color:#fff;
+  background:#867E32;
+  font-size:14px;
+  font-weight:750;
+  transition:background .2s,transform .2s;
+}
+.whatsapp-channel-button:hover{background:#A39A47;transform:translateY(-2px)}
+.whatsapp-channel-button:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.stay-connected-footnote{font-size:12px;color:#C4B5A6;margin:16px 0 0}
+@media(max-width:850px){
+  .stay-connected-grid{grid-template-columns:1fr}
+  .stay-connected-card{min-height:440px}
+  .stay-connected-card-copy{margin:50px 0 40px}
+}
+@media(max-width:480px){
+  .stay-connected{padding:75px 0 95px}
+  .stay-connected-card{padding:26px 23px;min-height:420px}
+  .stay-connected-card-copy h3{font-size:clamp(31px,8vw,43px)}
+  .newsletter-field-row{flex-direction:column}
+  .newsletter-field-row input,.newsletter-field-row button{width:100%;min-height:49px}
+  .whatsapp-channel-button{width:100%;font-size:13px}
+}
