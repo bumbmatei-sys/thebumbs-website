@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const opening = "We believe the Gospel is the greatest news the world will ever hear. And we’re giving our lives to make sure the world hears it. Because";
+const opening = "We believe the Gospel has the power to change the lives of all people, and we are giving our lives to make sure everybody will hear about it, because";
 const emphasis = "Jesus changes everything.";
 const words = [...opening.split(" "), ...emphasis.split(" ")];
 const fullText = `${opening} ${emphasis}`;
