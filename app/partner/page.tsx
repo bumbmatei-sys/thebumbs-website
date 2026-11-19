@@ -20,8 +20,8 @@ export default function Partner(){
     </section>
     <section className="partner-vision" aria-labelledby="partner-vision-title">
       <span className="eyebrow">ONE VISION · ONE MISSION</span>
-      <h2 id="partner-vision-title">Different places.<br/><em>The same mission.</em></h2>
-      <p>We may go to different places, but together we can carry the same mission: proclaiming Jesus, making disciples, and reaching people across nations with the Gospel.</p>
+      <h2 id="partner-vision-title">How you become a partner</h2>
+      <p>Stand with us through prayer, financial support, and sharing the vision of bringing the Gospel to the nations.</p>
       <div className="partner-ways">
         <article><span className="eyebrow">01 / PRAYER</span><h3>Stand with us in prayer.</h3><p>Pray for open doors, boldness, and lasting fruit in every place we serve.</p></article>
         <article><span className="eyebrow">02 / GIVING</span><h3>Help us go.</h3><p>Your financial partnership helps make outreach, travel, and ongoing ministry possible.</p></article>
