@@ -36,7 +36,7 @@ export function SiteFooter() {
           <div className="site-footer-link-group">
             <h3>{ro ? "Implică-te" : "Get involved"}</h3>
             {participate.map(({href,label})=><Link key={href} href={ro && href === "/partner" ? "/ro/partner" : href}>{ro && label === "Partner with us" ? "Devino Partener" : label}</Link>)}
-            <Link href="/contact"><Mail size={15} aria-hidden="true"/> {ro ? "Trimite un email" : "Send an email"}</Link>
+            <Link href={ro ? "/ro/contact" : "/contact"}><Mail size={15} aria-hidden="true"/> {ro ? "Trimite un email" : "Send an email"}</Link>
           </div>
           <div className="site-footer-link-group">
             <h3>{ro ? "Rămâi conectat" : "Stay connected"}</h3>

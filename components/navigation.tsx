@@ -21,6 +21,7 @@ export function Navigation() {
   const isRomanian = path === "/ro" || path.startsWith("/ro/");
   const isHome = path === "/" || path === "/ro";
   const isPartner = path === "/partner" || path === "/ro/partner";
+  const isContact = path === "/contact" || path === "/ro/contact";
   const [afterTunnel, setAfterTunnel] = useState(!isHome);
 
   useEffect(() => {
@@ -68,7 +69,7 @@ export function Navigation() {
           {items.slice(0, 5).map(({ href }, index) => (
             <Link
               key={href}
-              href={isRomanian && href === "/" ? "/ro" : isRomanian && href === "/partner" ? "/ro/partner" : href}
+              href={isRomanian && href === "/" ? "/ro" : isRomanian && href === "/partner" ? "/ro/partner" : isRomanian && href === "/contact" ? "/ro/contact" : href}
               aria-current={path === href || (href !== "/" && path.startsWith(href + "/")) ? "page" : undefined}
             >
               {menu[index]}
@@ -78,8 +79,8 @@ export function Navigation() {
         </nav>
         <div className="header-actions">
           <div className="header-language-flags" aria-label="Website languages">
-            <Link href={isPartner ? "/ro/partner" : "/ro"} className={`header-language-choice ${isRomanian ? "header-language-current" : ""}`} title="Română" aria-label="Română" aria-current={isRomanian ? "page" : undefined}><RomaniaFlag width={25} decorative /></Link>
-            <Link href={isPartner ? "/partner" : "/"} className={`header-language-choice ${!isRomanian ? "header-language-current" : ""}`} title="English" aria-label="English" aria-current={!isRomanian ? "page" : undefined}><UnitedKingdomFlag width={25} decorative /></Link>
+            <Link href={isPartner ? "/ro/partner" : isContact ? "/ro/contact" : "/ro"} className={`header-language-choice ${isRomanian ? "header-language-current" : ""}`} title="Română" aria-label="Română" aria-current={isRomanian ? "page" : undefined}><RomaniaFlag width={25} decorative /></Link>
+            <Link href={isPartner ? "/partner" : isContact ? "/contact" : "/"} className={`header-language-choice ${!isRomanian ? "header-language-current" : ""}`} title="English" aria-label="English" aria-current={!isRomanian ? "page" : undefined}><UnitedKingdomFlag width={25} decorative /></Link>
           </div>
           <Link className="button header-partner" href={isRomanian ? "/ro/partner" : "/partner"}>{isRomanian ? "Devino Partener" : "Partner With Us"}</Link>
         </div>
@@ -89,7 +90,7 @@ export function Navigation() {
           const localizedHref = isRomanian && href === "/" ? "/ro" : isRomanian && href === "/partner" ? "/ro/partner" : href;
           const active = path === localizedHref || (localizedHref !== "/" && path.startsWith(localizedHref + "/"));
           return (
-            <Link key={href} href={isRomanian && href === "/" ? "/ro" : href} aria-label={isRomanian ? (menu[index] || "Partener") : label} title={isRomanian ? (menu[index] || "Partener") : label} aria-current={active ? "page" : undefined}>
+            <Link key={href} href={localizedHref} aria-label={isRomanian ? (menu[index] || "Partener") : label} title={isRomanian ? (menu[index] || "Partener") : label} aria-current={active ? "page" : undefined}>
               <Icon size={21} strokeWidth={1.8} />
               <span className="dock-label">{isRomanian ? (menu[index] || "Partener") : label}</span>
             </Link>
