@@ -3,12 +3,13 @@
  * bumbmatei-sys/men-reset-site/src/pages/index.astro.
  * The original marble bust and landscape files are copied into this repo.
  */
-export function CallToResetHero() {
+export function CallToResetHero({locale = "en"}:{locale?:"en"|"ro"}) {
+  const ro = locale === "ro";
   return (
     <section className="call-reset-section" aria-label="Call to Reset discipleship">
       <div className="call-reset-introduction">
-        <span className="eyebrow">CALL TO RESET · DISCIPLESHIP</span>
-        <p>Discover free Christian teaching on God’s love, your identity in Christ, and living it out.</p>
+        <span className="eyebrow">{ro ? "CALL TO RESET · UCENICIZARE" : "CALL TO RESET · DISCIPLESHIP"}</span>
+        <p>{ro ? "Descoperă învățături creștine gratuite despre dragostea lui Dumnezeu, identitatea ta în Hristos și cum să trăiești aceste adevăruri." : "Discover free Christian teaching on God’s love, your identity in Christ, and living it out."}</p>
       </div>
       <div className="call-reset-hero">
         <img
@@ -23,12 +24,12 @@ export function CallToResetHero() {
         <div className="call-reset-shade" aria-hidden="true" />
         <div className="call-reset-copy">
           <h2>
-            <span>Know His love.</span>
-            <span>Know who you are.</span>
-            <span>Live it out.</span>
+            <span>{ro ? "Cunoaște dragostea Lui." : "Know His love."}</span>
+            <span>{ro ? "Descoperă cine ești." : "Know who you are."}</span>
+            <span>{ro ? "Trăiește aceste adevăruri." : "Live it out."}</span>
           </h2>
           <a className="call-reset-button" href="https://calltoreset.site/" target="_blank" rel="noopener noreferrer">
-            Be Discipled
+            {ro ? "Începe ucenicizarea" : "Be Discipled"}
           </a>
         </div>
         <p className="call-reset-wordmark" aria-hidden="true">Reset</p>
