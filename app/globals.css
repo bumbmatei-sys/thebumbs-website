@@ -411,3 +411,7 @@ body{background:var(--cream);color:var(--ink)}
   .manifesto h2{margin:27px 0 0}
   .mission-stack-section{padding-top:55px}
 }
+
+/* Keep the two-part mission headline clean, with its first phrase on one line. */
+.mission-stack-section .section-intro #mission-title{font-size:clamp(24px,4.3vw,70px);line-height:1.07;letter-spacing:-.058em}
+.mission-heading-line{white-space:nowrap}
