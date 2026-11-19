@@ -154,3 +154,17 @@ h1 em{color:var(--gold)}.lead,.body-copy,.panel p,.mission-row p{color:var(--mut
  .dock a:focus-visible{outline-offset:0}
 }
 @media(prefers-reduced-motion:reduce){.mission-stack-card{position:relative;top:auto}.story-tile:hover{transform:none}}
+
+
+/* Scroll-driven nine-photo tunnel. The images live in public/images/scroll. */
+.photo-tunnel{height:440vh;position:relative;isolation:isolate;background:#35271F;margin:0 calc(-1 * clamp(20px,3.8vw,72px))}
+.photo-tunnel-stage{height:100svh;position:sticky;top:0;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(24px,4vw,60px);background:radial-gradient(ellipse at center,#5b4134 0%,#35271F 75%)}
+.photo-tunnel-label{display:flex;justify-content:space-between;gap:15px;position:relative;z-index:3;font-size:11px;letter-spacing:.15em;font-weight:700;color:#EDE4D7}
+.photo-tunnel-perspective{position:absolute;inset:0;perspective:1000px;perspective-origin:center;transform-style:preserve-3d}
+.tunnel-photo{position:absolute;top:50%;left:50%;width:clamp(180px,26vw,480px);height:clamp(240px,32vw,580px);margin-left:calc(clamp(180px,26vw,480px) / -2);margin-top:calc(clamp(240px,32vw,580px) / -2);border:8px solid #EDE4D7;box-shadow:0 28px 90px #170e0bbb;will-change:transform,opacity;backface-visibility:hidden;overflow:hidden}
+.tunnel-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.tunnel-photo-0{z-index:9}.tunnel-photo-1{z-index:8}.tunnel-photo-2{z-index:7}.tunnel-photo-3{z-index:6}.tunnel-photo-4{z-index:5}.tunnel-photo-5{z-index:4}.tunnel-photo-6{z-index:3}.tunnel-photo-7{z-index:2}.tunnel-photo-8{z-index:1}
+.photo-tunnel-caption{position:relative;z-index:3;align-self:flex-end;max-width:280px;text-align:right;color:#EDE4D7;font-size:13px;line-height:1.5}
+.photo-tunnel-pending{height:90vh}.photo-tunnel-pending .photo-tunnel-stage{height:90vh}.photo-tunnel-pending .photo-tunnel-perspective{display:none}
+@media(max-width:700px){.photo-tunnel{margin:0 -18px;height:340vh}.photo-tunnel-stage{padding:25px 18px}.tunnel-photo{width:52vw;height:65vw;margin-left:-26vw;margin-top:-32.5vw;border-width:5px}.photo-tunnel-pending{height:65vh}.photo-tunnel-pending .photo-tunnel-stage{height:65vh}}
+@media(prefers-reduced-motion:reduce){.photo-tunnel{height:auto}.photo-tunnel-stage{position:relative;height:auto;min-height:65vh}.photo-tunnel-perspective{position:relative;inset:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;perspective:none;transform-style:flat;margin:30px 0}.tunnel-photo{position:relative;top:auto;left:auto;width:100%;height:auto;aspect-ratio:3/4;margin:0;transform:none!important;opacity:1!important;border-width:3px;will-change:auto}.photo-tunnel-pending .photo-tunnel-perspective{display:none}}
