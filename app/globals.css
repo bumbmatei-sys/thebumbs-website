@@ -287,8 +287,8 @@ body{background:var(--cream);color:var(--ink)}
   display:block;
   width:max-content;
   height:max-content;
-  max-width:min(31vw,480px);
-  max-height:46svh;
+  max-width:min(35vw,540px);
+  max-height:51svh;
   margin:0;
   border:0;
   overflow:hidden;
@@ -301,8 +301,8 @@ body{background:var(--cream);color:var(--ink)}
   display:block;
   width:auto;
   height:auto;
-  max-width:min(31vw,480px);
-  max-height:46svh;
+  max-width:min(35vw,540px);
+  max-height:51svh;
   object-fit:contain;
 }
 .photo-tunnel-label{
@@ -365,8 +365,8 @@ body{background:var(--cream);color:var(--ink)}
   .site-header .header-partner{font-size:11px;padding:11px 12px;margin-left:auto}
   .photo-tunnel{height:760svh;margin:0 -18px}
   .photo-tunnel-label{top:90px;left:18px;right:18px;font-size:9px}
-  .tunnel-photo{width:max-content;height:max-content;max-width:59vw;max-height:44svh;top:62%;border-width:0}
-  .tunnel-photo img{width:auto;height:auto;max-width:59vw;max-height:44svh;object-fit:contain}
+  .tunnel-photo{width:max-content;height:max-content;max-width:65vw;max-height:49svh;top:62%;border-width:0}
+  .tunnel-photo img{width:auto;height:auto;max-width:65vw;max-height:49svh;object-fit:contain}
   .intro-brand-lockup{bottom:clamp(70px,11svh,110px);left:10px;right:10px}
   .intro-brand-lockup .cinematic-title{font-size:15.2vw}
   .intro-brand-lockup .cinematic-subtitle{font-size:12px;margin-bottom:17px}
