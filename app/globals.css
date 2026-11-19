@@ -248,7 +248,7 @@ body{background:var(--cream);color:var(--ink)}
 
 /* THEBUMBS wordmark and nine-image tunnel now share the very first viewport. */
 .photo-tunnel{
-  height:550svh;
+  height:900svh;
   margin:0 calc(-1 * clamp(20px,3.8vw,72px));
   background:#090807;
   isolation:isolate;
@@ -283,8 +283,12 @@ body{background:var(--cream);color:var(--ink)}
   position:absolute;
   top:42%;
   left:50%;
-  width:clamp(260px,31vw,560px);
-  height:clamp(310px,56svh,710px);
+  /* The photograph decides its dimensions; no forced square or portrait crop. */
+  display:block;
+  width:max-content;
+  height:max-content;
+  max-width:min(70vw,820px);
+  max-height:65svh;
   margin:0;
   border:clamp(5px,.55vw,9px) solid #EDE4D7;
   overflow:hidden;
@@ -293,7 +297,14 @@ body{background:var(--cream);color:var(--ink)}
   backface-visibility:hidden;
   background:#211B17;
 }
-.tunnel-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.tunnel-photo img{
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:min(70vw,820px);
+  max-height:65svh;
+  object-fit:contain;
+}
 .photo-tunnel-label{
   position:absolute;
   z-index:4;
@@ -302,7 +313,7 @@ body{background:var(--cream);color:var(--ink)}
   right:clamp(20px,3.8vw,72px);
   display:flex;
   align-items:center;
-  justify-content:space-between;
+  justify-content:flex-end;
   color:var(--muted);
   font-size:11px;
   letter-spacing:.14em;
@@ -352,9 +363,10 @@ body{background:var(--cream);color:var(--ink)}
   .site-header .header-personal-name{font-size:clamp(10px,2.3vw,13px);letter-spacing:.055em}
   .site-header .brand{font-size:clamp(18px,4.6vw,24px)}
   .site-header .header-partner{font-size:11px;padding:11px 12px;margin-left:auto}
-  .photo-tunnel{height:475svh;margin:0 -18px}
+  .photo-tunnel{height:760svh;margin:0 -18px}
   .photo-tunnel-label{top:90px;left:18px;right:18px;font-size:9px}
-  .tunnel-photo{width:min(80vw,440px);height:min(56svh,540px);top:42%;border-width:5px}
+  .tunnel-photo{width:max-content;height:max-content;max-width:82vw;max-height:60svh;top:42%;border-width:5px}
+  .tunnel-photo img{width:auto;height:auto;max-width:82vw;max-height:60svh;object-fit:contain}
   .intro-brand-lockup{bottom:clamp(70px,11svh,110px);left:10px;right:10px}
   .intro-brand-lockup .cinematic-title{font-size:15.2vw}
   .intro-brand-lockup .cinematic-subtitle{font-size:12px;margin-bottom:17px}
@@ -373,11 +385,12 @@ body{background:var(--cream);color:var(--ink)}
   }
   .tunnel-photo{
     position:relative;top:auto;left:auto;
-    width:100%;height:auto;aspect-ratio:3/4;
+    width:100%;height:auto;max-width:100%;max-height:none;aspect-ratio:auto;
     transform:none!important;opacity:1!important;
     border-width:3px;will-change:auto;
   }
   .photo-tunnel-label{top:90px}
+  .tunnel-photo img{width:100%;height:auto;max-width:100%;max-height:none;object-fit:contain}
   .intro-brand-lockup{position:relative;bottom:auto;left:auto;right:auto;transform:none!important;opacity:1!important}
   .manifesto-word{will-change:auto;filter:none!important;transform:none!important}
 }
