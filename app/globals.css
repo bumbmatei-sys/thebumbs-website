@@ -447,3 +447,17 @@ body{background:var(--cream);color:var(--ink)}
   .mission-stack-card{width:95%;min-height:440px;padding:24px}
   .mission-stack-card .stack-card-bottom h3{font-size:clamp(42px,9vw,62px)}
 }
+
+
+/* The stacked cards should pin below the fixed navigation, never beneath it. */
+.mission-stack-section .stack-0{top:100px}
+.mission-stack-section .stack-1{top:118px}
+.mission-stack-section .stack-2{top:136px}
+@media(max-width:850px){
+  .mission-stack-section .stack-0{top:86px}
+  .mission-stack-section .stack-1{top:102px}
+  .mission-stack-section .stack-2{top:118px}
+}
+@media(prefers-reduced-motion:reduce){
+  .mission-stack-section .mission-stack-card{position:relative;top:auto}
+}
