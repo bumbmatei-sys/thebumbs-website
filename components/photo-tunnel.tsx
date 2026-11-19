@@ -83,7 +83,7 @@ export function PhotoTunnel() {
                 key={file}
                 style={{ opacity, transform, zIndex: photos.length - index }}
               >
-                <img src={`/images/scroll/${file}`} alt={alt} loading="eager" decoding="async" />
+                <img src={`/images/scroll/${file}${index === photos.length - 1 ? "?v=10-png" : ""}`} alt={alt} loading="eager" decoding="async" />
               </figure>
             );
           })}
