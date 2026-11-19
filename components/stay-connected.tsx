@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Mail, ArrowUpRight } from "lucide-react";
+import { Mail } from "lucide-react";
 
 const WHATSAPP_LOGO = "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg";
 
@@ -117,7 +117,7 @@ export function StayConnected() {
             <p>Shorter updates, testimonies, and prayer requests shared along the way through our WhatsApp channel.</p>
           </div>
           <a className="whatsapp-channel-button" href="https://whatsapp.com/channel/0029Vb6jl7GEAKW7CeyUOx01" target="_blank" rel="noopener noreferrer">
-            Follow our WhatsApp channel <ArrowUpRight size={19} strokeWidth={1.8} aria-hidden="true"/>
+            Follow our WhatsApp channel
           </a>
           <p className="stay-connected-footnote">Open the channel in WhatsApp and follow along.</p>
         </article>
