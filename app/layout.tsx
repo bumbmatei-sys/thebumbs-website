@@ -3,10 +3,10 @@ import "./globals.css";
 import { Navigation } from "@/components/navigation";
 export const metadata: Metadata = {
  metadataBase: new URL("https://thebumbs.space"),
- title: {default:"The Bumbs | Sharing Jesus Across Nations",template:"%s | The Bumbs"},
+ title: {default:"THEBUMBS | Sharing Jesus Across Nations",template:"%s | THEBUMBS"},
  description:"Meet Matei and Larisa Bumb. Follow their evangelism and discipleship journey, explore upcoming missions, and learn how to partner in the Gospel.",
- openGraph:{type:"website",siteName:"The Bumbs",locale:"en_US",title:"The Bumbs | Sharing Jesus Across Nations",description:"Meet Matei and Larisa Bumb and follow their Gospel mission across nations.",url:"https://thebumbs.space"},
- twitter:{card:"summary",title:"The Bumbs | Sharing Jesus Across Nations",description:"Evangelism, discipleship, and a journey of faith across nations."},
+ openGraph:{type:"website",siteName:"THEBUMBS",locale:"en_US",title:"THEBUMBS | Sharing Jesus Across Nations",description:"Meet Matei and Larisa Bumb and follow their Gospel mission across nations.",url:"https://thebumbs.space"},
+ twitter:{card:"summary",title:"THEBUMBS | Sharing Jesus Across Nations",description:"Evangelism, discipleship, and a journey of faith across nations."},
  robots:{index:true,follow:true}
 };
-export default function RootLayout({children}:{children:React.ReactNode}) {return <html lang="en"><body><a href="#main-content" className="skip-link">Skip to content</a><div className="container"><Navigation/><div id="main-content">{children}</div><footer className="footer">© {new Date().getFullYear()} The Bumbs · Sharing Jesus across nations.</footer></div></body></html>}
+export default function RootLayout({children}:{children:React.ReactNode}) {return <html lang="en"><body><a href="#main-content" className="skip-link">Skip to content</a><div className="container"><Navigation/><div id="main-content">{children}</div><footer className="footer"><div className="footer-top"><span>MATEI & LARISA BUMB</span><span>FAITH · EVANGELISM · DISCIPLESHIP</span></div><a href="/" className="footer-wordmark" aria-label="THEBUMBS home">THEBUMBS</a><div className="footer-bottom"><span>© {new Date().getFullYear()} THEBUMBS</span><span>Sharing Jesus across nations.</span></div></footer></div></body></html>}
