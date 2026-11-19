@@ -81,7 +81,7 @@ export function Navigation() {
           return (
             <Link key={href} href={href} aria-label={label} title={label} aria-current={active ? "page" : undefined}>
               <Icon size={21} strokeWidth={1.8} />
-              <span className="sr-only">{label}</span>
+              <span className="dock-label">{label}</span>
             </Link>
           );
         })}
