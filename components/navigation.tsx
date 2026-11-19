@@ -9,7 +9,7 @@ const items = [
   { href: "/", label: "Home", Icon: House },
   { href: "/about", label: "About", Icon: Users },
   { href: "/missions", label: "Missions", Icon: Globe2 },
-  { href: "/journal", label: "Blog", Icon: BookOpen },
+  { href: "/blog", label: "Blog", Icon: BookOpen },
   { href: "/contact", label: "Contact", Icon: Mail },
   { href: "/partner", label: "Partner", Icon: HeartHandshake },
 ];
