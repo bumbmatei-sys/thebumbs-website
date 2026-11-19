@@ -58,18 +58,21 @@ export function PhotoTunnel() {
       <div className="photo-tunnel-stage">
         <div className="photo-tunnel-perspective">
           {photos.map(({ file, alt }, index) => {
-            // Negative distance: the photo is waiting ahead of the viewer.
-            // Positive distance: the viewer has passed through the photo.
+            // Photos travel along alternating left/right lanes, rather than
+            // appearing in a stack at the center of the screen.
             const passed = step - index;
-            // Each photo approaches from deep in the scene, grows to fill the
-            // viewport, then passes the camera. Never keep old photos stacked.
-            const depth = Math.min(940, 75 + passed * 1450);
-            const entering = clamp((passed + 1.15) / 0.8);
-            const leaving = clamp((0.82 - passed) / 0.45);
+            const side = index % 2 === 0 ? -1 : 1;
+            const approach = clamp((passed + 1) / 1.25);
+            // Approach in perspective, then STOP growing before the image
+            // fills the viewport. Let it slide past and fade out instead.
+            const depth = Math.max(-1000, Math.min(310, 50 + passed * 960));
+            const horizontal = side * (25 - approach * 10 + clamp(passed / 0.65) * 4);
+            const entering = clamp((passed + 1.05) / 0.55);
+            const leaving = clamp((0.7 - passed) / 0.36);
             const opacity = reducedMotion ? 1 : Math.min(entering, leaving);
             const transform = reducedMotion
               ? undefined
-              : `translate(-50%, -50%) translate3d(0, 0, ${depth}px)`;
+              : `translate(-50%, -50%) translate3d(${horizontal}vw, 0, ${depth}px)`;
             return (
               <figure
                 className="tunnel-photo"
