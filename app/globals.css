@@ -609,3 +609,78 @@ body{background:var(--cream);color:var(--ink)}
   .call-reset-introduction{align-items:flex-start;flex-direction:column;gap:20px;padding-top:24px}
   .call-reset-button{padding:15px 22px}
 }
+
+
+/* Call to Reset: put the introduction before the hero and the CTA
+   between its three-line headline and the giant Reset wordmark. */
+.call-reset-introduction{
+  display:block;
+  padding:0 0 clamp(22px,3vw,36px);
+}
+.call-reset-introduction p{
+  max-width:710px;
+  margin:12px 0 0;
+}
+.call-reset-copy .call-reset-button{
+  display:inline-flex;
+  position:relative;
+  z-index:5;
+  margin-top:clamp(24px,4vh,45px);
+}
+.call-reset-button{
+  gap:0;
+  background:#0b0b0b;
+  border:1px solid rgba(255,255,255,.7);
+  box-shadow:0 8px 22px rgba(0,0,0,.24);
+  color:#fff;
+}
+.call-reset-button:hover{background:#242424}
+.call-reset-button:focus-visible,
+.header-discipleship:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+/* Both actions remain visible in the top nav, with Partner With Us at far right. */
+.site-header .header-actions{
+  display:flex;
+  position:relative;
+  z-index:2;
+  align-items:center;
+  justify-content:flex-end;
+  gap:10px;
+  margin-left:auto;
+  flex-shrink:0;
+}
+.site-header .header-actions .header-partner{margin-left:0}
+.site-header .header-discipleship{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 18px;
+  border:1px solid rgba(242,233,222,.45);
+  border-radius:100px;
+  background:#0b0b0b;
+  color:var(--ink);
+  font-weight:700;
+  font-size:12px;
+  line-height:1;
+  white-space:nowrap;
+  transition:background .2s,border-color .2s;
+}
+.site-header .header-discipleship:hover{background:#25201e;border-color:var(--ink)}
+@media(max-width:1050px){
+  .site-header .header-actions{gap:7px}
+  .site-header .header-discipleship{padding:12px 14px;font-size:11px}
+}
+@media(max-width:700px){
+  .call-reset-introduction{padding:0 0 22px}
+  .call-reset-copy .call-reset-button{margin-top:24px}
+  .call-reset-wordmark{bottom:15%}
+  .site-header .header-actions{gap:6px}
+  .site-header .header-discipleship{padding:11px 12px;font-size:10px}
+}
+@media(max-width:480px){
+  .call-reset-wordmark{bottom:26%}
+  .site-header .header-personal-name{font-size:9px;letter-spacing:0}
+  .site-header .header-actions{gap:4px}
+  .site-header .header-discipleship{padding:10px 8px;font-size:9px}
+  .site-header .header-actions .header-partner{padding:10px 8px;font-size:9px}
+}
