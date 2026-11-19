@@ -415,3 +415,35 @@ body{background:var(--cream);color:var(--ink)}
 /* Keep the two-part mission headline clean, with its first phrase on one line. */
 .mission-stack-section .section-intro #mission-title{font-size:clamp(24px,4.3vw,70px);line-height:1.07;letter-spacing:-.058em}
 .mission-heading-line{white-space:nowrap}
+
+/* Editorial balance: consistent section headlines, bottom-aligned story titles,
+   and a slightly more compact centered stack of mission cards. */
+.story-section h2,
+.home-invitation h2{
+  font-size:clamp(24px,4.3vw,70px);
+  line-height:1.07;
+  letter-spacing:-.058em;
+}
+.story-section h2{margin-bottom:50px}
+.story-tile{justify-content:flex-start}
+.story-tile-title{
+  margin-top:auto;
+  margin-bottom:12px;
+  font-size:clamp(25px,3vw,44px);
+  line-height:1.08;
+  letter-spacing:-.045em;
+}
+.story-tile>span:last-child{line-height:1.45}
+.mission-stack{align-items:center}
+.mission-stack-card{
+  width:min(92%,1050px);
+  min-height:clamp(340px,52vh,570px);
+  padding:clamp(24px,3.2vw,54px);
+}
+.mission-stack-card .stack-card-bottom h3{font-size:clamp(44px,6.3vw,94px)}
+@media(max-width:700px){
+  .story-section h2{margin-bottom:38px}
+  .story-tile-title{font-size:clamp(26px,6vw,36px);margin-bottom:10px}
+  .mission-stack-card{width:95%;min-height:440px;padding:24px}
+  .mission-stack-card .stack-card-bottom h3{font-size:clamp(42px,9vw,62px)}
+}
