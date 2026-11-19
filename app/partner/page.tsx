@@ -1,4 +1,38 @@
 import Link from "next/link";
-export const metadata={title:"Partner With Us"};
-const budget=[["Tanzania mission (both of us)","$14,000"],["Flights to the United States","$2,000"],["Orlando accommodation · 4 months","$4,000"],["Orlando living expenses · 4 months","$5,000"],["Additional travel & contingency","$5,000"]];
-export default function Partner(){return <main><section className="hero reveal"><span className="eyebrow">A partnership in the Gospel</span><h1>We go. <em>Together.</em></h1><p className="lead">Not everyone is called to travel, but everyone can take part. Your prayers, encouragement, and giving help us bring the Gospel to people across nations.</p><div className="actions"><a className="button" href="#giving">See Our Current Needs</a><Link className="button secondary" href="/contact">Get in Touch</Link></div></section><section className="section" id="giving"><span className="eyebrow">Our current goals</span><h2>Help make the next season possible.</h2><div className="grid"><article className="panel goal-panel"><span className="eyebrow">One-time needs</span><div className="goal-amount">$30,000</div><p>Mission travel, ministry training, accommodation, and outreach expenses.</p></article><article className="panel goal-panel"><span className="eyebrow">Ongoing monthly partnership</span><div className="goal-amount">$3,000<span> / month</span></div><p>Consistent support for ministry and ongoing evangelistic work.</p></article></div></section><section className="section"><span className="eyebrow">Transparency</span><h2>Where the one-time funds go.</h2><div className="budget-list">{budget.map(([name,value])=><div className="budget-row" key={name}><span>{name}</span><strong>{value}</strong></div>)}<div className="budget-row total"><span>Total</span><strong>$30,000</strong></div></div><p className="microcopy">These are fundraising targets and estimated expenses, not amounts already received.</p></section><section className="section closing"><span className="eyebrow">Giving details</span><h2>Thank you for standing with us.</h2><p className="lead">Secure giving links and bank details will appear here once confirmed. In the meantime, please reach out to discuss partnering with us.</p><Link className="button" href="/contact">Contact Us About Giving</Link></section></main>}
+import type { Metadata } from "next";
+import { GivingMethods } from "@/components/giving-methods";
+
+export const metadata: Metadata = {title:"Partner With Us",description:"Join Matei and Larisa Bumb in carrying the vision of sharing the Gospel and making disciples across nations.",alternates:{canonical:"/partner",languages:{en:"/partner",ro:"/ro/partner"}}};
+
+export default function Partner(){
+  return <main className="partner-page">
+    <section className="partner-hero">
+      <span className="eyebrow">PARTNER WITH US · THE GREAT COMMISSION</span>
+      <h1><span className="partner-headline-first">We're not looking for donors,</span><br/><em>but for partners.</em></h1>
+      <p className="partner-hero-lead">We want people who share the same vision and want to carry the same mission with us.</p>
+      <p className="partner-hero-body">People who believe in reaching the lost, preaching the Gospel, and making disciples across nations. Not simply giving to a cause, but standing together in faith, prayer, and action.</p>
+    </section>
+    <section className="partner-giving" id="giving" aria-labelledby="partner-giving-title">
+      <span className="eyebrow">WAYS TO GIVE</span>
+      <h2 id="partner-giving-title">Partner in the Gospel.</h2>
+      <p className="partner-giving-lead">Choose the way that works best for you. Every act of partnership helps us keep going.</p>
+      <GivingMethods/>
+    </section>
+    <section className="partner-vision" aria-labelledby="partner-vision-title">
+      <span className="eyebrow">ONE VISION · ONE MISSION</span>
+      <h2 id="partner-vision-title">Different places.<br/><em>The same mission.</em></h2>
+      <p>We may go to different places, but together we can carry the same mission: proclaiming Jesus, making disciples, and reaching people across nations with the Gospel.</p>
+      <div className="partner-ways">
+        <article><span className="eyebrow">01 / PRAYER</span><h3>Stand with us in prayer.</h3><p>Pray for open doors, boldness, and lasting fruit in every place we serve.</p></article>
+        <article><span className="eyebrow">02 / GIVING</span><h3>Help us go.</h3><p>Your financial partnership helps make outreach, travel, and ongoing ministry possible.</p></article>
+        <article><span className="eyebrow">03 / THE VISION</span><h3>Carry the vision together.</h3><p>Share the mission and be part of what God is doing across nations.</p></article>
+      </div>
+    </section>
+    <section className="partner-closing">
+      <span className="eyebrow">TOGETHER</span>
+      <h2>Let's carry the Gospel together.</h2>
+      <p>Have a question or want to connect personally about partnership? We'd love to hear from you.</p>
+      <Link href="/contact" className="button">Get in touch <span aria-hidden="true">↗</span></Link>
+    </section>
+  </main>;
+}

@@ -1464,3 +1464,75 @@ body{background:var(--cream);color:var(--ink)}
 .site-header .header-language-current{border-color:rgba(237,228,215,.55)}
 .site-header .header-language-pending{opacity:.72;cursor:help}
 @media(max-width:700px){.site-header .header-language-flags{gap:3px}.site-header .header-language-choice{padding:2px}.site-header .header-language-choice img{width:21px}}
+
+/* Partnership page — editorial, vision-led, no fundraising targets. */
+.partner-page{padding-top:clamp(100px,12vw,180px)}
+.partner-page .eyebrow{color:#D88977}
+.partner-hero{max-width:1120px;padding:clamp(45px,6vw,85px) 0 clamp(95px,10vw,150px)}
+.partner-hero h1{font-size:clamp(48px,7.6vw,115px);line-height:1.02;letter-spacing:-.075em;margin:22px 0 36px;font-weight:850}
+.partner-hero h1 em{font-style:normal;color:#C64F3B}
+.partner-hero-lead{max-width:800px;font-size:clamp(22px,2.6vw,34px);line-height:1.35;letter-spacing:-.035em;color:var(--ink);margin:0 0 18px}
+.partner-hero-body{max-width:720px;color:var(--muted);font-size:clamp(16px,1.45vw,20px);line-height:1.75;margin:0 0 34px}
+.partner-hero-action{display:inline-flex;align-items:center;gap:14px;background:#C64F3B;border-color:#C64F3B;color:#fff}
+.partner-vision,.partner-giving,.partner-closing{border-top:1px solid var(--line);padding:clamp(85px,10vw,140px) 0}
+.partner-vision h2,.partner-giving h2,.partner-closing h2{font-size:clamp(44px,6.4vw,94px);line-height:1.03;letter-spacing:-.065em;margin:22px 0 25px}
+.partner-vision h2 em{color:#C64F3B;font-style:normal}
+.partner-vision>p,.partner-giving-lead,.partner-closing>p{max-width:700px;font-size:clamp(17px,1.5vw,21px);line-height:1.65;color:var(--muted)}
+.partner-ways{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin-top:65px}
+.partner-ways article{padding:clamp(25px,3vw,43px);border:1px solid var(--line);border-radius:20px;background:rgba(242,233,222,.04)}
+.partner-ways h3{font-size:clamp(24px,2.4vw,36px);line-height:1.12;letter-spacing:-.05em;margin:36px 0 16px}
+.partner-ways p{color:var(--muted);font-size:16px;line-height:1.65}
+.partner-giving-lead{margin-bottom:48px}
+.giving-content{display:grid;gap:22px}
+.giving-method-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.giving-method-card{min-height:155px;display:flex;align-items:center;gap:23px;padding:clamp(20px,3vw,37px);border:1px solid var(--line);border-radius:20px;background:rgba(242,233,222,.035);color:var(--ink);transition:border-color .2s,transform .2s}
+a.giving-method-card:hover{border-color:#C64F3B;transform:translateY(-3px)}
+.giving-method-card>div:nth-child(2){flex:1;min-width:0}
+.giving-method-card h3{font-size:clamp(23px,2.4vw,33px);letter-spacing:-.045em;margin:0 0 7px}
+.giving-method-card p{font-size:14px;line-height:1.5;color:var(--muted);margin:0}
+.giving-method-card>svg{color:#C64F3B;flex-shrink:0}
+.giving-method-logo{width:65px;height:65px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.giving-method-logo img{width:52px;height:52px;object-fit:contain;background:transparent;filter:brightness(0) invert(1)}
+.giving-logo-bt span{font-weight:900;font-size:35px;letter-spacing:-.09em;color:#F0C34B}
+.giving-bank-card{border:1px solid var(--line);border-radius:23px;padding:clamp(24px,4vw,55px);background:rgba(242,233,222,.045);scroll-margin-top:110px}
+.giving-bank-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.giving-bank-top h3{font-size:clamp(29px,3.6vw,49px);line-height:1.1;letter-spacing:-.055em;margin:13px 0}
+.giving-bank-top p{color:var(--muted);font-size:16px;line-height:1.6;margin:0}
+.giving-bank-top>svg{color:#D88977;flex-shrink:0}
+.giving-currency-switch{display:flex;gap:8px;margin:35px 0 28px;padding:5px;border:1px solid var(--line);border-radius:14px;width:max-content;max-width:100%}
+.giving-currency-switch button{padding:12px 25px;background:transparent;border:0;border-radius:10px;color:var(--muted);font-weight:800;font-size:14px;cursor:pointer}
+.giving-currency-switch button.active{background:#867E32;color:#fff}
+.giving-currency-switch button:focus-visible,.giving-copy-line button:focus-visible{outline:2px solid #C64F3B;outline-offset:3px}
+.giving-bank-details{border-top:1px solid var(--line)}
+.giving-detail{padding:19px 0;border-bottom:1px solid var(--line)}
+.giving-detail>span{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#D88977;font-weight:800;margin-bottom:10px}
+.giving-detail strong{font-size:clamp(15px,1.55vw,21px);font-weight:700;letter-spacing:.005em;overflow-wrap:anywhere}
+.giving-copy-line{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.giving-copy-line button{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:9px 14px;min-width:92px;border:1px solid var(--line);border-radius:10px;background:transparent;color:var(--ink);font-size:13px;font-weight:750;cursor:pointer;flex-shrink:0}
+.giving-copy-line button:hover{border-color:#D88977}
+.giving-bank-note,.giving-copy-error{font-size:13px;color:var(--muted);margin:21px 0 0}
+.giving-copy-error{color:#D88977}
+.partner-closing{text-align:center}
+.partner-closing>p{margin:0 auto 30px}
+.partner-closing .button{display:inline-flex;align-items:center;gap:15px;background:#C64F3B;border-color:#C64F3B;color:#fff}
+@media(max-width:800px){.partner-ways{grid-template-columns:1fr;gap:13px}.giving-method-grid{grid-template-columns:1fr}.partner-hero h1{font-size:clamp(43px,8.2vw,70px)}}
+@media(max-width:500px){.partner-page{padding-top:105px}.partner-hero{padding-bottom:75px}.giving-method-card{min-height:115px;gap:16px}.giving-method-logo{width:47px;height:47px}.giving-method-logo img{width:42px;height:42px}.giving-currency-switch{width:100%}.giving-currency-switch button{flex:1;padding:12px 5px}.giving-copy-line{align-items:flex-start}.giving-copy-line button{min-width:80px;padding:9px 10px}.giving-detail strong{font-size:14px}}
+
+.giving-method-logo.giving-logo-bt img{filter:none;width:44px;height:50px;object-fit:contain}
+
+/* Refined partnership hero and centered closing typography. */
+.partner-hero{padding-bottom:clamp(70px,8vw,115px)}
+.partner-hero h1{max-width:1150px}
+.partner-closing{display:flex;flex-direction:column;align-items:center;text-align:center}
+.partner-closing .eyebrow,.partner-closing h2,.partner-closing>p{width:100%;text-align:center}
+.partner-closing h2{max-width:980px;margin-left:auto;margin-right:auto}
+.partner-closing>p{max-width:650px;margin-left:auto;margin-right:auto}
+.partner-closing .button{align-self:center}
+
+/* Partnership headline: keep the first phrase together at desktop widths. */
+@media(min-width:1050px){.partner-hero h1{font-size:clamp(43px,5.45vw,82px);max-width:none}.partner-headline-first{white-space:nowrap}}
+.partner-hero h1 em{font-weight:850}
+@media(max-width:1049px){.partner-hero h1{font-size:clamp(38px,6.6vw,72px)}}
+
+/* Fit the entire first sentence, including “donors,” on a single desktop line. */
+@media(min-width:1050px){.partner-hero h1{font-size:clamp(38px,4.25vw,65px);letter-spacing:-.075em}.partner-headline-first{white-space:nowrap}}
