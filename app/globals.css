@@ -839,3 +839,86 @@ body{background:var(--cream);color:var(--ink)}
 .subscription-page p{max-width:560px;color:var(--muted);font-size:17px;line-height:1.65}
 .subscription-page button{border:0;cursor:pointer;margin-top:20px}
 .subscription-page p:last-child a{text-decoration:underline;text-underline-offset:4px}
+
+
+/* Compact stay-connected cards with consistent newsletter fields on one row. */
+.stay-connected-card{
+  min-height:415px;
+  padding:clamp(26px,2.7vw,36px);
+}
+.stay-connected-card-copy{
+  margin:clamp(26px,3vw,40px) 0 25px;
+}
+.stay-connected-card-copy h3{
+  font-size:clamp(30px,3.1vw,46px);
+  margin:0 0 16px;
+}
+.stay-connected-card-copy p{font-size:16px;line-height:1.55}
+.newsletter-form{margin-top:auto}
+.newsletter-form-row{display:flex;align-items:flex-end;gap:9px;min-width:0}
+.newsletter-field{display:flex;flex-direction:column;min-width:0}
+.newsletter-field-name{flex:.83 1 0}
+.newsletter-field-email{flex:1.3 1 0}
+.newsletter-field label{
+  display:block;
+  margin:0 0 9px;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:12px;
+  font-weight:750;
+  line-height:1.25;
+  letter-spacing:0;
+}
+.newsletter-field input{
+  width:100%;
+  min-width:0;
+  height:48px;
+  padding:12px 12px;
+  border:1px solid rgba(73,55,45,.2);
+  border-radius:9px;
+  background:#FFFCF6;
+  color:#49372D;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:14px;
+  font-weight:400;
+}
+.newsletter-field input:focus-visible{outline:2px solid #CE4C37;outline-offset:2px}
+.newsletter-form-row .newsletter-submit{
+  flex:0 0 auto;
+  height:48px;
+  padding:12px 13px;
+  border:0;
+  border-radius:9px;
+  background:#49372D;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:12px;
+  font-weight:700;
+  white-space:nowrap;
+  cursor:pointer;
+  transition:background .2s;
+}
+.newsletter-form-row .newsletter-submit:hover:not(:disabled){background:#6B493A}
+.newsletter-form-row .newsletter-submit:disabled{opacity:.65;cursor:not-allowed}
+.newsletter-signup-note{
+  margin:13px 0 0;
+  font-size:12px;
+  line-height:1.4;
+  color:#6D5949;
+}
+.whatsapp-brand-mark{display:block;width:28px;height:28px;object-fit:contain}
+.stay-connected-footnote{margin:11px 0 0}
+@media(max-width:850px){
+  .stay-connected-card{min-height:360px}
+  .stay-connected-card-copy{margin:30px 0 22px}
+}
+@media(max-width:600px){
+  .stay-connected-card{min-height:0}
+  .newsletter-form-row{flex-wrap:wrap}
+  .newsletter-field-name{flex:0 1 calc(42% - 5px)}
+  .newsletter-field-email{flex:1 1 calc(58% - 5px)}
+  .newsletter-form-row .newsletter-submit{width:100%;margin-top:3px}
+}
+@media(max-width:380px){
+  .newsletter-form-row{flex-direction:column;align-items:stretch}
+  .newsletter-field-name,.newsletter-field-email{flex:none;width:100%}
+}
