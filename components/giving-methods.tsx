@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Copy, Landmark, ArrowUpRight } from "lucide-react";
+import { Check, Copy, ArrowUpRight } from "lucide-react";
 
 const accounts = {
   RON: "RO72BTRLRONCRT0355709001",
@@ -14,6 +14,7 @@ const methods = [
   { name:"PayPal", description:"Give through PayPal", href:"https://www.paypal.me/MateiGBumb", logo:"https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/paypal.svg", kind:"paypal" },
   { name:"Wise", description:"Give through Wise", href:"https://wise.com/pay/me/mateigabrielb", logo:"https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/wise.svg", kind:"wise" },
   { name:"Revolut", description:"Give through Revolut", href:"https://revolut.me/mateibumb", logo:"https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/revolut.svg", kind:"revolut" },
+  { name:"Cash App", description:"Give through Cash App", href:"https://cash.app/$LarisaBumb", logo:"https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/cashapp.svg", kind:"cashapp" },
 ] as const;
 
 export function GivingMethods({locale="en"}:{locale?:"en"|"ro"}) {
@@ -31,14 +32,9 @@ export function GivingMethods({locale="en"}:{locale?:"en"|"ro"}) {
         <div><h3>{method.name}</h3><p>{ro ? "Susține-ne prin "+method.name : method.description}</p></div>
         <ArrowUpRight size={19} aria-hidden="true"/>
       </a>)}
-      <div className="giving-method-card giving-bt-card">
-        <div className="giving-method-logo giving-logo-bt"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Banca_Transilvania_Logo.svg" alt="Banca Transilvania" width={44} height={50}/></div>
-        <div><h3>Banca Transilvania</h3><p>{ro ? "Transferuri bancare și BT Pay" : "Bank transfers and BT Pay"}</p></div>
-        <Landmark size={20} aria-hidden="true"/>
-      </div>
     </div>
     <div className="giving-bank-card" id="bank-transfer">
-      <div className="giving-bank-top"><div><span className="eyebrow">{ro ? "TRANSFER BANCAR" : "BANK TRANSFER"}</span><h3>{ro ? "O singură bancă. Trei monede." : "One bank. Three currencies."}</h3><p>{ro ? "Alege moneda dorită și copiază datele bancare." : "Choose your preferred currency and copy the account details."}</p></div><Landmark size={29} aria-hidden="true"/></div>
+      <div className="giving-bank-top"><div><span className="eyebrow">{ro ? "TRANSFER BANCAR" : "BANK TRANSFER"}</span><div className="giving-bank-brand"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Banca_Transilvania_Logo.svg" alt="" width={48} height={48}/><h3>Banca Transilvania</h3></div></div></div>
       <div className="giving-currency-switch" role="group" aria-label={ro ? "Alege moneda contului" : "Choose bank account currency"}>
         {(["EUR","RON","USD"] as const).map(c=><button key={c} type="button" className={currency===c?"active":""} aria-pressed={currency===c} onClick={()=>{setCurrency(c);setCopied("");}}>{c==="EUR"?"EUR €":c==="RON"?"RON lei":"USD $"}</button>)}
       </div>
