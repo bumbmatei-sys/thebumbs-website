@@ -1,13 +1,14 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Mail, MessageCircle, ArrowUpRight } from "lucide-react";
+import { Mail, ArrowUpRight } from "lucide-react";
+
+const WHATSAPP_LOGO = "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg";
 
 export function StayConnected() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [unsubscribeUrl, setUnsubscribeUrl] = useState("");
-  const [consent, setConsent] = useState(false);
   const [website, setWebsite] = useState("");
   const [busy, setBusy] = useState(false);
   const [feedback, setFeedback] = useState("");
@@ -19,10 +20,12 @@ export function StayConnected() {
     setBusy(true);
     setFeedback("");
     try {
+      // Submitting this clearly labeled newsletter form is the user's opt-in.
+      // The backend stores consent in Cloudflare D1, not in Resend.
       const response = await fetch("/api/newsletter", {
         method: "POST",
         headers: {"content-type": "application/json"},
-        body: JSON.stringify({name, email, consent, website})
+        body: JSON.stringify({name, email, consent: true, website})
       });
       const data = await response.json() as {ok?:boolean; error?:string; unsubscribeUrl?:string};
       if (!response.ok || !data.ok) {
@@ -33,7 +36,6 @@ export function StayConnected() {
         setFeedback("You're on the list! We'll share our next ministry update by email.");
         setName("");
         setEmail("");
-        setConsent(false);
       }
     } catch {
       setFeedback("We couldn't connect right now. Please try again.");
@@ -60,42 +62,43 @@ export function StayConnected() {
             <p>Mission reports, testimonies, upcoming outreaches, and ways you can pray with us. Delivered to your inbox.</p>
           </div>
           <form className="newsletter-form" onSubmit={subscribe}>
-            <div className="newsletter-name-field">
-              <label htmlFor="mission-newsletter-name">Your name</label>
-              <input
-                id="mission-newsletter-name"
-                type="text"
-                autoComplete="name"
-                placeholder="Your full name"
-                required
-                minLength={2}
-                maxLength={120}
-                value={name}
-                disabled={busy || subscribed}
-                onChange={event=>setName(event.target.value)}
-              />
-            </div>
-            <label htmlFor="mission-newsletter-email">Your email address</label>
-            <div className="newsletter-field-row">
-              <input
-                id="mission-newsletter-email"
-                type="email"
-                autoComplete="email"
-                placeholder="you@example.com"
-                required
-                maxLength={254}
-                value={email}
-                disabled={busy || subscribed}
-                onChange={event=>setEmail(event.target.value)}
-              />
-              <button type="submit" disabled={busy || subscribed || !consent}>
+            <div className="newsletter-form-row">
+              <div className="newsletter-field newsletter-field-name">
+                <label htmlFor="mission-newsletter-name">Full name</label>
+                <input
+                  id="mission-newsletter-name"
+                  type="text"
+                  autoComplete="name"
+                  placeholder="Your full name"
+                  required
+                  minLength={2}
+                  maxLength={120}
+                  value={name}
+                  disabled={busy || subscribed}
+                  onChange={event=>setName(event.target.value)}
+                />
+              </div>
+              <div className="newsletter-field newsletter-field-email">
+                <label htmlFor="mission-newsletter-email">Email address</label>
+                <input
+                  id="mission-newsletter-email"
+                  type="email"
+                  autoComplete="email"
+                  placeholder="you@example.com"
+                  required
+                  maxLength={254}
+                  value={email}
+                  disabled={busy || subscribed}
+                  onChange={event=>setEmail(event.target.value)}
+                />
+              </div>
+              <button className="newsletter-submit" type="submit" disabled={busy || subscribed}>
                 {subscribed ? "Subscribed" : busy ? "Joining…" : "Join newsletter"}
               </button>
             </div>
-            <label className="newsletter-consent">
-              <input type="checkbox" required checked={consent} disabled={busy || subscribed} onChange={event=>setConsent(event.target.checked)} />
-              <span>I agree to receive mission updates by email. I can unsubscribe at any time.</span>
-            </label>
+            <p className="newsletter-signup-note">
+              Join to receive mission updates by email. Unsubscribe at any time.
+            </p>
             <div className="newsletter-honeypot" aria-hidden="true">
               <label htmlFor="mission-newsletter-website">Website</label>
               <input id="mission-newsletter-website" tabIndex={-1} autoComplete="off" value={website} onChange={event=>setWebsite(event.target.value)} />
@@ -106,7 +109,7 @@ export function StayConnected() {
         </article>
         <article className="stay-connected-card stay-connected-whatsapp">
           <div className="stay-connected-card-top">
-            <MessageCircle size={23} strokeWidth={1.7} aria-hidden="true"/>
+            <img className="whatsapp-brand-mark" src={WHATSAPP_LOGO} alt="WhatsApp" width="28" height="28" loading="lazy" />
             <span>02 / WHATSAPP CHANNEL</span>
           </div>
           <div className="stay-connected-card-copy">
