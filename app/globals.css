@@ -182,3 +182,12 @@ h1 em{color:var(--gold)}.lead,.body-copy,.panel p,.mission-row p{color:var(--mut
 .journal-outro{border-top:1px solid var(--line);padding:100px 0 150px}
 .journal-outro h2{font-size:clamp(48px,7vw,100px);max-width:950px;line-height:1.05;margin:25px 0 45px}
 @media(max-width:700px){.journal-hero{min-height:60svh;padding:75px 0}.journal-hero h1{font-size:clamp(56px,13vw,100px)}.journal-editorial{padding:75px 0}.journal-editorial-inner{grid-template-columns:1fr;gap:25px}.journal-outro{padding:75px 0 110px}.dock{width:min(96vw,390px);padding:7px 5px}.dock a{width:44px;height:44px}}
+
+
+/* Approved photography integrated into editorial story cards. */
+.story-tile{position:relative;isolation:isolate;background-size:cover;background-position:center;overflow:hidden}
+.story-tile::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(24,17,14,.35),rgba(24,17,14,.78));transition:background .3s}
+.story-tile:first-child{background-image:url("/images/matei-larisa-portrait.jpg")}
+.story-tile:nth-child(2){background-image:url("/images/matei-speaking-approved.jpg");background-position:center 35%}
+.story-tile:hover{background-size:cover;background-color:#594538}
+.story-tile-number,.story-tile-title,.story-tile>span:last-child{color:#fff}
