@@ -12,7 +12,7 @@ const photos = [
   { file: "07-worship-and-prayer.jpg", alt: "Worship and prayer gathering" },
   { file: "08-outreach-team-outdoors.jpg", alt: "Outreach ministry team" },
   { file: "09-matei-preaching-black-white.jpg", alt: "Matei preaching at an outreach" },
-  { file: "10-matei-larisa-together.jpg", alt: "Matei and Larisa together at a gathering" },
+  { file: "10-matei-larisa-together.png", alt: "Matei and Larisa together at a gathering" },
 ] as const;
 
 const clamp = (value: number) => Math.max(0, Math.min(1, value));
