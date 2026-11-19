@@ -1,7 +1,8 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { GivingMethods } from "@/components/giving-methods";
 
-export const metadata = {title:"Partner With Us",description:"Join Matei and Larisa Bumb in carrying the vision of sharing the Gospel and making disciples across nations."};
+export const metadata: Metadata = {title:"Partner With Us",description:"Join Matei and Larisa Bumb in carrying the vision of sharing the Gospel and making disciples across nations.",alternates:{canonical:"/partner",languages:{en:"/partner",ro:"/ro/partner"}}};
 
 export default function Partner(){
   return <main className="partner-page">
