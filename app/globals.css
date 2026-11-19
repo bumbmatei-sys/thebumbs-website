@@ -1542,3 +1542,8 @@ a.giving-method-card:hover{border-color:#C64F3B;transform:translateY(-3px)}
 .partner-hero h1 em{font-weight:850}
 @media(min-width:1050px){.partner-hero h1{font-size:clamp(40px,4.6vw,70px);letter-spacing:-.065em}.partner-headline-first{white-space:nowrap}}
 @media(max-width:1049px){.partner-hero h1{font-size:clamp(38px,5.4vw,65px)}.partner-headline-first{white-space:normal}}
+
+/* Bank transfer brand header */
+.giving-bank-brand{display:flex;align-items:center;gap:14px;margin-top:12px}
+.giving-bank-brand img{width:48px;height:48px;object-fit:contain;flex-shrink:0}
+.giving-bank-brand h3{margin:0}
