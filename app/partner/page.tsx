@@ -7,7 +7,7 @@ export default function Partner(){
   return <main className="partner-page">
     <section className="partner-hero">
       <span className="eyebrow">PARTNER WITH US · THE GREAT COMMISSION</span>
-      <h1>We're not looking for donors,<br/><em>but for partners.</em></h1>
+      <h1><span className="partner-headline-first">We're not looking for donors,</span><br/><em>but for partners.</em></h1>
       <p className="partner-hero-lead">We want people who share the same vision and want to carry the same mission with us.</p>
       <p className="partner-hero-body">People who believe in reaching the lost, preaching the Gospel, and making disciples across nations. Not simply giving to a cause, but standing together in faith, prayer, and action.</p>
     </section>
