@@ -281,7 +281,7 @@ body{background:var(--cream);color:var(--ink)}
 }
 .tunnel-photo{
   position:absolute;
-  top:62%;
+  top:50%;
   left:50%;
   /* The photograph decides its dimensions; no forced square or portrait crop. */
   display:block;
@@ -365,7 +365,7 @@ body{background:var(--cream);color:var(--ink)}
   .site-header .header-partner{font-size:11px;padding:11px 12px;margin-left:auto}
   .photo-tunnel{height:760svh;margin:0 -18px}
   .photo-tunnel-label{top:90px;left:18px;right:18px;font-size:9px}
-  .tunnel-photo{width:max-content;height:max-content;max-width:65vw;max-height:49svh;top:62%;border-width:0}
+  .tunnel-photo{width:max-content;height:max-content;max-width:65vw;max-height:49svh;top:50%;border-width:0}
   .tunnel-photo img{width:auto;height:auto;max-width:65vw;max-height:49svh;object-fit:contain}
   .intro-brand-lockup{bottom:clamp(70px,11svh,110px);left:10px;right:10px}
   .intro-brand-lockup .cinematic-title{font-size:15.2vw}
