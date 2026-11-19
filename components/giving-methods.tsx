@@ -31,7 +31,7 @@ export function GivingMethods() {
         <ArrowUpRight size={19} aria-hidden="true"/>
       </a>)}
       <div className="giving-method-card giving-bt-card">
-        <div className="giving-method-logo giving-logo-bt" aria-label="Banca Transilvania logo"><span>BT</span></div>
+        <div className="giving-method-logo giving-logo-bt"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Banca_Transilvania_Logo.svg" alt="Banca Transilvania" width={44} height={50}/></div>
         <div><h3>Banca Transilvania</h3><p>Bank transfers and BT Pay</p></div>
         <Landmark size={20} aria-hidden="true"/>
       </div>
