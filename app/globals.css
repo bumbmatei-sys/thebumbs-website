@@ -941,6 +941,10 @@ body{background:var(--cream);color:var(--ink)}
     padding-top:0;
     flex-shrink:0;
   }
+  .call-reset-copy h2{
+    font-size:clamp(25px,6.4vw,38px);
+    line-height:1.1;
+  }
   .call-reset-wordmark{
     position:relative;
     z-index:3;
@@ -949,7 +953,7 @@ body{background:var(--cream);color:var(--ink)}
     width:100%;
     transform:none;
     margin:clamp(22px,5vw,34px) 0 0;
-    font-size:clamp(100px,40vw,248px);
+    font-size:clamp(86px,34vw,210px);
     line-height:.9;
     text-align:center;
     white-space:nowrap;
