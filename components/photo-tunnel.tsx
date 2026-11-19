@@ -49,8 +49,9 @@ export function PhotoTunnel() {
   }, []);
 
   // Move the viewer forward through nine spaced photographs, rather than stacking cards.
-  // The final interval lets the ninth photograph pass out of view into the next section.
-  const step = progress * photos.length;
+  // Stop the tunnel on the ninth photo. Keep it visible until the sticky
+  // section ends and the next section scrolls directly into view.
+  const step = progress * (photos.length - 1);
   const titleOpacity = reducedMotion ? 1 : clamp(1 - progress * 4.5);
 
   return (
