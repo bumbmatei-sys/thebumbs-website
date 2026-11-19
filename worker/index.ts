@@ -45,7 +45,7 @@ async function subscribeNewsletter(request: Request, env: Env): Promise<Response
   } catch { return json({error:"Please check your details and try again."},400); }
 
   if (fields.website) return json({ok:true}); // Quietly ignore bot honeypot submissions.
-  const name = typeof fields.name === "string" ? fields.name.trim().replace(/\\s+/g," ") : "";
+  const name = typeof fields.name === "string" ? fields.name.trim().replace(/\s+/g," ") : "";
   const email = typeof fields.email === "string" ? fields.email.trim().toLowerCase() : "";
   if (fields.consent !== true || name.length < 2 || name.length > 120 || email.length > 254 || !emailPattern.test(email)) {
     return json({error:"Please provide your name, a valid email, and permission to receive ministry updates."},400);
