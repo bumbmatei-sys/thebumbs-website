@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { House, Users, Globe2, BookOpen, Mail, HeartHandshake } from "lucide-react";
+import { RomaniaFlag } from "@/components/flags/countries/ro";
+import { UnitedKingdomFlag } from "@/components/flags/countries/gb";
 
 const items = [
   { href: "/", label: "Home", Icon: House },
@@ -72,6 +74,10 @@ export function Navigation() {
           <a href="https://calltoreset.site/" target="_blank" rel="noopener noreferrer">Be Discipled</a>
         </nav>
         <div className="header-actions">
+          <div className="header-language-flags" aria-label="Website languages">
+            <span className="header-language-choice header-language-pending" title="Versiunea în română va fi disponibilă în curând" aria-label="Romanian translation coming soon"><RomaniaFlag width={25} decorative /></span>
+            <span className="header-language-choice header-language-current" title="English — current language" aria-label="English — current language"><UnitedKingdomFlag width={25} decorative /></span>
+          </div>
           <Link className="button header-partner" href="/partner">Partner With Us</Link>
         </div>
       </header>
