@@ -1,0 +1,2 @@
+export const metadata={title:"Contact"};
+export default function Contact(){return <main><section className="hero reveal"><span className="eyebrow">Get in touch</span><h1>We would love to hear from you.</h1><p className="lead">Whether you would like to invite us, ask a question, or learn more about the ministry, we would love to connect.</p><p className="lead">Contact details and a working form will be added after we confirm the preferred inbox and delivery service.</p></section></main>}
