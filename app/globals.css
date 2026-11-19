@@ -1133,3 +1133,21 @@ body{background:var(--cream);color:var(--ink)}
   .dock a svg{width:18px;height:18px}
   .dock-label{font-size:8px}
 }
+
+
+/* Shared legal pages linked from the footer. */
+.legal-page{
+  max-width:950px;
+  margin:0 auto;
+  padding:clamp(110px,15vh,190px) 0 clamp(90px,12vh,150px);
+}
+.legal-page h1{font-size:clamp(46px,7vw,96px);line-height:1.03;letter-spacing:-.065em;margin:20px 0 12px}
+.legal-page .legal-updated{font-size:13px;letter-spacing:.02em;color:#C8AA98;margin:0 0 42px}
+.legal-page>p:not(.legal-updated){max-width:760px;color:#E0D4C7;font-size:clamp(17px,1.8vw,20px);line-height:1.7;margin:0 0 45px}
+.legal-page section{padding:30px 0;border-top:1px solid var(--line)}
+.legal-page section h2{font-size:clamp(23px,3vw,34px);letter-spacing:-.035em;margin:0 0 17px}
+.legal-page section p{max-width:770px;margin:0 0 14px;color:var(--muted);font-size:16px;line-height:1.7}
+.legal-page a{color:#E99079;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:700px){
+  .legal-page{padding:100px 0 95px}
+}
