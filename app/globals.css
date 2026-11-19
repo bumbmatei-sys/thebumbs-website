@@ -1536,3 +1536,9 @@ a.giving-method-card:hover{border-color:#C64F3B;transform:translateY(-3px)}
 
 /* Fit the entire first sentence, including “donors,” on a single desktop line. */
 @media(min-width:1050px){.partner-hero h1{font-size:clamp(38px,4.25vw,65px);letter-spacing:-.075em}.partner-headline-first{white-space:nowrap}}
+
+/* Partner hero uses the same heading scale as the Ways to Give heading. */
+.partner-hero h1,.partner-giving h2{font-size:clamp(40px,4.6vw,70px);line-height:1.07;letter-spacing:-.065em}
+.partner-hero h1 em{font-weight:850}
+@media(min-width:1050px){.partner-hero h1{font-size:clamp(40px,4.6vw,70px);letter-spacing:-.065em}.partner-headline-first{white-space:nowrap}}
+@media(max-width:1049px){.partner-hero h1{font-size:clamp(38px,5.4vw,65px)}.partner-headline-first{white-space:normal}}
