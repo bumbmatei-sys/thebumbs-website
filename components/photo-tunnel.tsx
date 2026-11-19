@@ -6,12 +6,9 @@ const photos = [
   { file: "01-matei-larisa-portrait.jpg", alt: "Matei and Larisa together" },
   { file: "02-matei-speaking-approved.jpg", alt: "Matei speaking at the microphone" },
   { file: "03-larisa-speaking.jpg", alt: "Larisa speaking at the microphone" },
-  { file: "04-matei-larisa-outreach.jpg", alt: "Matei and Larisa at an outreach" },
   { file: "05-street-evangelism.jpg", alt: "Sharing the Gospel outdoors" },
-  { file: "06-prayer-ministry.jpg", alt: "Prayer ministry" },
   { file: "07-worship-and-prayer.jpg", alt: "Worship and prayer gathering" },
   { file: "08-outreach-team-outdoors.jpg", alt: "Outreach ministry team" },
-  { file: "09-matei-preaching-black-white.jpg", alt: "Matei preaching at an outreach" },
   { file: "10-matei-larisa-together.png", alt: "Matei and Larisa together at a gathering" },
 ] as const;
 
@@ -49,14 +46,14 @@ export function PhotoTunnel() {
     };
   }, []);
 
-  // Move the viewer forward through ten spaced photographs, rather than stacking cards.
-  // Stop the tunnel on the tenth photo. Keep it visible until the sticky
+  // Move the viewer forward through seven spaced photographs, rather than stacking cards.
+  // Stop the tunnel on the seventh photo. Keep it visible until the sticky
   // section ends and the next section scrolls directly into view.
   const step = progress * (photos.length - 1);
   const titleOpacity = reducedMotion ? 1 : clamp(1 - progress * 4.5);
 
   return (
-    <section id="intro-tunnel" className="photo-tunnel" ref={root} aria-label="Our journey in ten photographs">
+    <section id="intro-tunnel" className="photo-tunnel" ref={root} aria-label="Our journey in seven photographs">
       <div className="photo-tunnel-stage">
         <div className="photo-tunnel-perspective">
           {photos.map(({ file, alt }, index) => {
@@ -83,7 +80,7 @@ export function PhotoTunnel() {
                 key={file}
                 style={{ opacity, transform, zIndex: photos.length - index }}
               >
-                <img src={`/images/scroll/${file}${index === photos.length - 1 ? "?v=10-png" : ""}`} alt={alt} loading="eager" decoding="async" />
+                <img src={`/images/scroll/${file}${file === "10-matei-larisa-together.png" ? "?v=10-png" : ""}`} alt={alt} loading="eager" decoding="async" />
               </figure>
             );
           })}
