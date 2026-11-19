@@ -1528,3 +1528,8 @@ a.giving-method-card:hover{border-color:#C64F3B;transform:translateY(-3px)}
 .partner-closing h2{max-width:980px;margin-left:auto;margin-right:auto}
 .partner-closing>p{max-width:650px;margin-left:auto;margin-right:auto}
 .partner-closing .button{align-self:center}
+
+/* Partnership headline: keep the first phrase together at desktop widths. */
+@media(min-width:1050px){.partner-hero h1{font-size:clamp(43px,5.45vw,82px);max-width:none}.partner-headline-first{white-space:nowrap}}
+.partner-hero h1 em{font-weight:850}
+@media(max-width:1049px){.partner-hero h1{font-size:clamp(38px,6.6vw,72px)}}
