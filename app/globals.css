@@ -1517,3 +1517,5 @@ a.giving-method-card:hover{border-color:#C64F3B;transform:translateY(-3px)}
 .partner-closing .button{display:inline-flex;align-items:center;gap:15px;background:#C64F3B;border-color:#C64F3B;color:#fff}
 @media(max-width:800px){.partner-ways{grid-template-columns:1fr;gap:13px}.giving-method-grid{grid-template-columns:1fr}.partner-hero h1{font-size:clamp(43px,8.2vw,70px)}}
 @media(max-width:500px){.partner-page{padding-top:105px}.partner-hero{padding-bottom:75px}.giving-method-card{min-height:115px;gap:16px}.giving-method-logo{width:47px;height:47px}.giving-method-logo img{width:42px;height:42px}.giving-currency-switch{width:100%}.giving-currency-switch button{flex:1;padding:12px 5px}.giving-copy-line{align-items:flex-start}.giving-copy-line button{min-width:80px;padding:9px 10px}.giving-detail strong{font-size:14px}}
+
+.giving-method-logo.giving-logo-bt img{filter:none;width:44px;height:50px;object-fit:contain}
