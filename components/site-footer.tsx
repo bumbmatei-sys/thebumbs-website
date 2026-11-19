@@ -8,7 +8,7 @@ const explore = [
   {href:"/",label:"Home"},
   {href:"/about",label:"About us"},
   {href:"/missions",label:"Missions"},
-  {href:"/journal",label:"Blog"},
+  {href:"/blog",label:"Blog"},
 ];
 const participate = [
   {href:"/partner",label:"Partner with us"},
