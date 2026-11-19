@@ -4,11 +4,15 @@ import { useEffect, useRef, useState } from "react";
 
 const opening = "We believe the Gospel has the power to change the lives of all people, and we are giving our lives to make sure everybody will hear about it, because";
 const emphasis = "Jesus changes everything.";
-const words = [...opening.split(" "), ...emphasis.split(" ")];
-const fullText = `${opening} ${emphasis}`;
+const roOpening = "Credem că Evanghelia are puterea de a transforma viețile tuturor oamenilor, Din motivul acesta ne dedicăm viețile pentru ca fiecare om să aibă ocazia să o audă, deoarece";
+const roEmphasis = "Isus schimbă totul.";
 const clamp = (value: number) => Math.max(0, Math.min(1, value));
 
-export function ScrollManifesto() {
+export function ScrollManifesto({locale = "en"}:{locale?:"en"|"ro"}) {
+  const first = locale === "ro" ? roOpening : opening;
+  const last = locale === "ro" ? roEmphasis : emphasis;
+  const words = [...first.split(" "), ...last.split(" ")];
+  const fullText = `${first} ${last}`;
   const heading = useRef<HTMLHeadingElement>(null);
   const [progress, setProgress] = useState(0);
 
@@ -50,7 +54,7 @@ export function ScrollManifesto() {
           return (
             <span
               key={index}
-              className={index >= words.length - 3 ? "manifesto-word manifesto-word-accent" : "manifesto-word"}
+              className={index >= words.length - last.split(" ").length ? "manifesto-word manifesto-word-accent" : "manifesto-word"}
               style={{
                 opacity: 0.13 + amount * 0.87,
                 transform: `translateY(${(1 - amount) * 14}px)`,
