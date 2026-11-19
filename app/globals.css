@@ -1415,3 +1415,26 @@ body{background:var(--cream);color:var(--ink)}
     width:min(100%,360px);
   }
 }
+
+
+/* Three new user-selected home images. */
+.story-tile.story-tile-photo{
+  background-color:#594538;
+  background-size:cover;
+  background-position:center;
+  color:#F2E9DE;
+}
+.story-tile.story-tile-photo:nth-child(2){background-color:#65503E}
+.story-tile.story-tile-photo:hover{
+  background-color:#594538;
+  transform:translateY(-8px);
+}
+.story-tile.story-tile-photo .story-tile-number{color:#F9C1AA;text-shadow:0 1px 12px #110c0a77}
+.story-tile.story-tile-photo .story-tile-title{color:#fff;text-shadow:0 2px 20px #110c0a66}
+.story-tile.story-tile-photo>span:last-child{color:#F1E8DC;text-shadow:0 1px 14px #110c0aaa}
+@media(prefers-reduced-motion:no-preference){
+  .photo-tunnel{height:1000svh}
+}
+@media(max-width:700px) and (prefers-reduced-motion:no-preference){
+  .photo-tunnel{height:850svh}
+}
