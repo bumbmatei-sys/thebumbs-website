@@ -4,7 +4,9 @@ import { useState, type FormEvent } from "react";
 import { Mail, MessageCircle, ArrowUpRight } from "lucide-react";
 
 export function StayConnected() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [unsubscribeUrl, setUnsubscribeUrl] = useState("");
   const [consent, setConsent] = useState(false);
   const [website, setWebsite] = useState("");
   const [busy, setBusy] = useState(false);
@@ -20,14 +22,16 @@ export function StayConnected() {
       const response = await fetch("/api/newsletter", {
         method: "POST",
         headers: {"content-type": "application/json"},
-        body: JSON.stringify({email, consent, website})
+        body: JSON.stringify({name, email, consent, website})
       });
-      const data = await response.json() as {ok?:boolean; error?:string};
+      const data = await response.json() as {ok?:boolean; error?:string; unsubscribeUrl?:string};
       if (!response.ok || !data.ok) {
         setFeedback(data.error || "Something went wrong. Please try again.");
       } else {
         setSubscribed(true);
+        setUnsubscribeUrl(data.unsubscribeUrl || "");
         setFeedback("You're on the list! We'll share our next ministry update by email.");
+        setName("");
         setEmail("");
         setConsent(false);
       }
@@ -56,6 +60,21 @@ export function StayConnected() {
             <p>Mission reports, testimonies, upcoming outreaches, and ways you can pray with us. Delivered to your inbox.</p>
           </div>
           <form className="newsletter-form" onSubmit={subscribe}>
+            <div className="newsletter-name-field">
+              <label htmlFor="mission-newsletter-name">Your name</label>
+              <input
+                id="mission-newsletter-name"
+                type="text"
+                autoComplete="name"
+                placeholder="Your full name"
+                required
+                minLength={2}
+                maxLength={120}
+                value={name}
+                disabled={busy || subscribed}
+                onChange={event=>setName(event.target.value)}
+              />
+            </div>
             <label htmlFor="mission-newsletter-email">Your email address</label>
             <div className="newsletter-field-row">
               <input
@@ -82,6 +101,7 @@ export function StayConnected() {
               <input id="mission-newsletter-website" tabIndex={-1} autoComplete="off" value={website} onChange={event=>setWebsite(event.target.value)} />
             </div>
             {feedback && <p className={subscribed ? "newsletter-feedback success" : "newsletter-feedback"} role="status" aria-live="polite">{feedback}</p>}
+            {subscribed && unsubscribeUrl && <a className="newsletter-unsubscribe-link" href={unsubscribeUrl}>Manage or cancel your subscription</a>}
           </form>
         </article>
         <article className="stay-connected-card stay-connected-whatsapp">
