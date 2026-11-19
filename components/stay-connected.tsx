@@ -45,7 +45,7 @@ export function StayConnected() {
   }
 
   return (
-    <section className="stay-connected" aria-labelledby="stay-connected-title">
+    <section id="stay-connected" className="stay-connected" aria-labelledby="stay-connected-title">
       <div className="stay-connected-intro">
         <span className="eyebrow">STAY CONNECTED</span>
         <h2 id="stay-connected-title">Stay close to the mission.</h2>
