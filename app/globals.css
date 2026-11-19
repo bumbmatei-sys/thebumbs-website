@@ -1547,3 +1547,38 @@ a.giving-method-card:hover{border-color:#C64F3B;transform:translateY(-3px)}
 .giving-bank-brand{display:flex;align-items:center;gap:14px;margin-top:12px}
 .giving-bank-brand img{width:48px;height:48px;object-fit:contain;flex-shrink:0}
 .giving-bank-brand h3{margin:0}
+
+/* Mobile footer wordmark and compact navigation dock refinements. */
+.site-footer .footer-wordmark{
+  display:block;
+  width:100%;
+  max-width:100%;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  letter-spacing:-.09em;
+}
+@media(max-width:700px){
+  .site-footer .footer-wordmark{
+    font-size:clamp(48px,16.9vw,120px);
+    letter-spacing:-.095em;
+    margin:28px auto 32px;
+  }
+  .dock{
+    width:min(90vw,360px);
+    min-height:0;
+    padding:5px 7px;
+    gap:2px;
+  }
+  .dock > a{
+    height:48px;
+    padding:3px 1px;
+    gap:3px;
+  }
+  .dock > a > svg{width:19px;height:19px}
+  .dock-label{font-size:9px}
+}
+@media(max-width:360px){
+  .site-footer .footer-wordmark{font-size:16.5vw}
+  .dock{width:94vw;padding:5px 4px}
+}
