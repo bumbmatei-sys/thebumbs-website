@@ -1,16 +1,18 @@
 import Link from "next/link";
-import { ArrowUpRight, ArrowUp, Mail, MessageCircle } from "lucide-react";
+import { ArrowUpRight, ArrowUp, Mail, Globe2 } from "lucide-react";
+
+const WHATSAPP_LOGO = "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg";
+const INSTAGRAM_LOGO = "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png";
 
 const explore = [
   {href:"/",label:"Home"},
   {href:"/about",label:"About us"},
   {href:"/missions",label:"Missions"},
-  {href:"/journal",label:"Journal"},
+  {href:"/journal",label:"Blog"},
 ];
 const participate = [
   {href:"/partner",label:"Partner with us"},
-  {href:"/#stay-connected",label:"Mission newsletter"},
-  {href:"/contact",label:"Contact us"},
+  {href:"/#stay-connected",label:"Newsletter"},
 ];
 
 export function SiteFooter() {
@@ -31,18 +33,15 @@ export function SiteFooter() {
           <div className="site-footer-link-group">
             <h3>Get involved</h3>
             {participate.map(({href,label})=><Link key={href} href={href}>{label}</Link>)}
+            <Link href="/contact"><Mail size={15} aria-hidden="true"/> Send an email</Link>
           </div>
           <div className="site-footer-link-group">
             <h3>Stay connected</h3>
-            <a href="https://whatsapp.com/channel/0029Vb6jl7GEAKW7CeyUOx01" target="_blank" rel="noopener noreferrer"><MessageCircle size={15} aria-hidden="true"/> WhatsApp channel <ArrowUpRight size={14} aria-hidden="true"/></a>
-            <a href="https://calltoreset.site/" target="_blank" rel="noopener noreferrer">Call to Reset <ArrowUpRight size={14} aria-hidden="true"/></a>
-            <Link href="/contact"><Mail size={15} aria-hidden="true"/> Send a message</Link>
+            <a href="https://whatsapp.com/channel/0029Vb6jl7GEAKW7CeyUOx01" target="_blank" rel="noopener noreferrer"><img className="site-footer-social-icon" src={WHATSAPP_LOGO} alt="" width="18" height="18" /> WhatsApp channel</a>
+            <span className="site-footer-social-label"><img className="site-footer-social-icon" src={INSTAGRAM_LOGO} alt="" width="18" height="18" /> Instagram</span>
+            <a href="https://calltoreset.site/" target="_blank" rel="noopener noreferrer"><Globe2 size={17} aria-hidden="true" /> Call to Reset</a>
           </div>
         </nav>
-      </div>
-      <div className="site-footer-brandline" aria-hidden="true">
-        <span>FAITH · EVANGELISM · DISCIPLESHIP</span>
-        <span>SHARING JESUS ACROSS NATIONS</span>
       </div>
       <Link className="footer-wordmark" href="/#intro-tunnel" aria-label="THEBUMBS — go to homepage">THEBUMBS</Link>
       <div className="site-footer-bottom">
