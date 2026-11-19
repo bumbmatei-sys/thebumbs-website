@@ -1151,3 +1151,80 @@ body{background:var(--cream);color:var(--ink)}
 @media(max-width:700px){
   .legal-page{padding:100px 0 95px}
 }
+
+
+/* Mobile navigation always shows BOTH a visible icon and its one-word label.
+   Partner With Us is a larger, easier-to-tap primary action in the header. */
+@media (max-width:700px){
+  .site-header{
+    min-height:76px;
+    height:76px;
+    padding-inline:clamp(12px,3.8vw,20px);
+  }
+  .site-header .header-actions .header-partner{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:45px;
+    padding:12px 16px;
+    font-size:12px;
+    line-height:1.15;
+    font-weight:800;
+    border-radius:999px;
+    white-space:nowrap;
+    margin-left:0;
+  }
+  .dock{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:2px;
+    width:min(97vw,394px);
+    min-height:76px;
+    padding:8px 6px;
+  }
+  .dock > a{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    flex:1 1 0;
+    min-width:0;
+    height:59px;
+    border-radius:18px;
+    padding:7px 2px;
+    text-align:center;
+  }
+  .dock > a > svg{
+    display:block;
+    width:21px;
+    height:21px;
+    min-height:21px;
+    flex:0 0 21px;
+    opacity:1;
+    visibility:visible;
+  }
+  .dock > a > .dock-label{
+    display:block;
+    position:static;
+    width:auto;
+    height:auto;
+    overflow:visible;
+    clip:auto;
+    opacity:1;
+    visibility:visible;
+    color:inherit;
+    font:700 9px/1.1 Arial,Helvetica,sans-serif;
+    letter-spacing:0;
+    white-space:nowrap;
+  }
+}
+@media (max-width:360px){
+  .site-header .header-actions .header-partner{
+    min-height:44px;
+    padding:11px 12px;
+    font-size:11px;
+  }
+  .dock > a > .dock-label{font-size:8.5px}
+}
