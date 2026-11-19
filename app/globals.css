@@ -461,3 +461,151 @@ body{background:var(--cream);color:var(--ink)}
 @media(prefers-reduced-motion:reduce){
   .mission-stack-section .mission-stack-card{position:relative;top:auto}
 }
+
+
+/* Call to Reset: faithful adaptation of men-reset-site's Aureum homepage hero.
+   Original marble illustrations and landscape are copied into this repository. */
+.call-reset-section{
+  border-top:1px solid var(--line);
+  padding:clamp(65px,8vw,110px) 0 clamp(75px,9vw,130px);
+}
+.call-reset-hero{
+  position:relative;
+  isolation:isolate;
+  height:clamp(600px,78svh,860px);
+  overflow:hidden;
+  border-radius:20px;
+  background:#0f0f0f;
+  color:#fff;
+}
+.call-reset-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 42%;
+}
+.call-reset-shade{
+  position:absolute;
+  z-index:1;
+  inset:0;
+  background:linear-gradient(180deg,rgba(15,15,15,.42) 0%,rgba(15,15,15,.05) 16%,transparent 34%,transparent 58%,rgba(15,15,15,.28) 82%,rgba(15,15,15,.5) 100%);
+  pointer-events:none;
+}
+.call-reset-copy{
+  position:relative;
+  z-index:4;
+  width:min(52rem,calc(100% - 2rem));
+  padding-top:clamp(55px,8vh,110px);
+  margin-inline:auto;
+  text-align:center;
+}
+.call-reset-copy h2{
+  display:block;
+  max-width:none;
+  margin:0;
+  color:white;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:clamp(30px,4.2vw,57px);
+  font-weight:500;
+  line-height:1.02;
+  letter-spacing:-.045em;
+  text-shadow:0 .08em .35em rgba(15,15,15,.45);
+}
+.call-reset-copy h2 span{display:block}
+.call-reset-wordmark{
+  position:absolute;
+  z-index:2;
+  bottom:7%;
+  left:50%;
+  width:max-content;
+  margin:0;
+  transform:translateX(-50%);
+  color:#fff;
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:clamp(95px,27vw,370px);
+  line-height:.82;
+  letter-spacing:-.055em;
+  font-weight:500;
+  text-shadow:0 .03em .02em rgba(15,15,15,.55),0 .12em .45em rgba(15,15,15,.45);
+  pointer-events:none;
+  user-select:none;
+}
+.call-reset-figure{
+  position:absolute;
+  z-index:3;
+  bottom:0;
+  display:block;
+  width:33%;
+  max-width:470px;
+  height:auto;
+  max-height:85%;
+  object-fit:contain;
+  object-position:bottom center;
+  pointer-events:none;
+  user-select:none;
+}
+.call-reset-figure-left{left:0;transform:scaleX(-1);transform-origin:bottom center}
+.call-reset-figure-right{right:0}
+.call-reset-introduction{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:28px;
+  padding:32px 0 0;
+}
+.call-reset-introduction p{
+  max-width:650px;
+  margin:11px 0 0;
+  color:var(--muted);
+  line-height:1.5;
+  font-size:clamp(16px,1.6vw,20px);
+}
+.call-reset-button{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:26px;
+  padding:17px 24px;
+  flex-shrink:0;
+  border-radius:999px;
+  background:#867E32;
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+  transition:background .2s,transform .2s;
+}
+.call-reset-button:hover{background:#A19A40;transform:translateY(-2px)}
+@media(max-width:700px){
+  .call-reset-section{padding:68px 0 84px}
+  .call-reset-hero{
+    height:clamp(510px,76svh,700px);
+    border-radius:14px;
+  }
+  .call-reset-copy{
+    width:calc(100% - 28px);
+    padding-top:clamp(50px,8vh,78px);
+  }
+  .call-reset-copy h2{
+    font-size:clamp(22px,5.6vw,35px);
+    line-height:1.08;
+  }
+  .call-reset-wordmark{
+    font-size:clamp(104px,40vw,260px);
+    bottom:28%;
+  }
+  .call-reset-figure-left{display:none}
+  .call-reset-figure-right{
+    width:72%;
+    max-width:440px;
+    max-height:70%;
+    left:50%;
+    right:auto;
+    transform:translateX(-50%);
+  }
+  .call-reset-introduction{align-items:flex-start;flex-direction:column;gap:20px;padding-top:24px}
+  .call-reset-button{padding:15px 22px}
+}
