@@ -3,7 +3,15 @@
   "name": "thebumbs-website",
   "main": "worker/index.ts",
   "compatibility_date": "2026-11-18",
-  "previews": {},
+  "previews": {
+    "d1_databases": [
+      {
+        "binding": "NEWSLETTER_DB",
+        "database_name": "thebumbs-newsletter-preview",
+        "database_id": "f6e9eed9-f741-487a-9db1-6696ff40d3dc"
+      }
+    ]
+  },
   "assets": {
     "directory": "./out",
     "binding": "ASSETS",
