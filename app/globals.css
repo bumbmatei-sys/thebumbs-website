@@ -76,3 +76,1342 @@ h2 {font-size:clamp(42px,5vw,68px);line-height:1.1;margin:16px 0 28px;max-width:
 .skip-link{position:fixed;z-index:100;top:12px;left:12px;transform:translateY(-180%);background:#252b27;color:white;padding:12px 18px;border-radius:6px;font-size:14px}
 .skip-link:focus{transform:translateY(0);outline:3px solid #b28a50;outline-offset:3px}
 :focus-visible{outline:3px solid #997445;outline-offset:3px}
+
+
+/* THEBUMBS cinematic design foundation */
+:root{color-scheme:dark;--ink:#EDE4D7;--muted:#C9BEA9;--cream:#49372D;--gold:#DC5438;--olive:#867E32;--deep:#35271F;--line:rgba(237,228,215,.2)}
+body{background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+.container{max-width:none;padding:0 clamp(20px,3.8vw,72px)}
+.header{position:relative;z-index:40;border-color:var(--line);min-height:84px}
+.brand{font-family:Arial,Helvetica,sans-serif;font-weight:900;letter-spacing:-.075em;font-size:clamp(24px,2.5vw,35px);line-height:1}
+.brand-dot{display:none}
+.nav>a:not(.button){color:var(--ink)}.nav>a:hover,.nav>a[aria-current="page"]{color:#FF886E}
+.button{background:var(--olive);color:#fff;font-weight:700;gap:12px}.button:hover{background:#736C29}
+.button.secondary{color:var(--ink);border-color:var(--line)}.button.secondary:hover{background:rgba(237,228,215,.1)}
+.eyebrow,.card-number{color:#F28A71}
+h1,h2,h3{font-family:Arial,Helvetica,sans-serif;font-weight:700;letter-spacing:-.065em}
+h1 em{color:var(--gold)}.lead,.body-copy,.panel p,.mission-row p{color:var(--muted)}
+.section,.footer{border-color:var(--line)}.panel,.contact-form{background:#594538;border-color:var(--line)}
+.quote-panel{background:#594538}.quote-panel span{color:var(--muted)}
+.mission-list,.mission-row,.budget-list,.budget-row{border-color:var(--line)}
+.budget-row strong{color:var(--ink)}.budget-row.total{color:var(--ink)}
+.contact-form label{color:var(--ink)}.contact-form input,.contact-form select,.contact-form textarea{background:#EDE4D7;color:#35271F;border-color:#b9a996}
+.contact-success{background:#44513a;border-color:#778468}.contact-success h3,.contact-success p{color:#EDE4D7}
+.contact-success .success-icon,.contact-success .button{background:var(--olive)}
+.skip-link{background:var(--deep);color:var(--ink)}.skip-link:focus,:focus-visible{outline-color:#FF886E}
+.cinematic-hero{min-height:min(880px,calc(100svh - 84px));display:flex;flex-direction:column;justify-content:space-between;padding:32px 0 35px;position:relative;overflow:hidden}
+.cinematic-hero::before{content:"";position:absolute;inset:6% 13% 13%;pointer-events:none;background:radial-gradient(ellipse at center,rgba(220,84,56,.13),transparent 65%);filter:blur(30px)}
+.cinematic-meta,.hero-scroll-cue{display:flex;justify-content:space-between;gap:20px;position:relative;font-size:11px;letter-spacing:.16em;font-weight:700}
+.cinematic-title-wrap{position:relative;text-align:center}
+.cinematic-title{font-family:Arial,Helvetica,sans-serif;font-weight:900;font-size:clamp(66px,15.4vw,310px);line-height:.78;letter-spacing:-.095em;margin:0;color:var(--gold);white-space:nowrap;transform:translateX(-.04em);animation:hero-rise 1.1s cubic-bezier(.16,1,.3,1) both}
+.cinematic-subtitle{font-size:clamp(14px,1.5vw,20px);margin:40px 0 0;color:var(--ink)}
+.hero-scroll-cue{align-items:center}.hero-scroll-cue span:last-child{font-size:28px;font-weight:400}
+@keyframes hero-rise{from{opacity:0;transform:translateY(55px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+.manifesto{min-height:100svh;padding:clamp(100px,13vw,230px) clamp(0px,4vw,90px);display:flex;flex-direction:column;justify-content:center;border-top:1px solid var(--line)}
+.manifesto h2{font-size:clamp(38px,5.9vw,108px);line-height:1.13;max-width:1500px;margin:38px 0 70px;font-weight:750;letter-spacing:-.064em}
+.manifesto h2 em{font-style:normal;color:var(--gold)}
+.manifesto-bottom{display:flex;align-items:end;justify-content:space-between;gap:25px;border-top:1px solid var(--line);padding-top:28px}
+.manifesto-bottom p{max-width:440px;line-height:1.7;color:var(--muted)}
+.text-link{color:var(--ink)}.text-link:hover{color:#FF886E}
+.mission-stack-section{padding:100px 0 150px;border-top:1px solid var(--line)}
+.section-intro{max-width:800px;margin:0 0 65px}.section-intro h2{font-size:clamp(56px,8vw,130px);line-height:.97;margin:20px 0 25px}
+.section-intro p{font-size:18px;color:var(--muted)}
+.mission-stack{display:flex;flex-direction:column;gap:30px}
+.mission-stack-card{position:sticky;top:18px;min-height:clamp(380px,62vh,650px);border-radius:22px;padding:clamp(25px,4vw,70px);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;box-shadow:0 18px 60px #1a100c3b}
+.stack-0{background:#EDE4D7;color:#49372D;top:18px}.stack-1{background:#867E32;color:#fff;top:38px}.stack-2{background:#DC5438;color:#fff;top:58px}
+.stack-card-top{display:flex;justify-content:space-between;gap:20px;font-size:12px;letter-spacing:.15em;font-weight:700}
+.stack-card-bottom{max-width:900px}.stack-card-bottom h3{font-size:clamp(56px,8vw,130px);line-height:.94;margin:0 0 28px}
+.stack-card-bottom p{font-size:clamp(17px,2vw,24px);line-height:1.55;max-width:600px}
+.stack-card-arrow{position:absolute;right:clamp(25px,4vw,70px);bottom:clamp(25px,4vw,70px);font-size:36px}
+.story-section{padding:110px 0;border-top:1px solid var(--line)}
+.story-section h2{font-size:clamp(52px,7vw,112px);max-width:1150px;line-height:1;margin:25px 0 70px}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.story-tile{display:flex;min-height:480px;flex-direction:column;justify-content:space-between;border:1px solid var(--line);border-radius:18px;background:#594538;padding:40px;transition:transform .5s cubic-bezier(.2,.8,.2,1),background .3s}
+.story-tile:nth-child(2){background:#65503E}.story-tile:hover{transform:translateY(-12px);background:#6C5545}
+.story-tile-number{font-size:12px;letter-spacing:.14em;color:#F28A71}.story-tile-title{font-size:clamp(38px,5vw,74px);line-height:1;letter-spacing:-.06em;font-weight:800}
+.story-tile>span:last-child{color:var(--muted)}
+.home-invitation{padding:140px 0 160px;border-top:1px solid var(--line)}.home-invitation h2{font-size:clamp(55px,8vw,130px);line-height:1;max-width:1100px;margin:25px 0}
+.home-invitation p{font-size:20px;line-height:1.6;color:var(--muted);max-width:560px;margin-bottom:35px}
+.footer{padding:40px 0 max(110px,calc(80px + env(safe-area-inset-bottom)));overflow:hidden}
+.footer-top,.footer-bottom{display:flex;justify-content:space-between;gap:20px;font-size:11px;letter-spacing:.12em;font-weight:700}
+.footer-wordmark{display:block;text-align:center;font-size:clamp(65px,16.1vw,330px);font-weight:900;letter-spacing:-.095em;line-height:.95;margin:60px 0;color:var(--ink);white-space:nowrap}
+.footer-bottom{color:var(--muted);letter-spacing:0;font-size:13px;font-weight:400}
+@media(max-width:700px){
+ .container{padding:0 18px}.header{min-height:70px}
+ .cinematic-hero{min-height:calc(90svh - 70px);padding:24px 0}.cinematic-meta span:last-child{display:none}
+ .cinematic-title{font-size:15.5vw}.cinematic-subtitle{margin-top:25px}
+ .manifesto{min-height:90svh;padding:110px 0}.manifesto h2{font-size:clamp(36px,9vw,60px)}
+ .manifesto-bottom{align-items:start;flex-direction:column}.mission-stack-section{padding:75px 0 110px}
+ .mission-stack{gap:22px}.mission-stack-card{min-height:470px;border-radius:15px;padding:28px}
+ .stack-0{top:12px}.stack-1{top:25px}.stack-2{top:38px}
+ .stack-card-bottom h3{font-size:clamp(46px,11vw,76px)}.stack-card-arrow{right:28px;bottom:25px}
+ .story-section{padding:80px 0}.story-grid{grid-template-columns:1fr}.story-tile{min-height:340px;padding:28px}
+ .home-invitation{padding:90px 0 110px}.footer-wordmark{font-size:15.5vw;margin:45px 0}
+ .footer-top{flex-direction:column;gap:7px}.footer-bottom{flex-direction:column;gap:6px}
+ .dock{display:flex;position:fixed;z-index:1000;bottom:calc(14px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:min(92vw,370px);justify-content:space-around;align-items:center;padding:8px;border-radius:100px;background:rgba(53,39,31,.95);border:1px solid rgba(237,228,215,.25);box-shadow:0 12px 40px #160d0a55;backdrop-filter:blur(20px)}
+ .dock a{width:48px;height:48px;color:#EDE4D7;flex-shrink:0}
+ .dock a[aria-current="page"]{background:var(--olive);color:#fff}
+ .dock a:focus-visible{outline-offset:0}
+}
+@media(prefers-reduced-motion:reduce){.mission-stack-card{position:relative;top:auto}.story-tile:hover{transform:none}}
+
+
+/* Scroll-driven nine-photo tunnel. The images live in public/images/scroll. */
+.photo-tunnel{height:440vh;position:relative;isolation:isolate;background:#35271F;margin:0 calc(-1 * clamp(20px,3.8vw,72px))}
+.photo-tunnel-stage{height:100svh;position:sticky;top:0;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(24px,4vw,60px);background:radial-gradient(ellipse at center,#5b4134 0%,#35271F 75%)}
+.photo-tunnel-label{display:flex;justify-content:space-between;gap:15px;position:relative;z-index:3;font-size:11px;letter-spacing:.15em;font-weight:700;color:#EDE4D7}
+.photo-tunnel-perspective{position:absolute;inset:0;perspective:1000px;perspective-origin:center;transform-style:preserve-3d}
+.tunnel-photo{position:absolute;top:50%;left:50%;width:clamp(180px,26vw,480px);height:clamp(240px,32vw,580px);margin-left:calc(clamp(180px,26vw,480px) / -2);margin-top:calc(clamp(240px,32vw,580px) / -2);border:0;box-shadow:0 28px 90px #170e0bbb;will-change:transform,opacity;backface-visibility:hidden;overflow:hidden}
+.tunnel-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.tunnel-photo-0{z-index:9}.tunnel-photo-1{z-index:8}.tunnel-photo-2{z-index:7}.tunnel-photo-3{z-index:6}.tunnel-photo-4{z-index:5}.tunnel-photo-5{z-index:4}.tunnel-photo-6{z-index:3}.tunnel-photo-7{z-index:2}.tunnel-photo-8{z-index:1}
+.photo-tunnel-caption{position:relative;z-index:3;align-self:flex-end;max-width:280px;text-align:right;color:#EDE4D7;font-size:13px;line-height:1.5}
+@media(max-width:700px){.photo-tunnel{margin:0 -18px;height:340vh}.photo-tunnel-stage{padding:25px 18px}.tunnel-photo{width:52vw;height:65vw;margin-left:-26vw;margin-top:-32.5vw;border-width:0}}
+@media(prefers-reduced-motion:reduce){.photo-tunnel{height:auto}.photo-tunnel-stage{position:relative;height:auto;min-height:65vh}.photo-tunnel-perspective{position:relative;inset:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;perspective:none;transform-style:flat;margin:30px 0}.tunnel-photo{position:relative;top:auto;left:auto;width:100%;height:auto;aspect-ratio:3/4;margin:0;transform:none!important;opacity:1!important;border-width:0;will-change:auto}}
+
+
+/* Editorial journal landing */
+.journal-hero{min-height:75svh;display:flex;flex-direction:column;justify-content:center;padding:90px 0 110px}
+.journal-hero h1{font-size:clamp(76px,12vw,220px);line-height:.91;margin:35px 0}
+.journal-hero h1 em{font-style:normal;color:var(--gold)}
+.journal-editorial{border-top:1px solid var(--line);padding:100px 0 150px}
+.journal-editorial-inner{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(35px,8vw,150px);margin-top:55px;align-items:end}
+.journal-index{font-size:11px;letter-spacing:.15em;color:#F28A71}
+.journal-editorial h2{font-size:clamp(50px,7vw,110px);line-height:1.02;margin:25px 0 0}
+.journal-editorial p{font-size:19px;line-height:1.75;color:var(--muted)}
+.journal-outro{border-top:1px solid var(--line);padding:100px 0 150px}
+.journal-outro h2{font-size:clamp(48px,7vw,100px);max-width:950px;line-height:1.05;margin:25px 0 45px}
+@media(max-width:700px){.journal-hero{min-height:60svh;padding:75px 0}.journal-hero h1{font-size:clamp(56px,13vw,100px)}.journal-editorial{padding:75px 0}.journal-editorial-inner{grid-template-columns:1fr;gap:25px}.journal-outro{padding:75px 0 110px}.dock{width:min(96vw,390px);padding:7px 5px}.dock a{width:44px;height:44px}}
+
+
+/* Approved photography integrated into editorial story cards. */
+.story-tile{position:relative;isolation:isolate;background-size:cover;background-position:center;overflow:hidden}
+.story-tile::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(24,17,14,.35),rgba(24,17,14,.78));transition:background .3s}
+.story-tile:first-child{background-image:url("/images/matei-larisa-portrait.jpg")}
+.story-tile:nth-child(2){background-image:url("/images/matei-speaking-approved.jpg");background-position:center 35%}
+.story-tile:hover{background-size:cover;background-color:#594538}
+.story-tile-number,.story-tile-title,.story-tile>span:last-child{color:#fff}
+
+
+/* November 2026: unified opening cinematic, near-black palette and adaptive header. */
+:root{
+  color-scheme:dark;
+  --cream:#100E0D;
+  --deep:#090807;
+  --ink:#F2E9DE;
+  --muted:#C4B5A6;
+  --gold:#CE4C37;
+  --line:rgba(242,233,222,.16);
+}
+body{background:var(--cream);color:var(--ink)}
+.panel,.quote-panel,.contact-form{background:#211B17;border-color:var(--line)}
+.story-tile{background-color:#211B17}
+.site-header{
+  position:fixed;
+  top:0;left:0;right:0;
+  width:100%;
+  z-index:1001;
+  height:84px;
+  min-height:84px;
+  padding:0 clamp(20px,3.8vw,72px);
+  display:flex;
+  align-items:center;
+  border-bottom:1px solid transparent;
+  background:transparent;
+  transition:background .3s ease,border-color .3s ease;
+}
+.site-header .header-identity{position:relative;z-index:2;display:flex;align-items:center;flex:0 0 auto}
+.site-header .header-personal-name{font-size:clamp(11px,1vw,14px);font-weight:800;letter-spacing:.13em;white-space:nowrap;color:var(--ink)}
+.site-header .brand{font-size:clamp(24px,2.5vw,35px);white-space:nowrap}
+.site-header .nav{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  gap:clamp(15px,2.1vw,32px);
+  margin:0;
+}
+.site-header .nav a{white-space:nowrap}
+.site-header .header-partner{position:relative;z-index:2;margin-left:auto;white-space:nowrap}
+.site-header.header-after-tunnel{
+  background:rgba(12,10,9,.92);
+  border-bottom-color:var(--line);
+  backdrop-filter:blur(18px);
+}
+.site-header.header-after-tunnel .nav{
+  position:static;
+  left:auto;
+  transform:none;
+  margin:0 26px 0 auto;
+}
+#main-content > main:not(.home-page){padding-top:84px}
+
+/* THEBUMBS wordmark and nine-image tunnel now share the very first viewport. */
+.photo-tunnel{
+  height:900svh;
+  margin:0 calc(-1 * clamp(20px,3.8vw,72px));
+  background:#090807;
+  isolation:isolate;
+}
+.photo-tunnel-stage{
+  height:100svh;
+  position:sticky;
+  top:0;
+  overflow:hidden;
+  display:block;
+  padding:0;
+  background:radial-gradient(ellipse at 50% 41%,#291B17 0%,#15100E 42%,#090807 80%);
+}
+.photo-tunnel-stage::after{
+  content:"";
+  position:absolute;
+  inset:48% 0 0;
+  z-index:2;
+  pointer-events:none;
+  background:linear-gradient(to bottom,transparent 10%,rgba(9,8,7,.74) 86%);
+}
+.photo-tunnel-perspective{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  perspective:1200px;
+  perspective-origin:50% 42%;
+  transform-style:preserve-3d;
+  pointer-events:none;
+}
+.tunnel-photo{
+  position:absolute;
+  top:50%;
+  left:50%;
+  /* The photograph decides its dimensions; no forced square or portrait crop. */
+  display:block;
+  width:max-content;
+  height:max-content;
+  max-width:min(35vw,540px);
+  max-height:51svh;
+  margin:0;
+  border:0;
+  overflow:hidden;
+  box-shadow:0 26px 100px rgba(0,0,0,.72);
+  will-change:transform,opacity;
+  backface-visibility:hidden;
+  background:#211B17;
+}
+.tunnel-photo img{
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:min(35vw,540px);
+  max-height:51svh;
+  object-fit:contain;
+}
+.photo-tunnel-label{
+  position:absolute;
+  z-index:4;
+  top:calc(84px + 22px);
+  left:clamp(20px,3.8vw,72px);
+  right:clamp(20px,3.8vw,72px);
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:.14em;
+  pointer-events:none;
+}
+.intro-brand-lockup{
+  position:absolute;
+  z-index:4;
+  bottom:clamp(32px,4.8vh,68px);
+  left:clamp(16px,3.8vw,72px);
+  right:clamp(16px,3.8vw,72px);
+  text-align:center;
+  pointer-events:none;
+  will-change:transform,opacity;
+}
+.intro-brand-lockup .cinematic-subtitle{
+  margin:0 0 clamp(14px,2vw,26px);
+  font-size:clamp(12px,1.3vw,18px);
+  color:var(--ink);
+}
+.intro-brand-lockup .cinematic-title{
+  font-size:clamp(56px,15vw,310px);
+  line-height:.8;
+  margin:0;
+  color:var(--gold);
+  letter-spacing:-.095em;
+  font-weight:900;
+  white-space:nowrap;
+}
+.manifesto{background:var(--cream)}
+.manifesto .scroll-manifesto{max-width:1500px}
+.manifesto-word{
+  display:inline-block;
+  margin-right:.23em;
+  will-change:transform,opacity,filter;
+}
+.manifesto-word-accent{color:var(--gold);font-style:normal}
+
+@media(max-width:1050px){
+  .site-header .nav{gap:15px;font-size:12px}
+  .site-header.header-after-tunnel .nav{margin-right:16px}
+  .site-header .header-partner{padding:13px 17px}
+}
+@media(max-width:850px){
+  .site-header{height:70px;min-height:70px;padding:0 18px}
+  .site-header .nav{display:none}
+  .site-header .header-personal-name{font-size:clamp(10px,2.3vw,13px);letter-spacing:.055em}
+  .site-header .brand{font-size:clamp(18px,4.6vw,24px)}
+  .site-header .header-partner{font-size:11px;padding:11px 12px;margin-left:auto}
+  .photo-tunnel{height:760svh;margin:0 -18px}
+  .photo-tunnel-label{top:90px;left:18px;right:18px;font-size:9px}
+  .tunnel-photo{width:max-content;height:max-content;max-width:65vw;max-height:49svh;top:50%;border-width:0}
+  .tunnel-photo img{width:auto;height:auto;max-width:65vw;max-height:49svh;object-fit:contain}
+  .intro-brand-lockup{bottom:clamp(70px,11svh,110px);left:10px;right:10px}
+  .intro-brand-lockup .cinematic-title{font-size:15.2vw}
+  .intro-brand-lockup .cinematic-subtitle{font-size:12px;margin-bottom:17px}
+  #main-content > main:not(.home-page){padding-top:70px}
+}
+@media(prefers-reduced-motion:reduce){
+  .site-header,.intro-brand-lockup{transition:none;will-change:auto}
+  .photo-tunnel{height:auto}
+  .photo-tunnel-stage{position:relative;height:auto;min-height:100svh;padding:120px 18px 60px}
+  .photo-tunnel-stage::after{display:none}
+  .photo-tunnel-perspective{
+    position:relative;inset:auto;
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:12px;perspective:none;transform-style:flat;margin:24px 0;
+    pointer-events:auto;
+  }
+  .tunnel-photo{
+    position:relative;top:auto;left:auto;
+    width:100%;height:auto;max-width:100%;max-height:none;aspect-ratio:auto;
+    transform:none!important;opacity:1!important;
+    border-width:0;will-change:auto;
+  }
+  .photo-tunnel-label{top:90px}
+  .tunnel-photo img{width:100%;height:auto;max-width:100%;max-height:none;object-fit:contain}
+  .intro-brand-lockup{position:relative;bottom:auto;left:auto;right:auto;transform:none!important;opacity:1!important}
+  .manifesto-word{will-change:auto;filter:none!important;transform:none!important}
+}
+@media(max-width:600px) and (prefers-reduced-motion:reduce){
+  .photo-tunnel-perspective{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+
+/* Keep the Gospel statement as the sole focus and transition directly into the mission cards. */
+.manifesto{
+  min-height:75svh;
+  padding:clamp(96px,11vh,148px) clamp(0px,4vw,90px) clamp(65px,8vh,100px);
+}
+.manifesto h2{margin:35px 0 0}
+.mission-stack-section{padding-top:72px}
+@media(max-width:700px){
+  .manifesto{min-height:72svh;padding:80px 0 65px}
+  .manifesto h2{margin:27px 0 0}
+  .mission-stack-section{padding-top:55px}
+}
+
+/* Keep the two-part mission headline clean, with its first phrase on one line. */
+.mission-stack-section .section-intro #mission-title{font-size:clamp(24px,4.3vw,70px);line-height:1.07;letter-spacing:-.058em}
+.mission-heading-line{white-space:nowrap}
+
+/* Editorial balance: consistent section headlines, bottom-aligned story titles,
+   and a slightly more compact centered stack of mission cards. */
+.story-section h2,
+.home-invitation h2{
+  font-size:clamp(24px,4.3vw,70px);
+  line-height:1.07;
+  letter-spacing:-.058em;
+}
+.story-section h2{margin-bottom:50px}
+.story-tile{justify-content:flex-start}
+.story-tile-title{
+  margin-top:auto;
+  margin-bottom:12px;
+  font-size:clamp(25px,3vw,44px);
+  line-height:1.08;
+  letter-spacing:-.045em;
+}
+.story-tile>span:last-child{line-height:1.45}
+.mission-stack{align-items:center}
+.mission-stack-card{
+  width:min(92%,1050px);
+  min-height:clamp(340px,52vh,570px);
+  padding:clamp(24px,3.2vw,54px);
+}
+.mission-stack-card .stack-card-bottom h3{font-size:clamp(44px,6.3vw,94px)}
+@media(max-width:700px){
+  .story-section h2{margin-bottom:38px}
+  .story-tile-title{font-size:clamp(26px,6vw,36px);margin-bottom:10px}
+  .mission-stack-card{width:95%;min-height:440px;padding:24px}
+  .mission-stack-card .stack-card-bottom h3{font-size:clamp(42px,9vw,62px)}
+}
+
+
+/* The stacked cards should pin below the fixed navigation, never beneath it. */
+.mission-stack-section .stack-0{top:100px}
+.mission-stack-section .stack-1{top:118px}
+.mission-stack-section .stack-2{top:136px}
+@media(max-width:850px){
+  .mission-stack-section .stack-0{top:86px}
+  .mission-stack-section .stack-1{top:102px}
+  .mission-stack-section .stack-2{top:118px}
+}
+@media(prefers-reduced-motion:reduce){
+  .mission-stack-section .mission-stack-card{position:relative;top:auto}
+}
+
+
+/* Call to Reset: faithful adaptation of men-reset-site's Aureum homepage hero.
+   Original marble illustrations and landscape are copied into this repository. */
+.call-reset-section{
+  border-top:1px solid var(--line);
+  padding:clamp(65px,8vw,110px) 0 clamp(75px,9vw,130px);
+}
+.call-reset-hero{
+  position:relative;
+  isolation:isolate;
+  height:clamp(600px,78svh,860px);
+  overflow:hidden;
+  border-radius:20px;
+  background:#0f0f0f;
+  color:#fff;
+}
+.call-reset-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 42%;
+}
+.call-reset-shade{
+  position:absolute;
+  z-index:1;
+  inset:0;
+  background:linear-gradient(180deg,rgba(15,15,15,.42) 0%,rgba(15,15,15,.05) 16%,transparent 34%,transparent 58%,rgba(15,15,15,.28) 82%,rgba(15,15,15,.5) 100%);
+  pointer-events:none;
+}
+.call-reset-copy{
+  position:relative;
+  z-index:4;
+  width:min(52rem,calc(100% - 2rem));
+  padding-top:clamp(55px,8vh,110px);
+  margin-inline:auto;
+  text-align:center;
+}
+.call-reset-copy h2{
+  display:block;
+  max-width:none;
+  margin:0;
+  color:white;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:clamp(30px,4.2vw,57px);
+  font-weight:500;
+  line-height:1.02;
+  letter-spacing:-.045em;
+  text-shadow:0 .08em .35em rgba(15,15,15,.45);
+}
+.call-reset-copy h2 span{display:block}
+.call-reset-wordmark{
+  position:absolute;
+  z-index:2;
+  bottom:7%;
+  left:50%;
+  width:max-content;
+  margin:0;
+  transform:translateX(-50%);
+  color:#fff;
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:clamp(95px,27vw,370px);
+  line-height:.82;
+  letter-spacing:-.055em;
+  font-weight:500;
+  text-shadow:0 .03em .02em rgba(15,15,15,.55),0 .12em .45em rgba(15,15,15,.45);
+  pointer-events:none;
+  user-select:none;
+}
+.call-reset-figure{
+  position:absolute;
+  z-index:3;
+  bottom:0;
+  display:block;
+  width:33%;
+  max-width:470px;
+  height:auto;
+  max-height:85%;
+  object-fit:contain;
+  object-position:bottom center;
+  pointer-events:none;
+  user-select:none;
+}
+.call-reset-figure-left{left:0;transform:scaleX(-1);transform-origin:bottom center}
+.call-reset-figure-right{right:0}
+.call-reset-introduction{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:28px;
+  padding:32px 0 0;
+}
+.call-reset-introduction p{
+  max-width:650px;
+  margin:11px 0 0;
+  color:var(--muted);
+  line-height:1.5;
+  font-size:clamp(16px,1.6vw,20px);
+}
+.call-reset-button{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:26px;
+  padding:17px 24px;
+  flex-shrink:0;
+  border-radius:999px;
+  background:#867E32;
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+  transition:background .2s,transform .2s;
+}
+.call-reset-button:hover{background:#A19A40;transform:translateY(-2px)}
+@media(max-width:700px){
+  .call-reset-section{padding:68px 0 84px}
+  .call-reset-hero{
+    height:clamp(510px,76svh,700px);
+    border-radius:14px;
+  }
+  .call-reset-copy{
+    width:calc(100% - 28px);
+    padding-top:clamp(50px,8vh,78px);
+  }
+  .call-reset-copy h2{
+    font-size:clamp(22px,5.6vw,35px);
+    line-height:1.08;
+  }
+  .call-reset-wordmark{
+    font-size:clamp(104px,40vw,260px);
+    bottom:28%;
+  }
+  .call-reset-figure-left{display:none}
+  .call-reset-figure-right{
+    width:72%;
+    max-width:440px;
+    max-height:70%;
+    left:50%;
+    right:auto;
+    transform:translateX(-50%);
+  }
+  .call-reset-introduction{align-items:flex-start;flex-direction:column;gap:20px;padding-top:24px}
+  .call-reset-button{padding:15px 22px}
+}
+
+
+/* Call to Reset: put the introduction before the hero and the CTA
+   between its three-line headline and the giant Reset wordmark. */
+.call-reset-introduction{
+  display:block;
+  padding:0 0 clamp(22px,3vw,36px);
+}
+.call-reset-introduction p{
+  max-width:710px;
+  margin:12px 0 0;
+}
+.call-reset-copy .call-reset-button{
+  display:inline-flex;
+  position:relative;
+  z-index:5;
+  margin-top:clamp(24px,4vh,45px);
+}
+.call-reset-button{
+  gap:0;
+  background:#0b0b0b;
+  border:1px solid rgba(255,255,255,.7);
+  box-shadow:0 8px 22px rgba(0,0,0,.24);
+  color:#fff;
+}
+.call-reset-button:hover{background:#242424}
+.call-reset-button:focus-visible,
+.header-discipleship:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+/* Both actions remain visible in the top nav, with Partner With Us at far right. */
+.site-header .header-actions{
+  display:flex;
+  position:relative;
+  z-index:2;
+  align-items:center;
+  justify-content:flex-end;
+  gap:10px;
+  margin-left:auto;
+  flex-shrink:0;
+}
+.site-header .header-actions .header-partner{margin-left:0}
+.site-header .header-discipleship{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 18px;
+  border:1px solid rgba(242,233,222,.45);
+  border-radius:100px;
+  background:#0b0b0b;
+  color:var(--ink);
+  font-weight:700;
+  font-size:12px;
+  line-height:1;
+  white-space:nowrap;
+  transition:background .2s,border-color .2s;
+}
+.site-header .header-discipleship:hover{background:#25201e;border-color:var(--ink)}
+@media(max-width:1050px){
+  .site-header .header-actions{gap:7px}
+  .site-header .header-discipleship{padding:12px 14px;font-size:11px}
+}
+@media(max-width:700px){
+  .call-reset-introduction{padding:0 0 22px}
+  .call-reset-copy .call-reset-button{margin-top:24px}
+  .call-reset-wordmark{bottom:15%}
+  .site-header .header-actions{gap:6px}
+  .site-header .header-discipleship{padding:11px 12px;font-size:10px}
+}
+@media(max-width:480px){
+  .call-reset-wordmark{bottom:26%}
+  .site-header .header-personal-name{font-size:9px;letter-spacing:0}
+  .site-header .header-actions{gap:4px}
+  .site-header .header-discipleship{padding:10px 8px;font-size:9px}
+  .site-header .header-actions .header-partner{padding:10px 8px;font-size:9px}
+}
+
+
+/* A clear invitation to follow the mission by email or WhatsApp.
+   The two cards deliberately contrast a warm paper tone with deep olive. */
+.stay-connected{
+  border-top:1px solid var(--line);
+  padding:clamp(78px,9vw,135px) 0 clamp(95px,11vw,155px);
+}
+.stay-connected-intro{margin:0 0 clamp(34px,4.5vw,64px)}
+.stay-connected-intro h2{
+  font-size:clamp(24px,4.3vw,70px);
+  letter-spacing:-.058em;
+  line-height:1.07;
+  margin:20px 0;
+  max-width:980px;
+}
+.stay-connected-intro>p{
+  color:var(--muted);
+  max-width:620px;
+  font-size:clamp(16px,1.6vw,19px);
+  line-height:1.6;
+}
+.stay-connected-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.stay-connected-card{
+  min-width:0;
+  min-height:530px;
+  padding:clamp(28px,3.4vw,46px);
+  border-radius:18px;
+  display:flex;
+  flex-direction:column;
+}
+.stay-connected-newsletter{background:#EDE4D7;color:#49372D}
+.stay-connected-whatsapp{
+  color:#F2E9DE;
+  background:radial-gradient(ellipse at 75% 18%,#454029 0%,#2C2A20 53%,#211F19 100%);
+  border:1px solid rgba(242,233,222,.17);
+}
+.stay-connected-card-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.stay-connected-card-top span{font-size:11px;font-weight:750;letter-spacing:.14em}
+.stay-connected-card-copy{margin:clamp(45px,5.4vw,78px) 0 38px}
+.stay-connected-card-copy h3{
+  font-size:clamp(32px,3.65vw,53px);
+  line-height:1.04;
+  letter-spacing:-.055em;
+  font-weight:800;
+  margin:0 0 22px;
+}
+.stay-connected-card-copy p{font-size:17px;line-height:1.65;max-width:460px;margin:0;opacity:.85}
+.newsletter-form{margin-top:auto}
+.newsletter-form>label:first-child{display:block;font-size:12px;font-weight:750;margin-bottom:10px}
+.newsletter-field-row{display:flex;gap:8px;align-items:stretch}
+.newsletter-field-row input{
+  min-width:0;
+  width:100%;
+  flex:1;
+  padding:16px 14px;
+  border-radius:9px;
+  border:1px solid rgba(73,55,45,.2);
+  background:#FFFCF6;
+  color:#49372D;
+  font:inherit;
+  font-size:14px;
+}
+.newsletter-field-row input:focus-visible{outline:2px solid #CE4C37;outline-offset:2px}
+.newsletter-field-row button{
+  border:none;
+  border-radius:9px;
+  background:#49372D;
+  color:#fff;
+  padding:14px 18px;
+  font-weight:700;
+  font:inherit;
+  font-size:13px;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:background .2s;
+}
+.newsletter-field-row button:hover:not(:disabled){background:#6B493A}
+.newsletter-field-row button:disabled{opacity:.65;cursor:not-allowed}
+.newsletter-consent{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:12px;line-height:1.5;cursor:pointer}
+.newsletter-consent input{width:16px;height:16px;flex:0 0 16px;margin:2px 0 0;accent-color:#CE4C37}
+.newsletter-honeypot{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(100%)}
+.newsletter-feedback{font-size:13px;line-height:1.5;margin:12px 0 0;color:#8B251D}
+.newsletter-feedback.success{color:#305D32}
+.whatsapp-channel-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  align-self:flex-start;
+  margin-top:auto;
+  padding:16px 19px;
+  border-radius:9px;
+  color:#fff;
+  background:#867E32;
+  font-size:14px;
+  font-weight:750;
+  transition:background .2s,transform .2s;
+}
+.whatsapp-channel-button:hover{background:#A39A47;transform:translateY(-2px)}
+.whatsapp-channel-button:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.stay-connected-footnote{font-size:12px;color:#C4B5A6;margin:16px 0 0}
+@media(max-width:850px){
+  .stay-connected-grid{grid-template-columns:1fr}
+  .stay-connected-card{min-height:440px}
+  .stay-connected-card-copy{margin:50px 0 40px}
+}
+@media(max-width:480px){
+  .stay-connected{padding:75px 0 95px}
+  .stay-connected-card{padding:26px 23px;min-height:420px}
+  .stay-connected-card-copy h3{font-size:clamp(31px,8vw,43px)}
+  .newsletter-field-row{flex-direction:column}
+  .newsletter-field-row input,.newsletter-field-row button{width:100%;min-height:49px}
+  .whatsapp-channel-button{width:100%;font-size:13px}
+}
+
+
+/* A real newsletter opt-in stores the subscriber's name and email in D1. */
+.newsletter-name-field{margin:0 0 17px}
+.newsletter-name-field label{
+  display:block;
+  font-size:12px;
+  font-weight:750;
+  margin:0 0 10px;
+}
+.newsletter-name-field input{
+  display:block;
+  width:100%;
+  min-width:0;
+  min-height:49px;
+  padding:15px 14px;
+  border-radius:9px;
+  border:1px solid rgba(73,55,45,.2);
+  background:#FFFCF6;
+  color:#49372D;
+  font:inherit;
+  font-size:14px;
+}
+.newsletter-name-field input:focus-visible{outline:2px solid #CE4C37;outline-offset:2px}
+.newsletter-unsubscribe-link{
+  display:inline-block;
+  margin-top:13px;
+  color:#49372D;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  font-size:13px;
+}
+.subscription-page{
+  min-height:65svh;
+  padding:clamp(130px,15vh,205px) 0 clamp(80px,12vh,160px);
+}
+.subscription-page h1{max-width:850px;font-size:clamp(38px,6vw,78px);margin:20px 0 26px}
+.subscription-page p{max-width:560px;color:var(--muted);font-size:17px;line-height:1.65}
+.subscription-page button{border:0;cursor:pointer;margin-top:20px}
+.subscription-page p:last-child a{text-decoration:underline;text-underline-offset:4px}
+
+
+/* Compact stay-connected cards with consistent newsletter fields on one row. */
+.stay-connected-card{
+  min-height:415px;
+  padding:clamp(26px,2.7vw,36px);
+}
+.stay-connected-card-copy{
+  margin:clamp(26px,3vw,40px) 0 25px;
+}
+.stay-connected-card-copy h3{
+  font-size:clamp(30px,3.1vw,46px);
+  margin:0 0 16px;
+}
+.stay-connected-card-copy p{font-size:16px;line-height:1.55}
+.newsletter-form{margin-top:auto}
+.newsletter-form-row{display:flex;align-items:flex-end;gap:9px;min-width:0}
+.newsletter-field{display:flex;flex-direction:column;min-width:0}
+.newsletter-field-name{flex:.83 1 0}
+.newsletter-field-email{flex:1.3 1 0}
+.newsletter-field label{
+  display:block;
+  margin:0 0 9px;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:12px;
+  font-weight:750;
+  line-height:1.25;
+  letter-spacing:0;
+}
+.newsletter-field input{
+  width:100%;
+  min-width:0;
+  height:48px;
+  padding:12px 12px;
+  border:1px solid rgba(73,55,45,.2);
+  border-radius:9px;
+  background:#FFFCF6;
+  color:#49372D;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:14px;
+  font-weight:400;
+}
+.newsletter-field input:focus-visible{outline:2px solid #CE4C37;outline-offset:2px}
+.newsletter-form-row .newsletter-submit{
+  flex:0 0 auto;
+  height:48px;
+  padding:12px 13px;
+  border:0;
+  border-radius:9px;
+  background:#49372D;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:12px;
+  font-weight:700;
+  white-space:nowrap;
+  cursor:pointer;
+  transition:background .2s;
+}
+.newsletter-form-row .newsletter-submit:hover:not(:disabled){background:#6B493A}
+.newsletter-form-row .newsletter-submit:disabled{opacity:.65;cursor:not-allowed}
+.newsletter-signup-note{
+  margin:13px 0 0;
+  font-size:12px;
+  line-height:1.4;
+  color:#6D5949;
+}
+.whatsapp-brand-mark{display:block;width:28px;height:28px;object-fit:contain}
+.stay-connected-footnote{margin:11px 0 0}
+@media(max-width:850px){
+  .stay-connected-card{min-height:360px}
+  .stay-connected-card-copy{margin:30px 0 22px}
+}
+@media(max-width:600px){
+  .stay-connected-card{min-height:0}
+  .newsletter-form-row{flex-wrap:wrap}
+  .newsletter-field-name{flex:0 1 calc(42% - 5px)}
+  .newsletter-field-email{flex:1 1 calc(58% - 5px)}
+  .newsletter-form-row .newsletter-submit{width:100%;margin-top:3px}
+}
+@media(max-width:380px){
+  .newsletter-form-row{flex-direction:column;align-items:stretch}
+  .newsletter-field-name,.newsletter-field-email{flex:none;width:100%}
+}
+
+
+/* Match the original Call to Reset phone composition: headline and CTA,
+   then the full Reset wordmark, with the single smaller statue in normal
+   document flow underneath. No absolute positioning over the wordmark. */
+@media(max-width:700px){
+  .call-reset-hero{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    height:auto;
+    min-height:0;
+    padding:clamp(42px,8vw,65px) 0 0;
+  }
+  .call-reset-copy{
+    width:calc(100% - 28px);
+    padding-top:0;
+    flex-shrink:0;
+  }
+  .call-reset-copy h2{
+    font-size:clamp(25px,6.4vw,38px);
+    line-height:1.1;
+  }
+  .call-reset-wordmark{
+    position:relative;
+    z-index:3;
+    left:auto;
+    bottom:auto;
+    width:100%;
+    transform:none;
+    margin:clamp(22px,5vw,34px) 0 0;
+    font-size:clamp(86px,34vw,210px);
+    line-height:.9;
+    text-align:center;
+    white-space:nowrap;
+  }
+  .call-reset-figure-left{display:none}
+  .call-reset-figure-right{
+    position:relative;
+    z-index:2;
+    align-self:center;
+    left:auto;
+    right:auto;
+    bottom:auto;
+    display:block;
+    width:60%;
+    max-width:340px;
+    max-height:none;
+    height:auto;
+    margin:0 auto;
+    transform:none;
+  }
+}
+
+
+/* Footer4-inspired editorial navigation, tailored to THEBUMBS. */
+.site-footer{
+  background:radial-gradient(ellipse at 14% 0%,rgba(67,47,34,.28),transparent 55%),#0B0908;
+  border-top:1px solid rgba(242,233,222,.17);
+  padding:clamp(66px,8vw,112px) clamp(0px,1.1vw,16px) max(115px,calc(100px + env(safe-area-inset-bottom)));
+  color:var(--ink);
+  overflow:hidden;
+}
+.site-footer-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.04fr) minmax(0,1.16fr);
+  gap:clamp(42px,6vw,110px);
+  align-items:start;
+}
+.site-footer-lead .eyebrow{color:#CE775D}
+.site-footer-lead h2{
+  max-width:550px;
+  font-size:clamp(39px,4.2vw,68px);
+  line-height:1.07;
+  letter-spacing:-.065em;
+  margin:22px 0 21px;
+  font-weight:850;
+  color:var(--ink);
+}
+.site-footer-lead p{max-width:480px;margin:0;color:var(--muted);font-size:16px;line-height:1.66}
+.site-footer-cta{
+  display:inline-flex;
+  gap:22px;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:32px;
+  padding:13px 17px;
+  border:1px solid rgba(242,233,222,.4);
+  border-radius:100px;
+  font-size:13px;
+  font-weight:700;
+  transition:border-color .2s,background .2s;
+}
+.site-footer-cta:hover{background:rgba(242,233,222,.08);border-color:var(--ink)}
+.site-footer-links{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(22px,2vw,42px);
+  padding-top:9px;
+}
+.site-footer-link-group{display:flex;flex-direction:column;align-items:flex-start;gap:16px;min-width:0}
+.site-footer-link-group h3{margin:0 0 10px;color:#D88977;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.13em}
+.site-footer-link-group a{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  color:#E8DFD5;
+  font-size:14px;
+  line-height:1.45;
+  transition:color .2s;
+}
+.site-footer-link-group a:hover{color:#E68A71}
+.site-footer-brandline{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:clamp(65px,8vw,130px);
+  padding-top:19px;
+  border-top:1px solid rgba(242,233,222,.16);
+  color:#B7A89A;
+  font-size:10px;
+  font-weight:750;
+  letter-spacing:.13em;
+}
+.site-footer .footer-wordmark{
+  display:block;
+  width:100%;
+  margin:clamp(22px,3vw,42px) 0 clamp(28px,3vw,44px);
+  color:#F2E9DE;
+  text-align:center;
+  font-size:clamp(48px,15.8vw,310px);
+  line-height:.83;
+  font-weight:900;
+  letter-spacing:-.095em;
+  white-space:nowrap;
+  text-decoration:none;
+}
+.site-footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:22px;
+  padding-top:22px;
+  border-top:1px solid rgba(242,233,222,.16);
+  color:#B7A89A;
+  font-size:12px;
+}
+.site-footer-bottom nav{display:flex;align-items:center;flex-wrap:wrap;gap:clamp(16px,2.5vw,33px)}
+.site-footer-bottom a{color:#D3C5B5;transition:color .2s}
+.site-footer-bottom a:hover{color:#FF9078}
+.site-footer-back{display:inline-flex;align-items:center;gap:8px}
+.site-footer a:focus-visible{outline:2px solid #F2E9DE;outline-offset:4px}
+#stay-connected{scroll-margin-top:100px}
+@media(max-width:1050px){
+  .site-footer-grid{grid-template-columns:1fr;gap:65px}
+  .site-footer-links{max-width:740px}
+}
+@media(max-width:700px){
+  .site-footer{
+    padding:66px 0 max(125px,calc(105px + env(safe-area-inset-bottom)));
+  }
+  .site-footer-grid{gap:52px}
+  .site-footer-lead h2{font-size:clamp(38px,9vw,57px)}
+  .site-footer-lead p{font-size:15px}
+  .site-footer-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:42px 26px}
+  .site-footer-link-group:last-child{grid-column:1 / -1}
+  .site-footer-link-group{gap:13px}
+  .site-footer-link-group h3{margin-bottom:5px}
+  .site-footer-brandline{margin-top:75px;gap:8px;flex-direction:column;font-size:9px}
+  .site-footer .footer-wordmark{font-size:clamp(49px,15.7vw,110px);margin:33px 0}
+  .site-footer-bottom{flex-direction:column;align-items:flex-start;gap:22px;line-height:1.6}
+  .site-footer-bottom nav{gap:21px}
+  .dock{
+    width:min(97vw,394px);
+    min-height:70px;
+    padding:7px 6px 8px;
+    gap:2px;
+  }
+  .dock a{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:4px;
+    flex:1 1 0;
+    min-width:0;
+    width:auto;
+    max-width:58px;
+    height:55px;
+    padding:7px 2px;
+    border-radius:17px;
+    line-height:1;
+  }
+  .dock a svg{width:19px;height:19px;flex-shrink:0}
+  .dock-label{
+    display:block;
+    white-space:nowrap;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:9px;
+    font-weight:650;
+    line-height:1;
+    letter-spacing:0;
+  }
+}
+@media(max-width:360px){
+  .dock{width:98vw;padding:6px 3px}
+  .dock a{gap:3px}
+  .dock a svg{width:18px;height:18px}
+  .dock-label{font-size:8px}
+}
+
+
+/* Shared legal pages linked from the footer. */
+.legal-page{
+  max-width:950px;
+  margin:0 auto;
+  padding:clamp(110px,15vh,190px) 0 clamp(90px,12vh,150px);
+}
+.legal-page h1{font-size:clamp(46px,7vw,96px);line-height:1.03;letter-spacing:-.065em;margin:20px 0 12px}
+.legal-page .legal-updated{font-size:13px;letter-spacing:.02em;color:#C8AA98;margin:0 0 42px}
+.legal-page>p:not(.legal-updated){max-width:760px;color:#E0D4C7;font-size:clamp(17px,1.8vw,20px);line-height:1.7;margin:0 0 45px}
+.legal-page section{padding:30px 0;border-top:1px solid var(--line)}
+.legal-page section h2{font-size:clamp(23px,3vw,34px);letter-spacing:-.035em;margin:0 0 17px}
+.legal-page section p{max-width:770px;margin:0 0 14px;color:var(--muted);font-size:16px;line-height:1.7}
+.legal-page a{color:#E99079;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:700px){
+  .legal-page{padding:100px 0 95px}
+}
+
+
+/* Mobile navigation always shows BOTH a visible icon and its one-word label.
+   Partner With Us is a larger, easier-to-tap primary action in the header. */
+@media (max-width:700px){
+  .site-header{
+    min-height:76px;
+    height:76px;
+    padding-inline:clamp(12px,3.8vw,20px);
+  }
+  .site-header .header-actions .header-partner{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:45px;
+    padding:12px 16px;
+    font-size:12px;
+    line-height:1.15;
+    font-weight:800;
+    border-radius:999px;
+    white-space:nowrap;
+    margin-left:0;
+  }
+  .dock{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:2px;
+    width:min(97vw,394px);
+    min-height:76px;
+    padding:8px 6px;
+  }
+  .dock > a{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    flex:1 1 0;
+    min-width:0;
+    height:59px;
+    border-radius:18px;
+    padding:7px 2px;
+    text-align:center;
+  }
+  .dock > a > svg{
+    display:block;
+    width:21px;
+    height:21px;
+    min-height:21px;
+    flex:0 0 21px;
+    opacity:1;
+    visibility:visible;
+  }
+  .dock > a > .dock-label{
+    display:block;
+    position:static;
+    width:auto;
+    height:auto;
+    overflow:visible;
+    clip:auto;
+    opacity:1;
+    visibility:visible;
+    color:inherit;
+    font:700 9px/1.1 Arial,Helvetica,sans-serif;
+    letter-spacing:0;
+    white-space:nowrap;
+  }
+}
+@media (max-width:360px){
+  .site-header .header-actions .header-partner{
+    min-height:44px;
+    padding:11px 12px;
+    font-size:11px;
+  }
+  .dock > a > .dock-label{font-size:8.5px}
+}
+
+
+/* November polish: authentic WhatsApp green, Tiger Lily partner actions,
+   simplified footer branding and clearer responsive navigation. */
+.whatsapp-channel-button{
+  width:100%;
+  align-self:stretch;
+  justify-content:center;
+  text-align:center;
+  background:#25D366;
+  color:#103B24;
+  border:1px solid #1BA64C;
+  min-height:49px;
+  font-weight:800;
+}
+.whatsapp-channel-button:hover{background:#1FBF5D;color:#103B24}
+.site-header .header-partner,
+.home-invitation .button,
+.site-footer .site-footer-cta{
+  background:var(--gold);
+  border-color:var(--gold);
+  color:#fff;
+}
+.site-header .header-partner:hover,
+.home-invitation .button:hover,
+.site-footer .site-footer-cta:hover{
+  background:#A93627;
+  border-color:#A93627;
+  color:#fff;
+}
+.site-footer-link-group .site-footer-social-label{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  font-size:14px;
+  line-height:1.45;
+  color:#E8DFD5;
+}
+.site-footer-social-icon{
+  display:block;
+  width:18px;
+  height:18px;
+  flex:0 0 18px;
+  object-fit:contain;
+}
+.site-footer .footer-wordmark{
+  font-size:clamp(64px,19.5vw,400px);
+  margin:clamp(22px,3.4vw,42px) 0 clamp(25px,3vw,42px);
+  letter-spacing:-.105em;
+}
+.site-footer-bottom{
+  border-top:0;
+  padding-top:0;
+}
+.site-header .header-personal-name{
+  font-size:clamp(24px,2.5vw,35px);
+  font-weight:900;
+  letter-spacing:-.075em;
+  line-height:1;
+}
+@media(max-width:850px){
+  .site-header .header-personal-name{
+    font-size:clamp(18px,4.6vw,24px);
+    letter-spacing:-.085em;
+  }
+}
+@media(max-width:700px){
+  .site-footer .footer-wordmark{
+    font-size:clamp(60px,19.2vw,145px);
+    margin:27px 0 32px;
+  }
+  .dock{width:min(90vw,360px)}
+}
+@media(max-width:360px){
+  .site-header .header-personal-name{
+    font-size:18px;
+    letter-spacing:-.095em;
+  }
+  .dock{width:94vw}
+}
+
+
+/* Personal partnership invitation before the newsletter and WhatsApp section. */
+.home-invitation{
+  padding:clamp(85px,10vw,150px) 0 clamp(90px,10vw,140px);
+  border-top:1px solid var(--line);
+}
+.home-partner-heading{max-width:1050px}
+.home-partner-heading h2{
+  max-width:1050px;
+  margin:20px 0 25px;
+  font-size:clamp(54px,8.3vw,125px);
+  font-weight:850;
+  line-height:.95;
+  letter-spacing:-.07em;
+}
+.home-partner-heading h2 em{font-style:normal;color:#C64F3B}
+.home-partner-heading>p{
+  max-width:690px;
+  margin:0;
+  font-size:clamp(17px,1.7vw,21px);
+  line-height:1.6;
+  color:var(--muted);
+}
+.home-partner-paths{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  margin:clamp(45px,6vw,80px) 0 35px;
+}
+.home-partner-path{
+  padding:clamp(28px,3.5vw,52px);
+  min-height:255px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:rgba(242,233,222,.045);
+}
+.home-partner-path-label{
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.16em;
+  color:#D88977;
+}
+.home-partner-path h3{
+  margin:38px 0 14px;
+  font-size:clamp(28px,3vw,43px);
+  line-height:1.06;
+  letter-spacing:-.05em;
+}
+.home-partner-path p{
+  max-width:490px;
+  margin:0;
+  font-size:clamp(16px,1.35vw,18px);
+  line-height:1.65;
+  color:var(--muted);
+}
+.home-partner-action{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.home-partner-action>.button{
+  margin:0;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  background:#C64F3B;
+  color:#fff;
+  border-color:#C64F3B;
+}
+.home-partner-action>.button:hover{background:#A93627;border-color:#A93627;color:#fff}
+.home-partner-action>span{font-size:13px;line-height:1.55;color:var(--muted)}
+@media(max-width:700px){
+  .home-partner-heading h2{font-size:clamp(48px,11vw,75px)}
+  .home-partner-paths{grid-template-columns:1fr;gap:13px}
+  .home-partner-path{min-height:0;padding:30px}
+  .home-partner-path h3{margin-top:28px}
+  .home-partner-action{align-items:stretch;flex-direction:column;gap:14px}
+  .home-partner-action>.button{width:100%}
+}
+
+
+/* Center the homepage partnership CTA on every screen. */
+.home-partner-action{
+  justify-content:center;
+  text-align:center;
+}
+.home-partner-action>.button{
+  flex:0 0 auto;
+}
+
+/* Mobile dock: active icon and label become olive green, without a selected tile. */
+@media(max-width:700px){
+  .dock > a[aria-current="page"],
+  .dock a[aria-current="page"]{
+    background:transparent;
+    box-shadow:none;
+    color:var(--olive);
+  }
+  .dock > a[aria-current="page"] > svg,
+  .dock > a[aria-current="page"] > .dock-label{
+    color:var(--olive);
+  }
+  .home-partner-action{
+    align-items:center;
+  }
+  .home-partner-action>.button{
+    width:min(100%,360px);
+  }
+}
