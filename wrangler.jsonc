@@ -7,6 +7,15 @@
   "assets": {
     "directory": "./out",
     "binding": "ASSETS",
-    "run_worker_first": ["/api/*"]
-  }
+    "run_worker_first": [
+      "/api/*"
+    ]
+  },
+  "d1_databases": [
+    {
+      "binding": "NEWSLETTER_DB",
+      "database_name": "thebumbs-newsletter",
+      "database_id": "e8233d1c-058b-4c1e-b9bc-30416a87b13d"
+    }
+  ]
 }
