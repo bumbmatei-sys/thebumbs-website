@@ -54,9 +54,9 @@ export function Navigation() {
       <header className={`header site-header ${showLogo ? "header-after-tunnel" : "header-during-tunnel"}`}>
         <div className="header-identity">
           {showLogo ? (
-            <Link className="brand" href="/" aria-label="THEBUMBS home">THEBUMBS</Link>
+            <a className="brand" href="/#intro-tunnel" aria-label="THEBUMBS — return to top of home">THEBUMBS</a>
           ) : (
-            <Link className="header-personal-name" href="/" aria-label="Matei and Larisa Bumb home">MATEI &amp; LARISA BUMB</Link>
+            <a className="header-personal-name" href="/#intro-tunnel" aria-label="Matei and Larisa Bumb — return to top of home">MATEI &amp; LARISA BUMB</a>
           )}
         </div>
         <nav className="nav" aria-label="Main navigation">
