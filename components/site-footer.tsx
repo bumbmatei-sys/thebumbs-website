@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, ArrowUp, Mail, Globe2 } from "lucide-react";
+import { ArrowUp, Mail, Globe2 } from "lucide-react";
 
 const WHATSAPP_LOGO = "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg";
 const INSTAGRAM_LOGO = "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png";
@@ -23,7 +23,6 @@ export function SiteFooter() {
           <span className="eyebrow">MATEI &amp; LARISA BUMB</span>
           <h2>Until the whole world hears.</h2>
           <p>Sharing the Gospel, walking with people, and inviting others to be part of what God is doing across nations.</p>
-          <Link href="/partner" className="site-footer-cta">Partner with us <ArrowUpRight size={17} aria-hidden="true"/></Link>
         </div>
         <nav className="site-footer-links" aria-label="Footer navigation">
           <div className="site-footer-link-group">
