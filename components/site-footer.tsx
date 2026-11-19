@@ -18,7 +18,8 @@ const participate = [
 ];
 
 export function SiteFooter() {
-  const ro = usePathname() === "/ro";
+  const path = usePathname();
+  const ro = path === "/ro" || path.startsWith("/ro/");
   return (
     <footer className="footer site-footer" aria-label="Website footer">
       <div className="site-footer-grid">
@@ -34,7 +35,7 @@ export function SiteFooter() {
           </div>
           <div className="site-footer-link-group">
             <h3>{ro ? "Implică-te" : "Get involved"}</h3>
-            {participate.map(({href,label})=><Link key={href} href={href}>{ro && label === "Partner with us" ? "Devino Partener" : label}</Link>)}
+            {participate.map(({href,label})=><Link key={href} href={ro && href === "/partner" ? "/ro/partner" : href}>{ro && label === "Partner with us" ? "Devino Partener" : label}</Link>)}
             <Link href="/contact"><Mail size={15} aria-hidden="true"/> {ro ? "Trimite un email" : "Send an email"}</Link>
           </div>
           <div className="site-footer-link-group">
