@@ -62,11 +62,13 @@ export function PhotoTunnel() {
             // appearing in a stack at the center of the screen.
             const passed = step - index;
             const side = index % 2 === 0 ? -1 : 1;
-            const approach = clamp((passed + 1) / 1.25);
+            // Every photo approaches from a side, then finishes in the
+            // exact horizontal center when it reaches its full size.
+            const approach = clamp(passed + 1);
             // Approach in perspective, then STOP growing before the image
             // fills the viewport. Let it slide past and fade out instead.
             const depth = Math.max(-1000, Math.min(310, 50 + passed * 960));
-            const horizontal = side * (25 - approach * 10 + clamp(passed / 0.65) * 4);
+            const horizontal = side * 24 * Math.pow(1 - approach, 1.35);
             const entering = clamp((passed + 1.05) / 0.55);
             const leaving = clamp((0.7 - passed) / 0.36);
             const opacity = reducedMotion ? 1 : Math.min(entering, leaving);
