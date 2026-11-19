@@ -1,11 +1,13 @@
 # THEBUMBS — approved photo assets
-The source images were supplied by the website owners. Only approved photos should be used. Do not use rejected image 1000139135.jpg.
 
-## Nine-image scroll tunnel
-Upload the contents of the approved `thebumbs-nine-scroll-photos.zip` into the repository, preserving paths:
+The website owners supplied the original photography. Only approved photographs may be published. **Never use rejected image `1000139135.jpg`.**
+
+## Nine-image scroll tunnel — committed to this branch
+
+The following nine paths are present in PR #8 and referenced by `components/photo-tunnel.tsx`:
 
 1. `public/images/scroll/01-matei-larisa-portrait.jpg`
-2. `public/images/scroll/02-matei-speaking-approved.jpg` — approved brown-shirt speaking photo, sourced from 1000139137.jpg
+2. `public/images/scroll/02-matei-speaking-approved.jpg` — approved brown-shirt microphone photograph, from `1000139137.jpg`
 3. `public/images/scroll/03-larisa-speaking.jpg`
 4. `public/images/scroll/04-matei-larisa-outreach.jpg`
 5. `public/images/scroll/05-street-evangelism.jpg`
@@ -14,10 +16,15 @@ Upload the contents of the approved `thebumbs-nine-scroll-photos.zip` into the r
 8. `public/images/scroll/08-outreach-team-outdoors.jpg`
 9. `public/images/scroll/09-matei-preaching-black-white.jpg`
 
-The `PhotoTunnel` component reads these exact paths. Missing assets are intentionally hidden until loaded.
+The additional approved photo library is also committed under `public/images/`. No further upload or relocation is required for these assets.
 
-## Remaining photo library
-The separate approved 19-image collection belongs in `public/images/`, retaining its original approved filenames. Check permissions for identifiable third parties before public deployment.
+## Release verification — still required
 
-## Publishing gate
-Do not merge or deploy until binary images have been committed, `npm run build` succeeds, and the scrolling sequence is checked on desktop and mobile (including reduced motion).
+- [ ] Verify that all nine image files decode and display, not merely that their paths exist.
+- [ ] Run `npm run build` on the current PR head.
+- [ ] Review the scroll animation on desktop and mobile, including reduced-motion behavior.
+- [ ] Confirm the second photo uses the approved brown-shirt microphone image, not the rejected alternative.
+- [ ] Check that identifiable third parties have appropriate publication permission.
+- [ ] Review all copy, links and contact-form delivery before deployment.
+
+**Do not merge or deploy until the verification above is complete and the owners approve release.**
