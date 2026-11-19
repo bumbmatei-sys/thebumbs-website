@@ -38,4 +38,4 @@ export default {
     return json({ok:true});
    }catch{return json({error:"Message could not be delivered. Please try again later."},502);}
  }
-} satisfies ExportedHandler<Env>;
+};
