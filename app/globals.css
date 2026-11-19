@@ -1438,3 +1438,20 @@ body{background:var(--cream);color:var(--ink)}
 @media(max-width:700px) and (prefers-reduced-motion:no-preference){
   .photo-tunnel{height:850svh}
 }
+
+/* Keep faces visible in the story photographs; remove bright card outlines. */
+.story-tile.story-tile-photo{
+  border:0;
+  background-clip:padding-box;
+  box-shadow:none;
+  overflow:hidden;
+}
+.story-tile.story-tile-photo:first-child{
+  background-position:center 14%;
+}
+.story-tile.story-tile-photo:nth-child(2){
+  background-position:center 37%;
+}
+.story-tile.story-tile-photo:hover{
+  box-shadow:none;
+}
