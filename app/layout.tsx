@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
+import { SiteFooter } from "@/components/site-footer";
 export const metadata: Metadata = {
  metadataBase: new URL("https://thebumbs.space"),
  title: {default:"THEBUMBS | Sharing Jesus Across Nations",template:"%s | THEBUMBS"},
@@ -9,4 +10,4 @@ export const metadata: Metadata = {
  twitter:{card:"summary",title:"THEBUMBS | Sharing Jesus Across Nations",description:"Evangelism, discipleship, and a journey of faith across nations."},
  robots:{index:true,follow:true}
 };
-export default function RootLayout({children}:{children:React.ReactNode}) {return <html lang="en"><body><a href="#main-content" className="skip-link">Skip to content</a><div className="container"><Navigation/><div id="main-content">{children}</div><footer className="footer"><div className="footer-top"><span>MATEI & LARISA BUMB</span><span>FAITH · EVANGELISM · DISCIPLESHIP</span></div><a href="/" className="footer-wordmark" aria-label="THEBUMBS home">THEBUMBS</a><div className="footer-bottom"><span>© {new Date().getFullYear()} THEBUMBS</span><span>Sharing Jesus across nations.</span></div></footer></div></body></html>}
+export default function RootLayout({children}:{children:React.ReactNode}) {return <html lang="en"><body><a href="#main-content" className="skip-link">Skip to content</a><div className="container"><Navigation/><div id="main-content">{children}</div><SiteFooter/></div></body></html>}
