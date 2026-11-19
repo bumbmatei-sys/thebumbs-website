@@ -38,7 +38,7 @@ export function SiteFooter() {
           <div className="site-footer-link-group">
             <h3>Stay connected</h3>
             <a href="https://whatsapp.com/channel/0029Vb6jl7GEAKW7CeyUOx01" target="_blank" rel="noopener noreferrer"><img className="site-footer-social-icon" src={WHATSAPP_LOGO} alt="" width="18" height="18" /> WhatsApp channel</a>
-            <span className="site-footer-social-label"><img className="site-footer-social-icon" src={INSTAGRAM_LOGO} alt="" width="18" height="18" /> Instagram</span>
+            <a href="https://instagram.com/mateibumb" target="_blank" rel="noopener noreferrer"><img className="site-footer-social-icon" src={INSTAGRAM_LOGO} alt="" width="18" height="18" /> Instagram</a>
             <a href="https://calltoreset.site/" target="_blank" rel="noopener noreferrer"><Globe2 size={17} aria-hidden="true" /> Call to Reset</a>
           </div>
         </nav>
