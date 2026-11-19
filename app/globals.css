@@ -1228,3 +1228,83 @@ body{background:var(--cream);color:var(--ink)}
   }
   .dock > a > .dock-label{font-size:8.5px}
 }
+
+
+/* November polish: authentic WhatsApp green, Tiger Lily partner actions,
+   simplified footer branding and clearer responsive navigation. */
+.whatsapp-channel-button{
+  width:100%;
+  align-self:stretch;
+  justify-content:center;
+  text-align:center;
+  background:#25D366;
+  color:#103B24;
+  border:1px solid #1BA64C;
+  min-height:49px;
+  font-weight:800;
+}
+.whatsapp-channel-button:hover{background:#1FBF5D;color:#103B24}
+.site-header .header-partner,
+.home-invitation .button,
+.site-footer .site-footer-cta{
+  background:var(--gold);
+  border-color:var(--gold);
+  color:#fff;
+}
+.site-header .header-partner:hover,
+.home-invitation .button:hover,
+.site-footer .site-footer-cta:hover{
+  background:#A93627;
+  border-color:#A93627;
+  color:#fff;
+}
+.site-footer-link-group .site-footer-social-label{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  font-size:14px;
+  line-height:1.45;
+  color:#E8DFD5;
+}
+.site-footer-social-icon{
+  display:block;
+  width:18px;
+  height:18px;
+  flex:0 0 18px;
+  object-fit:contain;
+}
+.site-footer .footer-wordmark{
+  font-size:clamp(60px,18vw,370px);
+  margin:clamp(22px,3.4vw,42px) 0 clamp(25px,3vw,42px);
+  letter-spacing:-.105em;
+}
+.site-footer-bottom{
+  border-top:0;
+  padding-top:0;
+}
+.site-header .header-personal-name{
+  font-size:clamp(24px,2.5vw,35px);
+  font-weight:900;
+  letter-spacing:-.075em;
+  line-height:1;
+}
+@media(max-width:850px){
+  .site-header .header-personal-name{
+    font-size:clamp(18px,4.6vw,24px);
+    letter-spacing:-.085em;
+  }
+}
+@media(max-width:700px){
+  .site-footer .footer-wordmark{
+    font-size:clamp(56px,17.8vw,132px);
+    margin:27px 0 32px;
+  }
+  .dock{width:min(90vw,360px)}
+}
+@media(max-width:360px){
+  .site-header .header-personal-name{
+    font-size:18px;
+    letter-spacing:-.095em;
+  }
+  .dock{width:94vw}
+}
