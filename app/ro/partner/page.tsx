@@ -9,30 +9,34 @@ export default function Partner(){
     <section className="partner-hero">
       <span className="eyebrow">DEVINO PARTENER · MAREA TRIMITERE</span>
       <h1><span className="partner-headline-first">Nu căutăm donatori,</span><br/><em>ci parteneri.</em></h1>
-      <p className="partner-hero-lead">Ne dorim oameni care împărtășesc aceeași viziune și vor să ducă mai departe aceeași misiune alături de noi.</p>
-      <p className="partner-hero-body">Oameni care cred în vestirea Evangheliei, în câștigarea celor pierduți pentru Hristos și în facerea de ucenici printre națiuni. Nu este vorba doar despre a susține financiar o cauză, ci despre a sta împreună în credință, rugăciune și acțiune.</p>
+      <p className="partner-hero-lead">Credem că Marea Trimitere nu a fost menită să fie împlinită de unul singur.</p>
+      <p className="partner-hero-body">Căutăm oameni care împărtășesc dorința noastră de a-i ajunge pe cei pierduți, de a vesti Evanghelia și de a face ucenici printre națiuni. Nu doar să susțină o cauză, ci să stea alături de noi în credință, rugăciune și acțiune.</p>
+    </section>
+    <section className="partner-vision" aria-labelledby="partner-heart-title">
+      <span className="eyebrow">INIMA DIN SPATELE MISIUNII</span>
+      <h2 id="partner-heart-title">Mai mult decât un moment.</h2>
+      <p>Ne dorim nu doar ca oamenii să-L întâlnească pe Isus, ci să vedem viețile lor transformate. De la vestirea Evangheliei la însoțirea noilor credincioși, vrem să-i vedem crescând în relația lor cu Dumnezeu și pregătiți să-i ajungă pe alții.</p>
+      <p><strong>Pentru că misiunea nu se încheie atunci când mulțimea pleacă acasă.</strong></p>
     </section>
     <section className="partner-giving" id="giving" aria-labelledby="partner-giving-title">
       <span className="eyebrow">MODALITĂȚI DE SUSȚINERE</span>
       <h2 id="partner-giving-title">Fii partener în vestirea Evangheliei.</h2>
-      <p className="partner-giving-lead">Alege modalitatea de susținere care ți se potrivește cel mai bine. Fiecare gest de susținere ne ajută să mergem mai departe.</p>
+      <p className="partner-giving-lead">Fie că alegi să dăruiești o singură dată sau regulat, generozitatea ta ne ajută să continuăm lucrarea pe care Dumnezeu ne-a pus-o pe inimă.</p>
       <GivingMethods locale="ro"/>
     </section>
     <section className="partner-vision" aria-labelledby="partner-vision-title">
-      <span className="eyebrow">O SINGURĂ VIZIUNE · O SINGURĂ MISIUNE</span>
-      <h2 id="partner-vision-title">Cum poți deveni partener</h2>
-      <p>Poți fi alături de noi prin rugăciune, susținere financiară și împărtășirea viziunii de a duce Evanghelia printre națiuni.</p>
+      <span className="eyebrow">TREI MODURI DE A FI PARTENER</span>
+      <h2 id="partner-vision-title">Să ducem Evanghelia împreună.</h2>
       <div className="partner-ways">
-        <article><span className="eyebrow">01 / RUGĂCIUNE</span><h3>Susține-ne în rugăciune.</h3><p>Roagă-te împreună cu noi pentru uși deschise, îndrăzneală și roade care să rămână în fiecare loc în care slujim.</p></article>
-        <article><span className="eyebrow">02 / SUSȚINERE FINANCIARĂ</span><h3>Ajută-ne să mergem.</h3><p>Prin susținerea ta financiară, contribui la realizarea evanghelizărilor, acoperirea cheltuielilor de călătorie și continuarea lucrării de slujire.</p></article>
-        <article><span className="eyebrow">03 / VIZIUNE</span><h3>Du mai departe viziunea alături de noi.</h3><p>Împărtășește această misiune și fii parte din ceea ce face Dumnezeu printre națiuni.</p></article>
+        <article><span className="eyebrow">01 / RUGĂCIUNE</span><h3>Roagă-te împreună cu noi.</h3><p>Susține-ne în rugăciune pentru uși deschise, îndrăzneală și roade care să rămână oriunde ne conduce Dumnezeu.</p></article>
+        <article><span className="eyebrow">02 / DĂRUIRE</span><h3>Ajută-ne să mergem.</h3><p>Generozitatea ta face posibile evanghelizările, călătoriile și ucenicizarea.</p></article>
+        <article><span className="eyebrow">03 / VIZIUNE</span><h3>Împărtășește viziunea.</h3><p>Ajută-ne să ne conectăm cu oameni care au aceeași dorință de a duce Evanghelia mai departe.</p></article>
       </div>
     </section>
     <section className="partner-closing">
-      <span className="eyebrow">ÎMPREUNĂ</span>
-      <h2>Să ducem Evanghelia mai departe, împreună.</h2>
-      <p>Ai o întrebare sau dorești să discutăm personal despre parteneriat? Ne-ar face plăcere să auzim de la tine.</p>
-      <Link href="/contact" className="button">Contactează-ne <span aria-hidden="true">↗</span></Link>
+      <span className="eyebrow">ÎMPREUNĂ, PENTRU SLAVA LUI</span>
+      <h2>Pentru că Isus este vrednic, iar oamenii au nevoie să-L cunoască.</h2>
+      <Link href="/ro/contact" className="button">Contactează-ne <span aria-hidden="true">↗</span></Link>
     </section>
   </main>;
 }
