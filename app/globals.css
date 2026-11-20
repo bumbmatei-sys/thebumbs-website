@@ -1582,3 +1582,13 @@ a.giving-method-card:hover{border-color:#C64F3B;transform:translateY(-3px)}
   .site-footer .footer-wordmark{font-size:16.5vw}
   .dock{width:94vw;padding:5px 4px}
 }
+
+/* Contact social links, adjacent to the contact form. */
+.contact-socials{margin-top:36px;max-width:520px}
+.contact-socials-intro{font-size:15px;line-height:1.7;color:var(--muted);margin:12px 0 18px}
+.contact-social-links{display:flex;flex-direction:column;gap:9px}
+.contact-social-links a{display:flex;align-items:center;gap:14px;padding:15px 17px;border:1px solid var(--line);border-radius:12px;background:rgba(237,228,215,.035);font-size:15px;font-weight:700;transition:background .2s,border-color .2s}
+.contact-social-links a:hover{background:rgba(237,228,215,.09);border-color:rgba(237,228,215,.35)}
+.contact-social-links img{width:25px;height:25px;object-fit:contain;flex-shrink:0}
+.contact-social-arrow{margin-left:auto;color:#F28A71;font-size:20px;font-weight:400}
+@media(max-width:700px){.contact-socials{margin-top:30px;margin-bottom:8px}.contact-social-links a{padding:13px 15px}}
