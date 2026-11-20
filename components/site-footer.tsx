@@ -5,6 +5,7 @@ import { ArrowUp, Mail, Globe2 } from "lucide-react";
 
 const WHATSAPP_LOGO = "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg";
 const INSTAGRAM_LOGO = "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png";
+const FACEBOOK_LOGO = "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg";
 
 const explore = [
   {href:"/",label:"Home"},
@@ -42,6 +43,7 @@ export function SiteFooter() {
             <h3>{ro ? "Rămâi conectat" : "Stay connected"}</h3>
             <a href="https://whatsapp.com/channel/0029Vb6jl7GEAKW7CeyUOx01" target="_blank" rel="noopener noreferrer"><img className="site-footer-social-icon" src={WHATSAPP_LOGO} alt="" width="18" height="18" /> {ro ? "Canal WhatsApp" : "WhatsApp channel"}</a>
             <a href="https://instagram.com/mateibumb" target="_blank" rel="noopener noreferrer"><img className="site-footer-social-icon" src={INSTAGRAM_LOGO} alt="" width="18" height="18" /> Instagram</a>
+            <a href="https://www.facebook.com/share/1F3zUkkWkk/" target="_blank" rel="noopener noreferrer"><img className="site-footer-social-icon" src={FACEBOOK_LOGO} alt="" width="18" height="18" /> Facebook</a>
             <a href="https://calltoreset.site/" target="_blank" rel="noopener noreferrer"><Globe2 size={17} aria-hidden="true" /> Call to Reset</a>
           </div>
         </nav>
