@@ -1636,3 +1636,9 @@ a.giving-method-card:hover{border-color:#C64F3B;transform:translateY(-3px)}
 .blog-article-footer{text-align:center;border-top:1px solid var(--line);padding:clamp(80px,10vw,140px) 0}
 .blog-article-footer h2{font-size:clamp(40px,6vw,80px);letter-spacing:-.065em;line-height:1.05;margin:20px auto 35px;max-width:900px}
 @media(max-width:700px){.blog-page,.blog-article-page{padding-top:95px}.blog-hero{padding-bottom:70px}.blog-hero h1{font-size:clamp(45px,11vw,75px)}.blog-list-heading{align-items:flex-start}.blog-count{margin-top:8px}.blog-grid{grid-template-columns:1fr;gap:44px}.blog-card-featured{grid-column:auto}.blog-card-featured .blog-card-media,.blog-card-media{aspect-ratio:1.35}.blog-card-visit{width:42px;height:42px;right:13px;bottom:13px}.blog-article-header{padding-top:20px}.blog-back{margin-bottom:65px}.blog-article-cover{aspect-ratio:1.15}.blog-article-body{padding:0 0 80px}}
+
+/* Journal: welcoming, personal headline with restrained editorial proportions. */
+.journal-page .blog-hero{max-width:1250px}
+.journal-page .blog-hero h1{font-size:clamp(43px,6.4vw,98px);line-height:1.08;letter-spacing:-.065em}
+.journal-page .blog-hero h1 em{color:#D88977;font-style:italic;font-weight:700}
+@media(max-width:700px){.journal-page .blog-hero h1{font-size:clamp(39px,9.3vw,67px)}.journal-page .blog-hero h1 br{display:none}}
