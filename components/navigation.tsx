@@ -3,15 +3,14 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { House, Users, Globe2, BookOpen, Mail, HeartHandshake } from "lucide-react";
+import { House, Users, BookOpen, Mail, HeartHandshake } from "lucide-react";
 import { RomaniaFlag } from "@/components/flags/countries/ro";
 import { UnitedKingdomFlag } from "@/components/flags/countries/gb";
 
 const items = [
   { href: "/", label: "Home", Icon: House },
   { href: "/about", label: "About", Icon: Users },
-  { href: "/missions", label: "Missions", Icon: Globe2 },
-  { href: "/blog", label: "Blog", Icon: BookOpen },
+  { href: "/journal", label: "Journal", Icon: BookOpen },
   { href: "/contact", label: "Contact", Icon: Mail },
   { href: "/partner", label: "Partner", Icon: HeartHandshake },
 ];
@@ -22,6 +21,7 @@ export function Navigation() {
   const isHome = path === "/" || path === "/ro";
   const isPartner = path === "/partner" || path === "/ro/partner";
   const isContact = path === "/contact" || path === "/ro/contact";
+  const isJournal = path === "/journal" || path.startsWith("/journal/") || path === "/ro/journal" || path.startsWith("/ro/journal/");
   const [afterTunnel, setAfterTunnel] = useState(!isHome);
 
   useEffect(() => {
@@ -53,7 +53,7 @@ export function Navigation() {
   }, [isHome]);
 
   const showLogo = !isHome || afterTunnel;
-  const menu = isRomanian ? ["Acasă","Despre noi","Misiuni","Blog","Contact"] : ["Home","About","Missions","Blog","Contact"];
+  const menu = isRomanian ? ["Acasă","Despre noi","Jurnal","Contact"] : ["Home","About","Journal","Contact"];
 
   return (
     <>
@@ -69,7 +69,7 @@ export function Navigation() {
           {items.slice(0, 5).map(({ href }, index) => (
             <Link
               key={href}
-              href={isRomanian && href === "/" ? "/ro" : isRomanian && href === "/partner" ? "/ro/partner" : isRomanian && href === "/contact" ? "/ro/contact" : href}
+              href={isRomanian && href === "/" ? "/ro" : isRomanian && href === "/partner" ? "/ro/partner" : isRomanian && href === "/contact" ? "/ro/contact" : isRomanian && href === "/journal" ? "/ro/journal" : href}
               aria-current={path === href || (href !== "/" && path.startsWith(href + "/")) ? "page" : undefined}
             >
               {menu[index]}
@@ -79,15 +79,15 @@ export function Navigation() {
         </nav>
         <div className="header-actions">
           <div className="header-language-flags" aria-label="Website languages">
-            <Link href={isPartner ? "/ro/partner" : isContact ? "/ro/contact" : "/ro"} className={`header-language-choice ${isRomanian ? "header-language-current" : ""}`} title="Română" aria-label="Română" aria-current={isRomanian ? "page" : undefined}><RomaniaFlag width={25} decorative /></Link>
-            <Link href={isPartner ? "/partner" : isContact ? "/contact" : "/"} className={`header-language-choice ${!isRomanian ? "header-language-current" : ""}`} title="English" aria-label="English" aria-current={!isRomanian ? "page" : undefined}><UnitedKingdomFlag width={25} decorative /></Link>
+            <Link href={isPartner ? "/ro/partner" : isContact ? "/ro/contact" : isJournal ? "/ro/journal" : "/ro"} className={`header-language-choice ${isRomanian ? "header-language-current" : ""}`} title="Română" aria-label="Română" aria-current={isRomanian ? "page" : undefined}><RomaniaFlag width={25} decorative /></Link>
+            <Link href={isPartner ? "/partner" : isContact ? "/contact" : isJournal ? "/journal" : "/"} className={`header-language-choice ${!isRomanian ? "header-language-current" : ""}`} title="English" aria-label="English" aria-current={!isRomanian ? "page" : undefined}><UnitedKingdomFlag width={25} decorative /></Link>
           </div>
           <Link className="button header-partner" href={isRomanian ? "/ro/partner" : "/partner"}>{isRomanian ? "Devino Partener" : "Partner With Us"}</Link>
         </div>
       </header>
       <nav className="dock" aria-label="Mobile navigation">
         {items.map(({ href, label, Icon }, index) => {
-          const localizedHref = isRomanian && href === "/" ? "/ro" : isRomanian && href === "/partner" ? "/ro/partner" : href;
+          const localizedHref = isRomanian && href === "/" ? "/ro" : isRomanian && href === "/partner" ? "/ro/partner" : isRomanian && href === "/journal" ? "/ro/journal" : isRomanian && href === "/contact" ? "/ro/contact" : href;
           const active = path === localizedHref || (localizedHref !== "/" && path.startsWith(localizedHref + "/"));
           return (
             <Link key={href} href={localizedHref} aria-label={isRomanian ? (menu[index] || "Partener") : label} title={isRomanian ? (menu[index] || "Partener") : label} aria-current={active ? "page" : undefined}>
