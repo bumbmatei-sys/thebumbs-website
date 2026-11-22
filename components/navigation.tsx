@@ -70,7 +70,7 @@ export function Navigation() {
             <Link
               key={href}
               href={isRomanian && href === "/" ? "/ro" : isRomanian && href === "/partner" ? "/ro/partner" : isRomanian && href === "/contact" ? "/ro/contact" : isRomanian && href === "/journal" ? "/ro/journal" : href}
-              aria-current={path === href || (href !== "/" && path.startsWith(href + "/")) ? "page" : undefined}
+              aria-current={path === (isRomanian && href === "/journal" ? "/ro/journal" : href) || (href !== "/" && path.startsWith((isRomanian && href === "/journal" ? "/ro/journal" : href) + "/")) ? "page" : undefined}
             >
               {menu[index]}
             </Link>
