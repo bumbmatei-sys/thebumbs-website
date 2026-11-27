@@ -1,6 +1,6 @@
 # The Bumbs — Missionary Website
 
-Official source repository for **thebumbs.space**.
+Official source repository for **thebumbs.com**.
 
 ## Site map
 - Home `/`

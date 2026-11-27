@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
 
-const base = "https://thebumbs.space";
+const base = "https://thebumbs.com";
 export default function sitemap(): MetadataRoute.Sitemap {
   return ["", "/about", "/ro/about", "/missions", "/blog", "/partner", "/contact", "/privacy", "/terms"].map(path => ({
     url: `${base}${path}`,
