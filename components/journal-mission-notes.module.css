@@ -1,0 +1,11 @@
+.section {
+  border-top: 1px solid var(--line);
+  padding: clamp(52px, 7vw, 95px) 0 clamp(85px, 11vw, 150px);
+}
+
+.section h2 { font-size: clamp(36px, 6vw, 74px); line-height: 1.08; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(26px, 4vw, 48px); margin-top: clamp(32px, 5vw, 60px); }
+.grid article { border-top: 1px solid var(--line); padding-top: 20px; }
+.grid h3 { font-size: clamp(24px, 3vw, 36px); line-height: 1.15; margin: 13px 0 10px; }
+.grid p { color: var(--muted); line-height: 1.65; }
+@media (max-width: 699px) { .grid { grid-template-columns: minmax(0, 1fr); } }

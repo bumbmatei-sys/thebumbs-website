@@ -1,0 +1,8 @@
+/missions /journal 301
+/missions/* /journal 301
+/blog /journal 301
+/blog/* /journal 301
+/ro/missions /ro/journal 301
+/ro/missions/* /ro/journal 301
+/ro/blog /ro/journal 301
+/ro/blog/* /ro/journal 301

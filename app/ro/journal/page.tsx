@@ -1,0 +1,4 @@
+import { JournalMissionNotes } from "@/components/journal-mission-notes";
+import { BlogGrid } from "@/components/blog-grid";
+export const metadata={title:"Jurnal",description:"Povești, lecții și momente de credință, oriunde ne conduce Dumnezeu.",alternates:{canonical:"/ro/journal",languages:{en:"/journal",ro:"/ro/journal"}}};
+export default function JournalRo(){return <main className="blog-page journal-page" lang="ro"><header className="blog-hero"><span className="eyebrow">THEBUMBS / JURNAL</span><h1>Puțin din inimile noastre,{" "}<em className="journal-title-second-line">puțin de pe drum.</em></h1><p>Povești, lecții și momente de credință, oriunde ne conduce Dumnezeu.</p></header><BlogGrid locale="ro"/><JournalMissionNotes locale="ro"/></main>;}

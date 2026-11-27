@@ -10,8 +10,7 @@ const FACEBOOK_LOGO = "https://upload.wikimedia.org/wikipedia/commons/5/51/Faceb
 const explore = [
   {href:"/",label:"Home"},
   {href:"/about",label:"About us"},
-  {href:"/missions",label:"Missions"},
-  {href:"/blog",label:"Blog"},
+  {href:"/journal",label:"Journal"},
 ];
 const participate = [
   {href:"/partner",label:"Partner with us"},
@@ -32,7 +31,7 @@ export function SiteFooter() {
         <nav className="site-footer-links" aria-label="Footer navigation">
           <div className="site-footer-link-group">
             <h3>{ro ? "Explorează" : "Explore"}</h3>
-            {explore.map(({href,label})=><Link key={href} href={ro && href === "/" ? "/ro" : href}>{ro ? ({"Home":"Acasă","About us":"Despre noi","Missions":"Misiuni","Blog":"Blog"}[label] || label) : label}</Link>)}
+            {explore.map(({href,label})=><Link key={href} href={ro && href === "/" ? "/ro" : ro && (href === "/journal" || href === "/about") ? "/ro" + href : href}>{ro ? ({"Home":"Acasă","About us":"Despre noi","Journal":"Jurnal"}[label] || label) : label}</Link>)}
           </div>
           <div className="site-footer-link-group">
             <h3>{ro ? "Implică-te" : "Get involved"}</h3>

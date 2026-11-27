@@ -1,0 +1,23 @@
+.page {
+  max-width: 720px;
+  margin-inline: auto;
+  padding: clamp(130px, 15vw, 205px) 0 clamp(88px, 12vw, 150px);
+}
+
+.page h1 {
+  margin: 0 0 clamp(30px, 5vw, 55px);
+  font-size: clamp(54px, 9vw, 108px);
+  line-height: 1.02;
+}
+
+.copy {
+  max-width: 65ch;
+  color: var(--muted);
+  font-size: clamp(17px, 2vw, 21px);
+  line-height: 1.7;
+}
+
+.copy p { margin: 0 0 1.25em; }
+.copy p:first-child { color: var(--ink); }
+.copy a { color: var(--ink); text-decoration: underline; text-underline-offset: .2em; }
+.copy .signoff { margin: 1.85em 0 0; color: var(--ink); }
