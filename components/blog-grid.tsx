@@ -10,6 +10,6 @@ export function BlogGrid({locale="en"}:{locale?:"en"|"ro"}) {
       <div className="blog-card-media"><img src={post.cover} alt={post.coverAlt}/><span className="blog-card-visit"><ArrowUpRight size={22}/></span></div>
       <div className="blog-card-meta"><span>{post.category}</span><span>{post.date}</span></div>
       <h3>{post.title}</h3><p>{post.excerpt}</p><span className="blog-card-read">{ro?"Citește articolul":"Read article"} <ArrowUpRight size={16}/></span>
-    </Link>)}</div> : <div className="blog-empty"><span className="blog-empty-number">01 — COMING SOON</span><h3>{ro?"Prima noastră poveste apare în curând.":"Our first journal entry is on its way."}</h3><p>{ro?"Pregătim primele povești și fotografii din călătoria noastră. Revino în curând.":"We're preparing the first story and photographs from our journey. Check back soon."}</p></div>}
+    </Link>)}</div> : <div className="blog-empty"><span className="blog-empty-number">{ro?"01 / ÎN CURÂND":"01 / COMING SOON"}</span><h3>{ro?"Prima noastră poveste apare în curând.":"Our first journal entry is on its way."}</h3><p>{ro?"Pregătim primele povești și fotografii din călătoria noastră. Revino în curând.":"We're preparing the first story and photographs from our journey. Check back soon."}</p></div>}
   </section>;
 }

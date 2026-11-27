@@ -69,7 +69,7 @@ export function Navigation() {
           )}
         </div>
         <nav className="nav" aria-label="Main navigation">
-          {items.slice(0, 5).map(({ href }, index) => (
+          {items.slice(0, -1).map(({ href }, index) => (
             <Link
               key={href}
               href={localizedPath(href)}

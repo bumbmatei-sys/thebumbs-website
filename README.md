@@ -1,11 +1,12 @@
 # The Bumbs — Missionary Website
 
-Official source repository for **thebumbs.space**.
+Official source repository for **thebumbs.com**.
 
 ## Site map
 - Home `/`
-- About + Vision `/about`
-- Missions + Reports `/missions` and `/missions/[slug]`
+- About `/about` and `/ro/about`
+- Journal (mission reports, stories and reflections) `/journal` and `/ro/journal`
+- Former `/blog` and `/missions` links redirect to the Journal.
 - Contact `/contact`
 - Partner `/partner`
 
