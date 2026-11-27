@@ -20,6 +20,7 @@ export function Navigation() {
   const path = usePathname();
   const isRomanian = path === "/ro" || path.startsWith("/ro/");
   const isHome = path === "/" || path === "/ro";
+  const isAbout = path === "/about" || path === "/ro/about";
   const isPartner = path === "/partner" || path === "/ro/partner";
   const isContact = path === "/contact" || path === "/ro/contact";
   const [afterTunnel, setAfterTunnel] = useState(!isHome);
@@ -66,29 +67,32 @@ export function Navigation() {
           )}
         </div>
         <nav className="nav" aria-label="Main navigation">
-          {items.slice(0, 5).map(({ href }, index) => (
+          {items.slice(0, 5).map(({ href }, index) => {
+            const target = isRomanian && href === "/about" ? "/ro/about" : isRomanian && href === "/" ? "/ro" : isRomanian && href === "/contact" ? "/ro/contact" : href;
+            return (
             <Link
               key={href}
-              href={isRomanian && href === "/" ? "/ro" : isRomanian && href === "/partner" ? "/ro/partner" : isRomanian && href === "/contact" ? "/ro/contact" : href}
-              aria-current={path === href || (href !== "/" && path.startsWith(href + "/")) ? "page" : undefined}
+              href={target}
+              aria-current={path === target || (target !== "/" && target !== "/ro" && path.startsWith(target + "/")) ? "page" : undefined}
             >
               {menu[index]}
             </Link>
-          ))}
+            );
+          })}
           <a href="https://calltoreset.site/" target="_blank" rel="noopener noreferrer">{isRomanian ? "Ucenicizare" : "Be Discipled"}</a>
         </nav>
         <div className="header-actions">
           <div className="header-language-flags" aria-label="Website languages">
-            <Link href={isPartner ? "/ro/partner" : isContact ? "/ro/contact" : "/ro"} className={`header-language-choice ${isRomanian ? "header-language-current" : ""}`} title="Română" aria-label="Română" aria-current={isRomanian ? "page" : undefined}><RomaniaFlag width={25} decorative /></Link>
-            <Link href={isPartner ? "/partner" : isContact ? "/contact" : "/"} className={`header-language-choice ${!isRomanian ? "header-language-current" : ""}`} title="English" aria-label="English" aria-current={!isRomanian ? "page" : undefined}><UnitedKingdomFlag width={25} decorative /></Link>
+            <Link href={isAbout ? "/ro/about" : isPartner ? "/ro/partner" : isContact ? "/ro/contact" : "/ro"} className={`header-language-choice ${isRomanian ? "header-language-current" : ""}`} title="Română" aria-label="Română" aria-current={isRomanian ? "page" : undefined}><RomaniaFlag width={25} decorative /></Link>
+            <Link href={isAbout ? "/about" : isPartner ? "/partner" : isContact ? "/contact" : "/"} className={`header-language-choice ${!isRomanian ? "header-language-current" : ""}`} title="English" aria-label="English" aria-current={!isRomanian ? "page" : undefined}><UnitedKingdomFlag width={25} decorative /></Link>
           </div>
           <Link className="button header-partner" href={isRomanian ? "/ro/partner" : "/partner"}>{isRomanian ? "Devino Partener" : "Partner With Us"}</Link>
         </div>
       </header>
       <nav className="dock" aria-label="Mobile navigation">
         {items.map(({ href, label, Icon }, index) => {
-          const localizedHref = isRomanian && href === "/" ? "/ro" : isRomanian && href === "/partner" ? "/ro/partner" : href;
-          const active = path === localizedHref || (localizedHref !== "/" && path.startsWith(localizedHref + "/"));
+          const localizedHref = isRomanian && href === "/about" ? "/ro/about" : isRomanian && href === "/" ? "/ro" : isRomanian && href === "/partner" ? "/ro/partner" : href;
+          const active = path === localizedHref || (localizedHref !== "/" && localizedHref !== "/ro" && path.startsWith(localizedHref + "/"));
           return (
             <Link key={href} href={localizedHref} aria-label={isRomanian ? (menu[index] || "Partener") : label} title={isRomanian ? (menu[index] || "Partener") : label} aria-current={active ? "page" : undefined}>
               <Icon size={21} strokeWidth={1.8} />

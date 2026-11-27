@@ -32,7 +32,7 @@ export function SiteFooter() {
         <nav className="site-footer-links" aria-label="Footer navigation">
           <div className="site-footer-link-group">
             <h3>{ro ? "Explorează" : "Explore"}</h3>
-            {explore.map(({href,label})=><Link key={href} href={ro && href === "/" ? "/ro" : href}>{ro ? ({"Home":"Acasă","About us":"Despre noi","Missions":"Misiuni","Blog":"Blog"}[label] || label) : label}</Link>)}
+            {explore.map(({href,label})=><Link key={href} href={ro && href === "/" ? "/ro" : ro && href === "/about" ? "/ro/about" : href}>{ro ? ({"Home":"Acasă","About us":"Despre noi","Missions":"Misiuni","Blog":"Blog"}[label] || label) : label}</Link>)}
           </div>
           <div className="site-footer-link-group">
             <h3>{ro ? "Implică-te" : "Get involved"}</h3>
