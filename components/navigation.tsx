@@ -19,6 +19,7 @@ export function Navigation() {
   const path = usePathname();
   const isRomanian = path === "/ro" || path.startsWith("/ro/");
   const isHome = path === "/" || path === "/ro";
+  const isAbout = path === "/about" || path === "/ro/about";
   const isPartner = path === "/partner" || path === "/ro/partner";
   const isContact = path === "/contact" || path === "/ro/contact";
   const isJournal = path === "/journal" || path.startsWith("/journal/") || path === "/ro/journal" || path.startsWith("/ro/journal/");
@@ -53,6 +54,8 @@ export function Navigation() {
   }, [isHome]);
 
   const showLogo = !isHome || afterTunnel;
+  const localizedPath = (href: string) => isRomanian ? (href === "/" ? "/ro" : "/ro" + href) : href;
+  const isActive = (href: string) => path === href || (href !== "/" && href !== "/ro" && path.startsWith(href + "/"));
   const menu = isRomanian ? ["Acasă","Despre noi","Jurnal","Contact"] : ["Home","About","Journal","Contact"];
 
   return (
@@ -69,8 +72,8 @@ export function Navigation() {
           {items.slice(0, 5).map(({ href }, index) => (
             <Link
               key={href}
-              href={isRomanian && href === "/" ? "/ro" : isRomanian && href === "/partner" ? "/ro/partner" : isRomanian && href === "/contact" ? "/ro/contact" : isRomanian && href === "/journal" ? "/ro/journal" : href}
-              aria-current={path === (isRomanian && href === "/journal" ? "/ro/journal" : href) || (href !== "/" && path.startsWith((isRomanian && href === "/journal" ? "/ro/journal" : href) + "/")) ? "page" : undefined}
+              href={localizedPath(href)}
+              aria-current={isActive(localizedPath(href)) ? "page" : undefined}
             >
               {menu[index]}
             </Link>
@@ -79,16 +82,16 @@ export function Navigation() {
         </nav>
         <div className="header-actions">
           <div className="header-language-flags" aria-label="Website languages">
-            <Link href={isPartner ? "/ro/partner" : isContact ? "/ro/contact" : isJournal ? "/ro/journal" : "/ro"} className={`header-language-choice ${isRomanian ? "header-language-current" : ""}`} title="Română" aria-label="Română" aria-current={isRomanian ? "page" : undefined}><RomaniaFlag width={25} decorative /></Link>
-            <Link href={isPartner ? "/partner" : isContact ? "/contact" : isJournal ? "/journal" : "/"} className={`header-language-choice ${!isRomanian ? "header-language-current" : ""}`} title="English" aria-label="English" aria-current={!isRomanian ? "page" : undefined}><UnitedKingdomFlag width={25} decorative /></Link>
+            <Link href={isPartner ? "/ro/partner" : isContact ? "/ro/contact" : isJournal ? "/ro/journal" : isAbout ? "/ro/about" : "/ro"} className={`header-language-choice ${isRomanian ? "header-language-current" : ""}`} title="Română" aria-label="Română" aria-current={isRomanian ? "page" : undefined}><RomaniaFlag width={25} decorative /></Link>
+            <Link href={isPartner ? "/partner" : isContact ? "/contact" : isJournal ? "/journal" : isAbout ? "/about" : "/"} className={`header-language-choice ${!isRomanian ? "header-language-current" : ""}`} title="English" aria-label="English" aria-current={!isRomanian ? "page" : undefined}><UnitedKingdomFlag width={25} decorative /></Link>
           </div>
           <Link className="button header-partner" href={isRomanian ? "/ro/partner" : "/partner"}>{isRomanian ? "Devino Partener" : "Partner With Us"}</Link>
         </div>
       </header>
       <nav className="dock" aria-label="Mobile navigation">
         {items.map(({ href, label, Icon }, index) => {
-          const localizedHref = isRomanian && href === "/" ? "/ro" : isRomanian && href === "/partner" ? "/ro/partner" : isRomanian && href === "/journal" ? "/ro/journal" : isRomanian && href === "/contact" ? "/ro/contact" : href;
-          const active = path === localizedHref || (localizedHref !== "/" && path.startsWith(localizedHref + "/"));
+          const localizedHref = localizedPath(href);
+          const active = isActive(localizedHref);
           return (
             <Link key={href} href={localizedHref} aria-label={isRomanian ? (menu[index] || "Partener") : label} title={isRomanian ? (menu[index] || "Partener") : label} aria-current={active ? "page" : undefined}>
               <Icon size={21} strokeWidth={1.8} />

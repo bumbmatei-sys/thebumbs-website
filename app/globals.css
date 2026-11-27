@@ -1640,5 +1640,6 @@ a.giving-method-card:hover{border-color:#C64F3B;transform:translateY(-3px)}
 /* Journal: welcoming, personal headline with restrained editorial proportions. */
 .journal-page .blog-hero{max-width:1250px}
 .journal-page .blog-hero h1{font-size:clamp(43px,6.4vw,98px);line-height:1.08;letter-spacing:-.065em}
+.journal-page .blog-hero h1 .journal-title-second-line{display:block}
 .journal-page .blog-hero h1 em{color:#D88977;font-style:italic;font-weight:700}
-@media(max-width:700px){.journal-page .blog-hero h1{font-size:clamp(39px,9.3vw,67px)}.journal-page .blog-hero h1 br{display:none}}
+@media(max-width:700px){.journal-page .blog-hero h1{font-size:clamp(39px,9.3vw,67px)}}
